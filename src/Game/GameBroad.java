@@ -28,8 +28,8 @@ public class GameBroad {
     extraZombiesPlace = new ZombiesWonderingPlace();
 
     totalPlayerslist = new Playable[6];
-    for (int i=0; i<totalPlayerslist.length; i++){
-        totalPlayerslist[i]=new Player();
+    for (int i = 0; i < totalPlayerslist.length; i++){
+        totalPlayerslist[i] = new Player();
       }
     totalPlayerslist[0].setColor("RED");
     totalPlayerslist[1].setColor("YELLOW");
@@ -39,18 +39,15 @@ public class GameBroad {
     totalPlayerslist[5].setColor("BLACK");
 
     players = new ArrayList<>();
-    for (int i=0; i<numplayer; i++){
+
+    for (int i = 0; i < numplayer; i++){
         players.add(totalPlayerslist[i]);
-        for (int q=0; q<players.get(i).getGameCharacters().size(); q++){
+        for (int q = 0; q < players.get(i).getGameCharacters().size(); q++){
             players.get(i).getGameCharacters().get(q).setOwnercolor(players.get(i).getColor());
             players.get(i).getCharactersselect().get(q).setOwnercolor(players.get(i).getColor());
         }
     }
-
-
     itemDeck = new ItemDeck();
-
-
   }
 
     public List<Room> getRooms() {
@@ -70,8 +67,9 @@ public class GameBroad {
     }
 
     public int totalCharatersRemain () {
-      int sum=0;
-      for (int i=0; i<players.size(); i++){
+
+      int sum = 0;
+      for (int i = 0; i < players.size(); i++){
           sum += players.get(i).remaingCharacter();
       }
       return sum;
@@ -79,8 +77,8 @@ public class GameBroad {
 
     public Room matchRoom(int roomNum){
       int q = 0;
-      for (int i=0; i<rooms.size(); i++){
-          if (roomNum==rooms.get(i).getRoomNum()){
+      for (int i = 0; i < rooms.size(); i++){
+          if (roomNum == rooms.get(i).getRoomNum()){
               q = i;
           }
       }
@@ -89,7 +87,7 @@ public class GameBroad {
 
     public Playable matchPlayer(String color){
         int q = 0;
-        for (int i=0; i<players.size(); i++){
+        for (int i = 0; i < players.size(); i++){
             if (color.equalsIgnoreCase(players.get(i).getColor())){
                 q = i;
             }
@@ -99,7 +97,7 @@ public class GameBroad {
 
     public Item matchItem(Playable player, String name){
         int q = 0;
-        for (int i=0; i<player.getCurrentItem().size(); i++){
+        for (int i = 0; i < player.getCurrentItem().size(); i++){
             if (name.equalsIgnoreCase(player.getCurrentItem().get(i).getName())){
                 q = i;
             }
@@ -110,7 +108,7 @@ public class GameBroad {
 
     public GameCharacter matchGameCharacter(Playable player, String gameCharacter){
        int q = 0;
-       for (int i=0; i<player.getGameCharacters().size(); i++){
+       for (int i = 0; i < player.getGameCharacters().size(); i++){
            if (gameCharacter.equalsIgnoreCase(player.getGameCharacters().get(i).getName())){
                q = i;
            }
@@ -119,18 +117,18 @@ public class GameBroad {
     }
 
     public Room inWhichRoom (GameCharacter character){
-        int k=0;
-        for (int i=0; i<rooms.size(); i++){
-            for (int q=0; q<rooms.get(i).getRoomCharaters().size();q++)
+        int k = 0;
+        for (int i = 0; i < rooms.size(); i++){
+            for (int q = 0; q < rooms.get(i).getRoomCharaters().size();q++)
             if (character.equals(rooms.get(i).getRoomCharaters().get(q))){
-               k=i;
+               k = i;
             }
         }
         return rooms.get(k);
     }
 
     public void printRooms(){
-        for (int i=0; i<rooms.size(); i++){
+        for (int i = 0; i <rooms.size(); i++){
             System.out.println(rooms.get(i));
         }
     }
@@ -164,21 +162,21 @@ public class GameBroad {
      * @return the room with most people
      */
     public Room mostPeople(){
-        int q=0;
+        int q = 0;
         int maxPeople = rooms.get(0).getRoomCharaters().size();
         int count = 0;
-        for (int i=0; i<rooms.size(); i++){
-           if (maxPeople<rooms.get(i).getRoomCharaters().size()){
+        for (int i = 0; i<rooms.size(); i++){
+           if (maxPeople < rooms.get(i).getRoomCharaters().size()){
                maxPeople = rooms.get(i).getRoomCharaters().size();
                q = i;
            }
         }
-        for (int i=0; i<rooms.size(); i++){
-            if (maxPeople==rooms.get(i).getRoomCharaters().size()){
+        for (int i = 0; i < rooms.size(); i++){
+            if (maxPeople == rooms.get(i).getRoomCharaters().size()){
                 count++;
             }
         }
-        if (count>1){
+        if (count > 1){
             return extraZombiesPlace;
         } else {
             return rooms.get(q);
@@ -187,21 +185,21 @@ public class GameBroad {
     }
 
     public Room mostModel(){
-        int q=0;
+        int q = 0;
         int maxPeople = rooms.get(0).modelNumber();
         int count = 0;
-        for (int i=0; i<rooms.size(); i++){
-            if (maxPeople<rooms.get(i).modelNumber()){
+        for (int i = 0; i < rooms.size(); i++){
+            if (maxPeople < rooms.get(i).modelNumber()){
                 maxPeople = rooms.get(i).modelNumber();
                 q = i;
             }
         }
-        for (int i=0; i<rooms.size(); i++){
-            if (maxPeople==rooms.get(i).modelNumber()){
+        for (int i = 0; i < rooms.size(); i++){
+            if (maxPeople == rooms.get(i).modelNumber()){
                 count++;
             }
         }
-        if (count>1){
+        if (count > 1){
             return extraZombiesPlace;
         } else {
             return rooms.get(q);

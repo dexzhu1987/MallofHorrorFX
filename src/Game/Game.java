@@ -51,6 +51,7 @@ public class Game { // test
 
         System.out.println();
         System.out.println("-------------Pregame Phase: choosing rooms begins ---------------------");
+
         //Pre-game phase, setting up charater locations
         PairofDice pairofDice = new PairofDice();
         String precharselect = "";

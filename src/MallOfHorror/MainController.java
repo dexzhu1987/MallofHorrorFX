@@ -1,5 +1,6 @@
 package MallOfHorror;
 
+import Dice.PairofDice;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
@@ -21,6 +24,12 @@ public class MainController {
     private ProgressBar progressBar;
     @FXML
     private Label continueLabel;
+    @FXML
+    private Label rollResult_1;
+    @FXML
+    private Label rollResult_2;
+
+    private PairofDice roll = new PairofDice();
 
     public class bg_Thread implements Runnable{
 
@@ -44,7 +53,7 @@ public class MainController {
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-
+                            continueLabel.setText("Done.....");
                         }
                     });
                 }
@@ -71,6 +80,17 @@ public class MainController {
         start_stage.show();
 
     }
+
+    @FXML
+    public void NextBtn(ActionEvent event)throws IOException{
+        Parent nextRoot = FXMLLoader.load(getClass().getResource("BoardRoom.fxml"));
+        Scene nextScene = new Scene(nextRoot);
+        Stage next_stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        next_stage.setScene(nextScene);
+        next_stage.show();
+
+    }
+
     @FXML
     public void BackBtn(ActionEvent event)throws IOException{
         Parent backRoot = FXMLLoader.load(getClass().getResource("Main.fxml"));
@@ -96,6 +116,18 @@ public class MainController {
         Stage rule_stage = new Stage();
         rule_stage.setScene(ruleScene);
         rule_stage.show();
+    }
+
+    @FXML
+    public void rollBtn(){
+        roll.rollDieOne();
+        roll.rollDieTwo();
+        rollResult_1.setFont(Font.font(20));
+        rollResult_1.setTextFill(Color.RED);
+        rollResult_2.setFont(Font.font(20));
+        rollResult_2.setTextFill(Color.RED);
+        rollResult_1.setText(Integer.toString(roll.getDieOneFace()));
+        rollResult_2.setText(Integer.toString(roll.getDieTwoFace()));
     }
 
 }
