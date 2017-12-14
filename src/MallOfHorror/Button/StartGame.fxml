@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -9,6 +8,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+
 
 <GridPane prefHeight="800.0" prefWidth="1480.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MallOfHorror.MainController">
    <columnConstraints>
@@ -37,5 +37,10 @@
             <Insets top="100.0" />
          </GridPane.margin>
       </Label>
+      <Button mnemonicParsing="false" onAction="#NextBtn" text="Next" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets top="300.0" />
+         </GridPane.margin>
+      </Button>
    </children>
 </GridPane>
