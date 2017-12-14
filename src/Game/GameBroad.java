@@ -6,9 +6,19 @@ import Playable.*;
 import Room.*;
 import java.util.*;
 import Character.*;
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 
-public class GameBroad {
+public class GameBroad{
   private List<Room> rooms;
   private List<Playable> players;
   private ItemDeck itemDeck;
@@ -226,7 +236,6 @@ public class GameBroad {
         System.out.println(gameBroad.mostPeople().getName());
         System.out.println(gameBroad.mostModel().getName());
 
-
+        //launch();///
     }
-
 }

@@ -6,11 +6,125 @@ import Item.*;
 import Playable.*;
 import Room.*;
 import Character.*;
+import javafx.application.Application;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
-public class Game { // test
+public class Game extends Application {
+
+    private Parent createContent() {
+        Pane root = new Pane();
+        root.setPrefSize(1200, 800);
+
+        Region background = new Region();
+        background.setPrefSize(1200, 900);
+        background.setStyle("-fx-background-color: rgba(0, 0, 0, 1)");
+
+        // Upper windows
+        HBox upper = new HBox(10);
+        upper.setPadding(new Insets(10, 10, 10, 10));
+
+        Rectangle scene1 = new Rectangle(870, 500);
+        scene1.setFill(Color.DARKSLATEGREY);
+        Rectangle scene2 = new Rectangle(300, 500);
+        scene2.setFill(Color.DARKSLATEGREY);
+
+        Rectangle room1 = new Rectangle(250, 180);
+        room1.setArcWidth(120);
+        room1.setArcHeight(30);
+        room1.setFill(Color.ROSYBROWN);
+
+        Rectangle room2 = new Rectangle(250, 180);
+        room2.setArcWidth(120);
+        room2.setArcHeight(30);
+        room2.setFill(Color.ROSYBROWN);
+
+        Rectangle room3 = new Rectangle(250, 180);
+        room3.setArcWidth(120);
+        room3.setArcHeight(30);
+        room3.setFill(Color.ROSYBROWN);
+
+        Rectangle room4 = new Rectangle(250, 180);
+        room4.setArcWidth(120);
+        room4.setArcHeight(30);
+        room4.setFill(Color.ROSYBROWN);
+
+        Rectangle room5 = new Rectangle(250, 180);
+        room5.setArcWidth(120);
+        room5.setArcHeight(30);
+        room5.setFill(Color.ROSYBROWN);
+
+        Rectangle room6 = new Rectangle(250, 180);
+        room6.setArcWidth(120);
+        room6.setArcHeight(30);
+        room6.setFill(Color.ROSYBROWN);
+
+        VBox v1 = new VBox(35);
+        v1.getChildren().addAll(room1, room4);
+        VBox v2 = new VBox(35);
+        v2.getChildren().addAll(room2, room5);
+        VBox v3 = new VBox(35);
+        v3.getChildren().addAll(room3, room6);
+
+        HBox h = new HBox(35);
+        h.getChildren().addAll(v1, v2, v3);
+        h.setPadding(new Insets(75, 10, 10, 25));
+
+        StackPane scene1WithRooms = new StackPane();
+        scene1WithRooms.getChildren().addAll(scene1, h);
+
+        // Lower windows
+        HBox lower = new HBox(10);
+        lower.setPadding(new Insets(0, 10, 10, 10));
+
+        Rectangle scene3 = new Rectangle(430, 250);
+        scene3.setFill(Color.DARKSLATEGREY);
+        Rectangle scene4 = new Rectangle(430, 250);
+        scene4.setFill(Color.DARKSLATEGREY);
+        Rectangle scene5 = new Rectangle(300, 250);
+        scene5.setFill(Color.DARKSLATEGREY);
+
+        // Upper + Lower
+        upper.getChildren().addAll(scene1WithRooms, new StackPane(scene2));
+        lower.getChildren().addAll(new StackPane(scene3), new StackPane(scene4), new StackPane(scene5));
+
+        VBox layout = new VBox();
+        layout.getChildren().addAll(upper, lower);
+        root.getChildren().addAll(background, layout);
+        return root;
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setScene(new Scene(createContent()));
+        primaryStage.setWidth(1200);
+        primaryStage.setHeight(800);
+        primaryStage.setResizable(false);
+        primaryStage.setTitle("Mall Of Horror");
+        primaryStage.show();
+    }
+
     public static void main(String[] args) {
-
+        launch();
         //deciding how many players phase;
         boolean keeploop;
         int numPlayers = 0;
