@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
@@ -118,13 +119,16 @@ public class Game extends Application {
 
     public static void main(String[] args) {
         launch();
-        //deciding how many players phase;
-        MainLogic();
-    }
+        //MainLogic();
+        Game test = new Game();
+            test.MainLogic();
 
-    private static void MainLogic() {
+    }
+    //deciding how many players phase;
+    public void MainLogic() {
         boolean keeploop;
         int numPlayers = 0;
+
         do {
             try {
                 do {
@@ -1390,7 +1394,4 @@ public class Game extends Application {
 
         return notInTheRoomList;
     }
-
-
-
 }

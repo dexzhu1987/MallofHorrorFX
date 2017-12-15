@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Dice.PairofDice;
+import Model.Game.Game;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,11 +11,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -29,7 +32,9 @@ public class MainController {
     private TextField inputName_1, inputName_2, inputName_3, inputName_4;
 
 
+
     private PairofDice roll = new PairofDice();
+    private Game run = new Game();
 
     //Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure you want to format your system?");
 
@@ -134,10 +139,29 @@ public class MainController {
 
     @FXML
     public void SelectNameBtn(){
-        label_1.textProperty().bind(inputName_1.textProperty());
-        label_2.textProperty().bind(inputName_2.textProperty());
-        label_3.textProperty().bind(inputName_3.textProperty());
-        label_4.textProperty().bind(inputName_4.textProperty());
+            label_1.textProperty().bind(inputName_1.textProperty());
+            label_2.textProperty().bind(inputName_2.textProperty());
+            label_3.textProperty().bind(inputName_3.textProperty());
+            label_4.textProperty().bind(inputName_4.textProperty());
+
     }
+    @FXML
+    public void RunGameBtn(){
+        //printOut_Label.setText("Hello");
+        run.MainLogic();
+
+    }
+
+
+    public static void create(TextArea textarea) {
+        PrintStream stream = new PrintStream(System.out) {
+            @Override
+            public void print(String text) {
+                textarea.setText(text + "\n");
+            }
+        };
+        System.setOut(stream);
+    }
+
 
 }

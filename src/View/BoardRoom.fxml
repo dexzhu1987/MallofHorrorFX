@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane prefHeight="780.0" prefWidth="1480.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MainController">
-   <bottom>
-      <AnchorPane prefHeight="82.0" prefWidth="1480.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
-   </bottom>
    <right>
       <AnchorPane prefHeight="577.0" prefWidth="200.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
          <children>
@@ -25,6 +23,10 @@
             <Label id="printName2" fx:id="label_2" layoutX="84.0" layoutY="151.0" text="Name2" />
             <Label id="printName3" fx:id="label_3" layoutX="84.0" layoutY="290.0" text="Name3" />
             <Label id="printName4" fx:id="label_4" layoutX="84.0" layoutY="430.0" text="Name4" />
+            <Label fx:id="rollResult_2" alignment="CENTER" layoutX="44.0" layoutY="597.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white;" />
+            <Button layoutX="50.0" layoutY="668.0" mnemonicParsing="false" onAction="#rollBtn" prefHeight="60.0" prefWidth="60.0" text="Roll" />
+            <Button layoutX="118.0" layoutY="688.0" mnemonicParsing="false" onMouseClicked="#RunGameBtn" text="test run" />
+            <Label fx:id="rollResult_1" alignment="CENTER" layoutX="106.0" layoutY="597.0" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white;" />
          </children></AnchorPane>
    </right>
    <left>
@@ -35,7 +37,7 @@
             <TextField fx:id="inputName_3" layoutX="28.0" layoutY="240.0" prefHeight="27.0" prefWidth="106.0" promptText="Player 3" />
             <TextField fx:id="inputName_4" layoutX="28.0" layoutY="320.0" prefHeight="27.0" prefWidth="106.0" promptText="Player 4" />
             <Text layoutX="30.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Input your Name" />
-            <Button fx:id="nameBtn" layoutX="46.0" layoutY="441.0" mnemonicParsing="false" onAction="#SelectNameBtn" prefHeight="27.0" prefWidth="64.0" text="OK" />
+            <Button fx:id="nameBtn" layoutX="46.0" layoutY="441.0" mnemonicParsing="false" onMouseClicked="#SelectNameBtn" prefHeight="27.0" prefWidth="64.0" text="OK" />
             <Label layoutX="5.0" layoutY="84.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: red;" />
             <Label layoutX="5.0" layoutY="324.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: green;" />
             <Label layoutX="5.0" layoutY="243.0" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: blue;" />
@@ -44,19 +46,37 @@
       </AnchorPane>
    </left>
    <center>
-      <HBox prefHeight="290.0" prefWidth="643.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="rollResult_2" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white;" />
-            <Label fx:id="rollResult_1" alignment="CENTER" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: white;">
-               <HBox.margin>
-                  <Insets left="10.0" />
-               </HBox.margin></Label>
-            <Button mnemonicParsing="false" onAction="#rollBtn" prefHeight="60.0" prefWidth="60.0" text="Roll">
-               <HBox.margin>
-                  <Insets left="10.0" />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" text="tset run" />
+            <VBox prefHeight="780.0" prefWidth="375.0">
+               <children>
+                  <HBox prefHeight="350.0" prefWidth="375.0" />
+                  <HBox prefHeight="350.0" prefWidth="375.0" />
+                  <HBox prefHeight="200.0" prefWidth="375.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="780.0" prefWidth="400.0">
+               <children>
+                  <HBox prefHeight="350.0" prefWidth="375.0" />
+                  <HBox prefHeight="350.0" prefWidth="375.0" />
+                  <HBox prefHeight="200.0" prefWidth="375.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="362.0" layoutY="10.0" prefHeight="780.0" prefWidth="400.0">
+               <children>
+                  <HBox prefHeight="350.0" prefWidth="375.0" />
+                  <HBox prefHeight="350.0" prefWidth="375.0" />
+                  <HBox prefHeight="200.0" prefWidth="375.0" style="-fx-background-color: black;">
+                     <children>
+                        <Label fx:id="printOut_Label" alignment="CENTER" prefHeight="166.0" prefWidth="383.0" text="Label" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
       </HBox>
    </center>
