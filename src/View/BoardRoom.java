@@ -17,6 +17,7 @@ public class BoardRoom extends Application {
         primaryStage.setTitle("Mall Of Horror");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+
     }
 
 

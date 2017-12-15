@@ -1,4 +1,5 @@
 package View;
+import Controller.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,11 +10,14 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../View/Main.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/Main.fxml"));
+        Parent root = (Parent) loader.load();
+        MainController ctrl = loader.getController();
+        Scene newScene = new Scene(root);
+        Stage newStage = new Stage();
+        newStage.setScene(newScene);
+        newStage.show();
 
-        primaryStage.setTitle("Mall Of Horror");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
     }
 
 
