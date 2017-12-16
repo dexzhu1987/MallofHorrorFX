@@ -31,6 +31,8 @@ public class MainController {
     @FXML
     private TextField inputName_1, inputName_2, inputName_3, inputName_4;
 
+    private int numberButton;
+
 
 
     private PairofDice roll = new PairofDice();
@@ -163,5 +165,23 @@ public class MainController {
 //        System.setOut(stream);
 //    }
 
+    public void numberFourButton(){
+        numberButton=4;
+    }
 
+    public void numberFiveButton(){
+        numberButton=5;
+    }
+
+    public void numberSixButton(){
+        numberButton=6;
+    }
+
+    public int getNumberButton() {
+        return numberButton;
+    }
+
+    public void setNumberButton(int numberButton) {
+        this.numberButton = numberButton;
+    }
 }
