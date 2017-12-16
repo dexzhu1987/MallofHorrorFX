@@ -11,6 +11,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
@@ -20,6 +21,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.io.PrintStream;
 import java.util.*;
 import java.util.List;
 
@@ -90,6 +92,9 @@ public class Game extends Application {
         HBox lower = new HBox(10);
         lower.setPadding(new Insets(0, 10, 10, 10));
 
+//        Label label = new Label();
+//        label.setText("Tryout");
+
         Rectangle scene3 = new Rectangle(430, 250);
         scene3.setFill(Color.DARKSLATEGREY);
         Rectangle scene4 = new Rectangle(430, 250);
@@ -120,10 +125,11 @@ public class Game extends Application {
     public static void main(String[] args) {
         launch();
         //MainLogic();
-        Game test = new Game();
-            test.MainLogic();
+//        Game test = new Game();
+//            test.MainLogic();
 
     }
+
     //deciding how many players phase;
     public void MainLogic() {
         boolean keeploop;
