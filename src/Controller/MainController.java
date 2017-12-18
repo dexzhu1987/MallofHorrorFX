@@ -150,15 +150,15 @@ public class MainController {
 
 
 
-    public static void create(TextArea textarea) {
-        PrintStream stream = new PrintStream(System.out) {
-            @Override
-            public void print(String text) {
-                textarea.setText(text + "\n");
-            }
-        };
-        System.setOut(stream);
-    }
+//    public static void create(TextArea textarea) {
+//        PrintStream stream = new PrintStream(System.out) {
+//            @Override
+//            public void print(String text) {
+//                textarea.setText(text + "\n");
+//            }
+//        };
+//        System.setOut(stream);
+//    }
 
     public void numberFourButton(){
         numberButton=4;
