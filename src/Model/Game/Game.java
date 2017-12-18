@@ -25,12 +25,7 @@ import java.io.PrintStream;
 import java.util.*;
 import java.util.List;
 
-<<<<<<< HEAD
-public class Game {
 
-    public static void main(String[] args) {
-
-=======
 public class Game extends Application {
 
     private Parent createContent() {
@@ -138,7 +133,7 @@ public class Game extends Application {
 
     //deciding how many players phase;
     public void MainLogic() {
->>>>>>> 6c879ca82ed64aa0e7864e07d1ea389d3fd13c0c
+
         boolean keeploop;
         int numPlayers = 0;
 

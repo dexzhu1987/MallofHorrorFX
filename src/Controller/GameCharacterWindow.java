@@ -60,6 +60,7 @@ public class GameCharacterWindow {
 
 
         VBox layout = new VBox(10);
+        layout.getChildren().clear();
 
         layout.getChildren().add(label);
 

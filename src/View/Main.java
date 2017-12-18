@@ -190,7 +190,8 @@ public class Main extends Application{
                 for (int k= 0; k< gameBroad.getPlayers().get(q).getCharactersselect().size();k++){
                     characterOpitons.add(gameBroad.getPlayers().get(q).getCharactersselect().get(k));
                 }
-                String selectedCharacter = GameCharacterWindow.display(characterOpitons, "please select one of these characters into that room");
+                String selectedCharacter = GameCharacterWindow.display(characterOpitons, gameBroad.getPlayers().get(q) +
+                        "please select one of these characters into" + gameBroad.matchRoom(selectedRoom).getName());
                 if (gameBroad.matchRoom(selectedRoom).isFull()){
                     gameBroad.matchRoom(4).enter(gameBroad.getPlayers().get(q).selectchoose(selectedCharacter));
                     gameBroad.getPlayers().get(q).selectchooseremove(selectedCharacter);
