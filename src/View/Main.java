@@ -70,14 +70,15 @@ public class Main extends Application{
         howTOPlay.setText("How to Play");
 
 //        VBox firstlayout = new VBox();
+//        firstlayout.setAlignment(Pos.CENTER);
 //        firstlayout.getChildren().addAll(startGame, howTOPlay);
 //        Scene firstscene = new Scene(firstlayout, WIDTH, HEIGHT);
 //        primaryStage.setScene(firstscene);
 //        mainWindow.show();
+
         GridPane firstlayout = new GridPane();
         GridPane.setRowIndex(startGame,1);
         GridPane.setRowIndex(howTOPlay, 2);
-        firstlayout.setPadding(new Insets(15));
         firstlayout.setHgap(5);
         firstlayout.setVgap(5);
         firstlayout.setAlignment(Pos.CENTER);
@@ -91,16 +92,11 @@ public class Main extends Application{
         ok1.setOnAction(event -> {
            playerselectRoom();
         });
-//        VBox welcomePlayerslayout = new VBox();
-//        welcomePlayerslayout.getChildren().addAll(welcome,ok1);
-//        welcomeScene = new Scene(welcomePlayerslayout, WIDTH, HEIGHT);
-
-        GridPane welcomePlayerslayout = new GridPane();
-        GridPane.setRowIndex(ok1,1);
-        ok1.setPrefWidth(120);
+        VBox welcomePlayerslayout = new VBox();
         welcomePlayerslayout.setAlignment(Pos.CENTER);
         welcomePlayerslayout.getChildren().addAll(welcome,ok1);
         welcomeScene = new Scene(welcomePlayerslayout, WIDTH, HEIGHT);
+
 
         //playersSceneRedSetUp;
         viewRoomButtonRed.setText("Red - Rooms");
@@ -202,6 +198,7 @@ public class Main extends Application{
                     }
                 }
                 while (!yes);
+
                 for (int k= 0; k< gameBroad.getPlayers().get(q).getCharactersselect().size();k++){
                     characterOpitons.add(gameBroad.getPlayers().get(q).getCharactersselect().get(k));
                 }
