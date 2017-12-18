@@ -32,7 +32,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class Tryout implements Initializable {
+public class tryout implements Initializable {
     @FXML
     public static IntegerProperty numberplayer;
 

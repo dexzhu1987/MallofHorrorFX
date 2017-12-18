@@ -1,21 +1,17 @@
 package View;
 import Controller.GameCharacterWindow;
-import Controller.MainController;
-import Controller.NumberWindow;
+import Controller.numberWindow;
 import Controller.YesNoWindow;
 import Model.Character.GameCharacter;
 import Model.Dice.PairofDice;
-import Model.Game.Game;
 import Model.Game.GameBroad;
 import javafx.application.*;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.scene.image.Image;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
-import javafx.event.*;
 
 import java.util.*;
 
@@ -62,7 +58,7 @@ public class Main extends Application{
 
         startGame.setText("Start Game");
         startGame.setOnAction(event -> {
-            gameBroad.setPlayersNumber(NumberWindow.display(numberOfPlayersOptions, "please select how many players"));
+            gameBroad.setPlayersNumber(numberWindow.display(numberOfPlayersOptions, "please select how many players"));
             welcomeScene();
             welcome.setText("Welcome  players " + gameBroad.getPlayersNumber() );
             for (int i=0; i<gameBroad.getPlayersNumber(); i++){
@@ -73,17 +69,36 @@ public class Main extends Application{
 
         howTOPlay.setText("How to Play");
 
-        VBox firstlayout = new VBox();
-        firstlayout.getChildren().addAll(startGame, howTOPlay);
-        Scene firstscene = new Scene(firstlayout, WIDTH, HEIGHT);
+//        VBox firstlayout = new VBox();
+//        firstlayout.getChildren().addAll(startGame, howTOPlay);
+//        Scene firstscene = new Scene(firstlayout, WIDTH, HEIGHT);
+//        primaryStage.setScene(firstscene);
+//        mainWindow.show();
+        GridPane firstlayout = new GridPane();
+        GridPane.setRowIndex(startGame,1);
+        GridPane.setRowIndex(howTOPlay, 2);
+        firstlayout.setPadding(new Insets(15));
+        firstlayout.setHgap(5);
+        firstlayout.setVgap(5);
+        firstlayout.setAlignment(Pos.CENTER);
+        howTOPlay.setLayoutY(200);
+        Scene firstscene = new Scene(firstlayout, 800, 600);
+        firstlayout.getChildren().addAll(startGame,howTOPlay);
         primaryStage.setScene(firstscene);
-        mainWindow.show();
+        primaryStage.show();
 
         Button ok1 = new Button("OK");
         ok1.setOnAction(event -> {
            playerselectRoom();
         });
-        VBox welcomePlayerslayout = new VBox();
+//        VBox welcomePlayerslayout = new VBox();
+//        welcomePlayerslayout.getChildren().addAll(welcome,ok1);
+//        welcomeScene = new Scene(welcomePlayerslayout, WIDTH, HEIGHT);
+
+        GridPane welcomePlayerslayout = new GridPane();
+        GridPane.setRowIndex(ok1,1);
+        ok1.setPrefWidth(120);
+        welcomePlayerslayout.setAlignment(Pos.CENTER);
         welcomePlayerslayout.getChildren().addAll(welcome,ok1);
         welcomeScene = new Scene(welcomePlayerslayout, WIDTH, HEIGHT);
 
@@ -167,8 +182,8 @@ public class Main extends Application{
     }
 
     public void availableRoomSelect(){
-        for (int i = 0; i < gameBroad.totalCharatersRemain(); i += 4) {
-            for (int q = 0; q < gameBroad.getPlayers().size(); q++) {
+        for (int i = 1; i < gameBroad.totalCharatersRemain(); i += 4) {
+            for (int q = 1; q < gameBroad.getPlayers().size(); q++) {
                 PairofDice pairofDice = new PairofDice();
                 pairofDice.rollDieOne();
                 pairofDice.rollDieTwo();
@@ -179,7 +194,7 @@ public class Main extends Application{
                 int selectedRoom = 0;
                 boolean yes = true;
                 do {
-                    selectedRoom = NumberWindow.display(dices, gameBroad.getPlayers().get(q) + " get " + pairofDice.getDieOneFace() + " and "
+                    selectedRoom = numberWindow.display(dices, gameBroad.getPlayers().get(q) + " get " + pairofDice.getDieOneFace() + " and "
                             + pairofDice.getDieTwoFace() + " please select your which room you want to go to");
                     if (gameBroad.matchRoom(selectedRoom).isFull()){
                          yes = YesNoWindow.display(gameBroad.matchRoom(selectedRoom).getName() +

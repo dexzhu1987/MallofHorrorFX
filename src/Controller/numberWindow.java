@@ -8,7 +8,7 @@ import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.geometry.*;
 
-public class NumberWindow {
+public class numberWindow {
     static int theNumber;
 
     public static int display(List<Integer> opitons, String message){
