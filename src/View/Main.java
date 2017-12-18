@@ -17,6 +17,8 @@ import javafx.scene.control.*;
 
 import java.util.*;
 
+import static Model.Game.Game.characterCorrectSelectForCertianList;
+
 public class Main extends Application {
     final Button startGame = new Button(), howTOPlay = new Button(),
             viewRoomButtonRed = new Button(), viewItemListButtonRed = new Button(), okButtonRed = new Button(),
@@ -27,7 +29,7 @@ public class Main extends Application {
             viewRoomButtonBlack = new Button(), viewItemListButtonBlack = new Button(), okButtonBlack = new Button();
     List<Scene> playersenes = new ArrayList<>();
     Scene welcomeScene, playerRedScene, playerYellowScene, playerBlueScene, playerGreenScene, playerBrownScene, playerBlackScene,
-            getStartItemScene, parkingSearchScene, chiefSelectScene, movingScene;
+            getStartItemScene, parkingSearchScene, chiefSelectScene, movingScene, zombieAttackScene,fallenRoomScene;
     Stage mainWindow;
     static int numberOfPlayers;
     final static int WIDTH = 800;
@@ -209,6 +211,26 @@ public class Main extends Application {
         VBox chiefSelectLayout = new VBox();
         chiefSelectLayout.getChildren().addAll(chiefSelectLabel, ok4);
         chiefSelectScene = new Scene(chiefSelectLayout, WIDTH,HEIGHT);
+
+        //ChracterMovingScene
+        Label movingLabel = new Label();
+        movingLabel.setText("The chief will at the result now. If no chief is eleced, a ramdom player will start the turn first");
+        Button ok5 = new Button();
+        ok5.setText("OK");
+        VBox movingLayout = new VBox();
+        movingLayout.getChildren().addAll(movingLabel, ok5);
+        movingScene = new Scene(movingLayout,WIDTH,HEIGHT);
+
+        //ZombieAttackScene
+        Label zombieAttackLabel = new Label();
+        zombieAttackLabel.setText("Now we will reveal where the zomies will go to ");
+        Button ok6 = new Button();
+        ok6.setText("OK");
+        VBox zombieAttackLayout = new VBox();
+        zombieAttackLayout.getChildren().addAll(zombieAttackLabel, ok6);
+        zombieAttackScene = new Scene(zombieAttackLayout,WIDTH,HEIGHT);
+
+
 
 
     }
@@ -402,7 +424,7 @@ public class Main extends Application {
             //voting begins
             HashSet<Playable> team =  gameBroad.WhoCan(gameBroad.matchRoom(currentVotingRoomNumber).existCharacterColor());
             List <Playable> chiefTeam = new ArrayList<>();
-            for (Playable player : chiefTeam) {
+            for (Playable player : team) {
                 chiefTeam.add(player);
             }
             SimpleMessageWindow.display(chiefTeam + " please vote who will be the chief");
@@ -472,9 +494,210 @@ public class Main extends Application {
         }
         //
         mainWindow.setScene(movingScene);
+        //------------------------Room selecting begins-------------------------------
+        TwoPairofDice fourdices = new TwoPairofDice();
+        int DiceOne = fourdices.rollDieOne();
+        int DiceTwo = fourdices.rollDieTwo();
+        int DiceThree = fourdices.rollDieThree();
+        int DiceFour = fourdices.rollDieFour();
+        List<Integer> dices = new ArrayList<>();
+        dices.add(DiceOne);
+        dices.add(DiceTwo);
+        dices.add(DiceThree);
+        dices.add(DiceFour);
+        int startplayer = 0;
+        int startplayerroomnumber = 0;
+        if (gameBroad.matchRoom(5).winner().equals("TIE") || gameBroad.matchRoom(5).isEmpty() ){
+            Random generator = new Random();
+            startplayer = generator.nextInt(gameBroad.getPlayers().size());
+            SimpleMessageWindow.display("As a result, a random player will start first.");
+            Playable startActPlayer = gameBroad.getPlayers().get(startplayer);
+            mainWindow.setScene(actualPlayerScenes.get(startplayer));
+            if (startActPlayer.hasSecurityCamera()) {
+                boolean usedCamera = YesNoWindow.display("The results can be viewed by using item SecurityCamera, you want to use Security Camera?(y/n)");
+                if (usedCamera) {
+                    List<String> messages = new ArrayList<>();
+                    messages.add(dices.toString());
+                    messages.add("Each number means the correspoding room will have one zombie");
+                    MultiMessagesWindow.display(messages, "Zombies will be approaching:");
+                }
+            }
+            List <Integer> options = new ArrayList<>();
+            options.add(1);
+            options.add(2);
+            options.add(3);
+            options.add(4);
+            options.add(5);
+            options.add(6);
+            startplayerroomnumber = numberWindow.display(options,startActPlayer + " please choose your room number");
+            System.out.println();
+        } else {
+            String winnercolor = gameBroad.matchRoom(currentVotingRoomNumber).winner();
+            startplayer = gameBroad.getPlayers().indexOf(gameBroad.matchPlayer(winnercolor));
+            SimpleMessageWindow.display(gameBroad.matchPlayer(winnercolor) + " looked at the screens " +
+                        "found zombies are approaching to rooms(only winning player can see the result),please click OK to move to next step)");
+            List<String> messages = new ArrayList<>();
+            messages.add(dices.toString());
+            messages.add("If you have remember the results, please type OK to continue");
+            MultiMessagesWindow.display(messages,"Each number means the correspoding room will have one zombie");
+            mainWindow.setScene(actualPlayerScenes.get(startplayer));
+            List <Integer> options = new ArrayList<>();
+            options.add(1);
+            options.add(2);
+            options.add(3);
+            options.add(4);
+            options.add(5);
+            options.add(6);
+            startplayerroomnumber = numberWindow.display(options,"Please choose the room number that you will go to" );
+            SimpleMessageWindow.display("After reviewing the monitor, the chief will go to Model.Room " + startplayerroomnumber);
+        }
+        if (teamHasSecurityCamera(gameBroad.getPlayers())) {
+           boolean usedCameraTeam = YesNoWindow.display("The results can be viewed by using item SecurityCamera, anyone want to use Security Camera?(y/n)");
+            if (usedCameraTeam) {
+                for (int i=0; i<gameBroad.getPlayers().size(); i++) {
+                    Playable player = gameBroad.getPlayers().get(i);
+                    mainWindow.setScene(actualPlayerScenes.get(i));
+                    boolean usedCamera = YesNoWindow.display(player + " please confirm you want to use your SecurityCamera Model.Item to view the result(y/n)");
+                    if (usedCamera) {
+                        if (player.hasSecurityCamera()) {
+                            List<String> messages = new ArrayList<>();
+                            messages.add(dices.toString());
+                            messages.add("Each number means the correspoding room will have one zombie");
+                            MultiMessagesWindow.display(messages, "Zombies will be approaching:");
+                        } else {
+                            SimpleMessageWindow.display("You do not have a Security Camera");
+                        }
+                    }
+                }
+            }
+        }
+        //-------------------------chief select and camera viewing ends------------------------
+        //----------------------other 5 player choosing their desination---------------------
+        List<Integer> roomspicked = new ArrayList<>();
+        //first half of players
+        for (int i = startplayer+1; i<gameBroad.getPlayers().size(); i++){
+            mainWindow.setScene(actualPlayerScenes.get(i));
+            List <Integer> options = new ArrayList<>();
+            options.add(1);
+            options.add(2);
+            options.add(3);
+            options.add(4);
+            options.add(5);
+            options.add(6);
+            int roompicked = numberWindow.display(options,gameBroad.getPlayers().get(i) + " please choose your room number");
+            roomspicked.add(roompicked);
+        }
+        //other half players
+        for (int i = 0; i<startplayer; i++){
+            mainWindow.setScene(actualPlayerScenes.get(i));
+            List <Integer> options = new ArrayList<>();
+            options.add(1);
+            options.add(2);
+            options.add(3);
+            options.add(4);
+            options.add(5);
+            options.add(6);
+            int roompicked = numberWindow.display(options,gameBroad.getPlayers().get(i) + " please choose your room number");
+            roomspicked.add(roompicked);
+        }
+        SimpleMessageWindow.display("Moving Begins");
+        //-------------------------- now players choose character and move to rooms;
+        //start player move
+        Playable startActualPlayer = gameBroad.getPlayers().get(startplayer);
+        Room destination = gameBroad.matchRoom(startplayerroomnumber);
+        mainWindow.setScene(actualPlayerScenes.get(startplayer));
+        String charselect = GameCharacterWindow.display(characterNotInTheRoom(destination, startActualPlayer), gameBroad.getPlayers().get(startplayer) + " please choose your characters to Room " + startplayerroomnumber + ": " +
+                gameBroad.matchRoom(startplayerroomnumber).getName() );
+        GameCharacter selectedCharacter = gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect);
+        Room leavingroom = gameBroad.inWhichRoom(selectedCharacter);
+        gameBroad.inWhichRoom(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect)).leave(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect));
+        if (gameBroad.matchRoom(startplayerroomnumber).isFull()){
+            gameBroad.matchRoom(4).enter(selectedCharacter);
+            SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect) + " left " +
+                    leavingroom.getName() + " and wanted to enter " + gameBroad.matchRoom(startplayerroomnumber).getName()
+            +"\nBut due to room is full, character is moved to Parking instead");
+        }else {
+            gameBroad.matchRoom(startplayerroomnumber).enter(selectedCharacter);
+            SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect) + " left " +
+                    leavingroom.getName() + " enter " + gameBroad.matchRoom(startplayerroomnumber).getName());
+        }
+        //other players, first half
+        int k = 0;
+        for (int i = startplayer+1 ,q=0; i<gameBroad.getPlayers().size(); i++,q++){
+            Playable actualPlayer = gameBroad.getPlayers().get(i);
+            Room destination2 = gameBroad.matchRoom(roomspicked.get(q));
+            mainWindow.setScene(actualPlayerScenes.get(i));
+            charselect = GameCharacterWindow.display(characterNotInTheRoom(destination2, actualPlayer),actualPlayer + " please choose your characters to Model.Room " + destination2.getName() + ": " +
+                    destination2.getName());
+            GameCharacter selectedCharacter2 =  gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect);
+            Room leavingroom2 = gameBroad.inWhichRoom(selectedCharacter2);
+            gameBroad.inWhichRoom(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect)).leave(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect));
+            if (gameBroad.matchRoom(roomspicked.get(q)).isFull()){
+                gameBroad.matchRoom(4).enter(selectedCharacter2);
+                SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
+                        leavingroom2.getName() + " and wanted enter " + gameBroad.matchRoom(roomspicked.get(q)).getName()+
+                        "\nBut due to room is full, character is moved to Parking instead");
+            }else {
+                gameBroad.matchRoom(roomspicked.get(q)).enter(selectedCharacter2);
+                System.out.println(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
+                        leavingroom2.getName() + " enter " + gameBroad.matchRoom(roomspicked.get(q)).getName());
+            }
+            k++;
+        }
+        for (int i = 0 ,q=k; i<startplayer; i++,q++){
+            Playable actualPlayer2 = gameBroad.getPlayers().get(i);
+            Room destination3 = gameBroad.matchRoom(roomspicked.get(q));
+            mainWindow.setScene(actualPlayerScenes.get(i));
+            charselect = GameCharacterWindow.display(characterNotInTheRoom(destination3, actualPlayer2),actualPlayer2 + " please choose your characters to Model.Room " + destination3.getName() + ": " +
+                    destination3.getName() );
+            GameCharacter selectedCharacter2 = gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect);
+            Room leavingRoom2 = gameBroad.inWhichRoom(selectedCharacter2);
+            gameBroad.inWhichRoom(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect)).leave(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect));
+            if (gameBroad.matchRoom(roomspicked.get(q)).isFull()){
+                gameBroad.matchRoom(4).enter(selectedCharacter2);
+                SimpleMessageWindow.display( gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
+                        leavingRoom2.getName() + " and wanted to enter " + gameBroad.matchRoom(roomspicked.get(q)).getName()
+                        +"\nDue to room is full, character is moved to Parking instead");
+            }else {
+                gameBroad.matchRoom(roomspicked.get(q)).enter(selectedCharacter2);
+                SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " leave " +
+                        leavingRoom2.getName() + " enter " + gameBroad.matchRoom(roomspicked.get(q)).getName());
+            }
+        }
+       mainWindow.setScene(zombieAttackScene);
+       List<String> messages = new ArrayList<>();
+       messages.add("Zombies will be approaching rooms ");
+       messages.add("Dices result" + dices);
+       messages.add("Each number means the correspoding room will have one zombie");
+       messages.add("As a result, zomebie are entering");
+        for (int dice: dices){
+            gameBroad.matchRoom(dice).zombieApproached();
+            messages.add("A zombie has approached " + gameBroad.matchRoom(dice).getName() );
+        }
+        MultiMessagesWindow.display(messages,"Now we will reveal where the zomies will go to");
 
-
+        List<String> messages2 = new ArrayList<>();
+        messages2.add("For the room with most people, one more zombie will attracted to there (they can smell the flesh)");
+        if (gameBroad.mostPeople().getRoomNum()==7){
+            messages2.add("Result is TIE, no zombie will be attacted");
+        }
+        else {
+            gameBroad.mostPeople().zombieApproached();
+            messages2.add("As a result, one zombie has approached " + gameBroad.mostPeople().getName());
+        }
+        messages2.add("---------------------------------------------------------------------------------------------------------");
+        messages2.add("For the room with most models (they are more likely to scream), one more zombie will attracted to there");
+        if (gameBroad.mostModel().getRoomNum()==7){
+            messages2.add("Result is TIE, no zombie will be attacted");
+        }
+        else {
+            gameBroad.mostModel().zombieApproached();
+            messages2.add("As a result, one zombie has approached " + gameBroad.mostModel().getName());
+        }
+        MultiMessagesWindow.display(messages2, "We may have more zombies approached due to below reasons");
+        mainWindow.setScene(fallenRoomScene);
     }
+
 
 
 

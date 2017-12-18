@@ -25,7 +25,12 @@ import java.io.PrintStream;
 import java.util.*;
 import java.util.List;
 
-
+//<<<<<<< HEAD
+//public class Game {
+//
+//    public static void main(String[] args) {
+//
+//=======
 public class Game extends Application {
 
     private Parent createContent() {
