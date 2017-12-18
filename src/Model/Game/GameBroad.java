@@ -5,6 +5,8 @@ import Model.Playable.*;
 import Model.Room.*;
 import java.util.*;
 import Model.Character.*;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 
 
 public class GameBroad{
@@ -13,6 +15,7 @@ public class GameBroad{
   private ItemDeck itemDeck;
   private Playable[] totalPlayerslist;
   private Room extraZombiesPlace;
+  public static IntegerProperty playersNumber ;
 
 
   public GameBroad(int numplayer) {
@@ -47,7 +50,28 @@ public class GameBroad{
         }
     }
     itemDeck = new ItemDeck();
+
+      playersNumber = new SimpleIntegerProperty();
   }
+
+    public int getPlayersNumber() {
+        return playersNumber.get();
+    }
+
+    public IntegerProperty playersNumberProperty() {
+        return playersNumber;
+    }
+
+    public void setPlayersNumber(int playersNumber) {
+        this.playersNumber.set(playersNumber);
+        for (int i = 0; i < playersNumber; i++) {
+            players.add(totalPlayerslist[i]);
+            for (int q = 0; q < players.get(i).getGameCharacters().size(); q++) {
+                players.get(i).getGameCharacters().get(q).setOwnercolor(players.get(i).getColor());
+                players.get(i).getCharactersselect().get(q).setOwnercolor(players.get(i).getColor());
+            }
+        }
+    }
 
     public List<Room> getRooms() {
         return rooms;

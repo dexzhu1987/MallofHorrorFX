@@ -11,13 +11,13 @@ import javafx.geometry.*;
 public class NumberWindow {
     static int theNumber;
 
-    public static int display(List<Integer> opitons){
+    public static int display(List<Integer> opitons, String message){
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Please select your number");
         window.setMinWidth(250);
         Label label = new Label();
-        label.setText("Please select your number: ");
+        label.setText(message);
 
         Button numberOneButton = new Button("1");
         Button numberTwoButton = new Button("2");
@@ -62,6 +62,7 @@ public class NumberWindow {
         oneToSix.add(numberSixButton);
 
         List<Button> optionsButton = new ArrayList<>();
+        optionsButton.clear();
         for (int i=0; i<opitons.size();i++){
             for (int q=0; q<oneToSix.size(); q++)
             if (opitons.get(i)==Integer.parseInt(oneToSix.get(q).getText()) ){
@@ -73,7 +74,6 @@ public class NumberWindow {
 
         VBox layout = new VBox(10);
 
-        //Add buttons
         layout.getChildren().add(label);
 
         for (int i=0; i<optionsButton.size(); i++){
@@ -87,6 +87,12 @@ public class NumberWindow {
         window.showAndWait();
 
 
+        return theNumber;
+    }
+
+
+
+    public static int getTheNumber() {
         return theNumber;
     }
 

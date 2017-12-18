@@ -30,7 +30,7 @@ public class MainController {
     private Label rollResult_1, rollResult_2, continueLabel, label_1, label_2, label_3, label_4;
     @FXML
     private TextField inputName_1, inputName_2, inputName_3, inputName_4;
-
+    @FXML
     private int numberButton;
 
 
@@ -145,14 +145,9 @@ public class MainController {
             label_2.textProperty().bind(inputName_2.textProperty());
             label_3.textProperty().bind(inputName_3.textProperty());
             label_4.textProperty().bind(inputName_4.textProperty());
-
     }
     @FXML
-    public void RunGameBtn(){
-        //printOut_Label.setText("Hello");
-        run.MainLogic();
 
-    }
 
 
     public static void create(TextArea textarea) {
@@ -169,12 +164,12 @@ public class MainController {
         numberButton=4;
     }
 
-    public void numberFiveButton(){
-        numberButton=5;
+    public int numberFiveButton(){
+        return  5;
     }
 
-    public void numberSixButton(){
-        numberButton=6;
+    public int numberSixButton(){
+        return  6;
     }
 
     public int getNumberButton() {
