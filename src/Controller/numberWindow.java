@@ -19,6 +19,7 @@ public class numberWindow {
         Label label = new Label();
         label.setText(message);
 
+        Button numberZeroButton = new Button("0");
         Button numberOneButton = new Button("1");
         Button numberTwoButton = new Button("2");
         Button numberThreeButton = new Button("3");
@@ -26,6 +27,7 @@ public class numberWindow {
         Button numberFiveButton = new Button("5");
         Button numberSixButton = new Button("6");
 
+        Button numberZeroButton2 = new Button("0");
         Button numberOneButton2 = new Button("1");
         Button numberTwoButton2 = new Button("2");
         Button numberThreeButton2 = new Button("3");
@@ -62,6 +64,10 @@ public class numberWindow {
 //        Button numberSixButton6 = new Button("6");
 
         //Clicking will set answer and close window
+        numberZeroButton.setOnAction(e -> {
+            theNumber = 0;
+            window.close();
+        });
         numberOneButton.setOnAction(e -> {
             theNumber = 1;
             window.close();
@@ -87,6 +93,10 @@ public class numberWindow {
             window.close();
         });
 
+        numberZeroButton2.setOnAction(e -> {
+            theNumber = 1;
+            window.close();
+        });
         numberOneButton2.setOnAction(e -> {
             theNumber = 1;
             window.close();
@@ -213,6 +223,7 @@ public class numberWindow {
 //        });
 
         List<Button> oneToSix = new ArrayList<>();
+        oneToSix.add(numberZeroButton);
         oneToSix.add(numberOneButton);
         oneToSix.add(numberTwoButton);
         oneToSix.add(numberThreeButton);
@@ -221,6 +232,7 @@ public class numberWindow {
         oneToSix.add(numberSixButton);
 
         List<Button> oneToSix2 = new ArrayList<>();
+        oneToSix2.add(numberZeroButton2);
         oneToSix2.add(numberOneButton2);
         oneToSix2.add(numberTwoButton2);
         oneToSix2.add(numberThreeButton2);
