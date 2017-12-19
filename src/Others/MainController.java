@@ -1,4 +1,4 @@
-package Controller;
+package Others;
 
 import Model.Dice.PairofDice;
 import Model.Game.Game;
@@ -11,13 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -82,7 +80,7 @@ public class MainController {
 
     @FXML
     public void StartGameBtn(ActionEvent event)throws IOException{
-        Parent startRoot = FXMLLoader.load(getClass().getResource("../View/StartGame.fxml"));
+        Parent startRoot = FXMLLoader.load(getClass().getResource("../Others/StartGame.fxml"));
         Scene startScene = new Scene(startRoot);
         Stage start_stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         start_stage.setScene(startScene);
@@ -92,7 +90,7 @@ public class MainController {
 
     @FXML
     public void NextBtn(ActionEvent event)throws IOException{
-        Parent nextRoot = FXMLLoader.load(getClass().getResource("../View/BoardRoom.fxml"));
+        Parent nextRoot = FXMLLoader.load(getClass().getResource("../Others/BoardRoom.fxml"));
         Scene nextScene = new Scene(nextRoot);
         Stage next_stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         next_stage.setScene(nextScene);
@@ -102,7 +100,7 @@ public class MainController {
 
     @FXML
     public void BackBtn(ActionEvent event)throws IOException{
-        Parent backRoot = FXMLLoader.load(getClass().getResource("../View/Main.fxml"));
+        Parent backRoot = FXMLLoader.load(getClass().getResource("../Others/Main.fxml"));
         Scene backScene = new Scene(backRoot);
         Stage back_stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         back_stage.setScene(backScene);
@@ -111,7 +109,7 @@ public class MainController {
 
     @FXML
     public void closeBtn(ActionEvent event)throws IOException{
-        Parent closeRoot = FXMLLoader.load(getClass().getResource("../View/Main.fxml"));
+        Parent closeRoot = FXMLLoader.load(getClass().getResource("../Others/Main.fxml"));
         Scene closeScene = new Scene(closeRoot);
         Stage close_stage = (Stage)((Node) event.getSource()).getScene().getWindow();
         close_stage.setScene(closeScene);
@@ -120,7 +118,7 @@ public class MainController {
 
     @FXML
     public void RuleBtn(ActionEvent event)throws IOException{
-        Parent ruleRoot = FXMLLoader.load(getClass().getResource("../View/Rule.fxml"));
+        Parent ruleRoot = FXMLLoader.load(getClass().getResource("../Others/Rule.fxml"));
         Scene ruleScene = new Scene(ruleRoot);
         Stage rule_stage = new Stage();
         rule_stage.setScene(ruleScene);

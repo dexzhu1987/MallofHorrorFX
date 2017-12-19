@@ -525,7 +525,7 @@ public class Main extends Application {
     public void chiefSelect(){
         int currentVotingRoomNumber = 5;
         if (gameBroad.matchRoom(5).isEmpty() ){
-            System.out.println("Due to SecurityHQ is empty, no chief election will be performed");
+           SimpleMessageWindow.display("Due to SecurityHQ is empty, no chief election will be performed");
 
         }
         else {
@@ -638,7 +638,6 @@ public class Main extends Application {
             options.add(5);
             options.add(6);
             startplayerroomnumber = numberWindow.display(options,startActPlayer + " please choose your room number");
-            System.out.println();
         } else {
             String winnercolor = gameBroad.matchRoom(currentVotingRoomNumber).winner();
             startplayer = gameBroad.getPlayers().indexOf(gameBroad.matchPlayer(winnercolor));
@@ -747,7 +746,7 @@ public class Main extends Application {
                         "\nBut due to room is full, character is moved to Parking instead");
             }else {
                 gameBroad.matchRoom(roomspicked.get(q)).enter(selectedCharacter2);
-                System.out.println(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
+                SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
                         leavingroom2.getName() + " enter " + gameBroad.matchRoom(roomspicked.get(q)).getName());
             }
             k++;

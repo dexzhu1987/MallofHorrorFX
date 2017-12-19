@@ -1,4 +1,4 @@
-package View;
+package Others;
 
 import java.io.OutputStream;
 import java.io.PrintStream;

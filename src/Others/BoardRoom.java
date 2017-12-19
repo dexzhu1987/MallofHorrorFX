@@ -1,4 +1,4 @@
-package View;
+package Others;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +10,7 @@ public class BoardRoom extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("../View/BoardRoom.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../Others/BoardRoom.fxml"));
         primaryStage.setTitle("Mall Of Horror");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
