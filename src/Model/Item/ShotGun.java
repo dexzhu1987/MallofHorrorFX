@@ -1,7 +1,11 @@
 package Model.Item;
 
+import Controller.MultiMessagesWindow;
 import Model.Playable.*;
 import Model.Room.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShotGun extends Item {
     public ShotGun() {
@@ -9,13 +13,14 @@ public class ShotGun extends Item {
     }
 
     public void effect(Playable player, Room room) {
-        System.out.println("--------------------------------ShortGun-----------------------------------");
-        System.out.println("You have choosed ShortGun");
-        System.out.println("ShortGun can kill two zomebie in the room");
+        List<String> messeges = new ArrayList<>();
+        messeges.add("You have choosed ShortGun");
+        messeges.add("ShortGun can kill two zomebie in the room");
         int orignalZombieNumber =room.getCurrentZombienumber();
         room.zombieKilled();
         room.zombieKilled();
-        System.out.println("Zombies number has dropped from " + orignalZombieNumber + " to "  + room.getCurrentZombienumber());
-        System.out.println("------------------------------------------------------------------------------");
+        messeges.add("Zombies number has dropped from " + orignalZombieNumber + " to "  + room.getCurrentZombienumber());
+        messeges.add("------------------------------------------------------------------------------");
+        MultiMessagesWindow.display(messeges,"--------------------------------ShortGun-----------------------------------");
     }
 }

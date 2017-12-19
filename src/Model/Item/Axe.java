@@ -1,7 +1,11 @@
 package Model.Item;
 
+import Controller.MultiMessagesWindow;
 import Model.Playable.*;
 import Model.Room.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Axe extends Item {
     public Axe() {
@@ -11,13 +15,13 @@ public class Axe extends Item {
 
     @Override
     public void effect(Playable player, Room room) {
-        System.out.println("-----------------------------Axe------------------------------------------");
-        System.out.println("You have choosed Axe");
-        System.out.println("Axe can kill one zomebie in the room");
+        List<String> messages = new ArrayList<>();
+        messages.add("You have choosed Axe");
+        messages.add("Axe can kill one zomebie in the room");
         int orignalZombieNumber =room.getCurrentZombienumber();
         room.zombieKilled();
-        System.out.println("Zombies number has dropped from " + orignalZombieNumber + " to "  + room.getCurrentZombienumber());
-        System.out.println("------------------------------------------------------------------------------");
-
+        messages.add("Zombies number has dropped from " + orignalZombieNumber + " to "  + room.getCurrentZombienumber());
+        messages.add("------------------------------------------------------------------------------");
+        MultiMessagesWindow.display(messages,  "-----------------------------Axe------------------------------------------");
     }
 }

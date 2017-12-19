@@ -18,7 +18,6 @@ public class YesNoWindow {
 
     public static boolean display( String message){
         Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Please select your answer");
         window.setMinWidth(250);
         Label label = new Label();

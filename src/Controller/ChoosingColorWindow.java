@@ -18,7 +18,6 @@ public class ChoosingColorWindow {
 
     public static String display(List<Playable> opitons, String message){
         Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Please select the color");
         window.setMinWidth(250);
         Label label = new Label();

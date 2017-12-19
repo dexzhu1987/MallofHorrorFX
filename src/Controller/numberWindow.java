@@ -13,7 +13,6 @@ public class numberWindow {
 
     public static int display(List<Integer> opitons, String message){
         Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Please select your number");
         window.setMinWidth(250);
         Label label = new Label();

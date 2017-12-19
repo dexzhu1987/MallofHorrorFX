@@ -1,6 +1,10 @@
 package Model.Item;
 
 import java.util.*;
+
+import Controller.GameCharacterWindow;
+import Controller.MultiMessagesWindow;
+import Controller.SimpleMessageWindow;
 import Model.Character.*;
 import Model.Room.*;
 import Model.Game.*;
@@ -12,30 +16,17 @@ public class Hidden extends Item {
     }
 
     public void effect(Playable player, Room room) {
-        System.out.println("-------------------------------Hidden------------------------------------------");
-        System.out.println("You have choosed Hidden");
-        System.out.println("You will be hiding during the whole process, (you will not be eaten nor can join the voting)");
-        System.out.println("Cosider your character temporaly leaving the room");
-        int roompicked = 0;
-        System.out.println(player + "pleaese choose the character you want to hide. " );
         String charselect = "";
-        boolean selectedCorrect = false;
         HashSet<GameCharacter> existedCharacters = room.existChracterForThatPlayer(player);
-        do {
-            Scanner input = new Scanner(System.in);
-            System.out.println("In the list: " + existedCharacters);
-            charselect = input.nextLine();
-            for (GameCharacter character: existedCharacters){
-                if (charselect.equalsIgnoreCase(character.getName())){
-                    selectedCorrect = true;
-                }
-            }
-
-            if (!selectedCorrect){
-                System.out.println("Please select correct character");
-            }
+        List<GameCharacter> existedCharactersList = new ArrayList<>();
+        for (GameCharacter character: existedCharacters){
+            existedCharactersList.add(character);
         }
-        while (!selectedCorrect);
+        charselect = GameCharacterWindow.display(existedCharactersList, "-------------------------------Hidden------------------------------------------"+
+                "\nYou have choosed Hidden"+
+                "\nYou will be hiding during the whole process, (you will not be eaten nor can join the voting)"+
+                "\nCosider your character temporaly leaving the room"+
+                "\n" + player + "pleaese choose the character you want to hide. " );
         GameCharacter selectedCharacter = new ToughGuy();
         for (GameCharacter character: existedCharacters){
             if (charselect.equalsIgnoreCase(character.getName())){
@@ -43,17 +34,18 @@ public class Hidden extends Item {
             }
         }
         room.leave(selectedCharacter);
-        System.out.println(selectedCharacter + " temporarily lefted " + room.getName());
+        SimpleMessageWindow.display(selectedCharacter + " temporarily lefted " + room.getName());
         affectedRoomNumber = room.getRoomNum();
         affectedGameCharacter = selectedCharacter;
     }
 
     public void afterEffect(GameBroad gameBroad){
-        System.out.println("--------------------------------Hidden-----------------------------------------");
-        System.out.println("Due to Hidden has been used, aftereffect(entering back to the room is triggerd)");
+        List<String> messages = new ArrayList<>();
+        messages.add("Due to Hidden has been used, aftereffect(entering back to the room is triggerd)");
         gameBroad.matchRoom(affectedRoomNumber).enter(affectedGameCharacter);
-        System.out.println(affectedGameCharacter + " has entered back to " + gameBroad.matchRoom(affectedRoomNumber).getName());
-        System.out.println("------------------------------------------------------------------------------");
+        messages.add(affectedGameCharacter + " has entered back to " + gameBroad.matchRoom(affectedRoomNumber).getName());
+        messages.add("------------------------------------------------------------------------------");
+        MultiMessagesWindow.display(messages,"--------------------------------Hidden-----------------------------------------" );
     }
 
     public static void main(String[] args) {

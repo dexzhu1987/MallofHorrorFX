@@ -5,6 +5,7 @@ import Model.Playable.*;
 import java.util.*;
 import Model.Character.*;
 import Model.Game.*;
+import Controller.*;
 
 public class Sprint extends Item {
     public Sprint() {
@@ -13,50 +14,37 @@ public class Sprint extends Item {
 
     @Override
     public void effect(Playable player, Room room) {
-        System.out.println("-------------------------------Sprint---------------------------------------");
-        System.out.println("You have choosed Sprint");
-        System.out.println("You can eacaped from this room to other any room");
+        System.out.println("");
+        System.out.println();
+        System.out.println();
         int roompicked = 0;
         boolean loop = false;
         do {
             loop=false;
-            try {
-                Scanner input = new Scanner(System.in);
-                System.out.println("Please choose your room number that you want to go to");
-                roompicked = input.nextInt();
-                if (roompicked<0 || roompicked>6 ){
-                    System.out.println("Please enter a valid room number");
+            List<Integer> opitons = new ArrayList<>();
+            opitons.add(1);
+            opitons.add(2);
+            opitons.add(3);
+            opitons.add(4);
+            opitons.add(5);
+            opitons.add(6);
+            roompicked = numberWindow.display(opitons, "-------------------------------Sprint---------------------------------------"+
+                    "\nYou have choosed Sprint"+
+                    "\nYou can eacaped from this room to other any room"+
+                    "\nPlease choose your room number that you want to go to");
+            if (roompicked == room.getRoomNum()){
+                   SimpleMessageWindow.display("You are already in the room, please select other number");
                     loop=true;
-                }
-                if (roompicked == room.getRoomNum()){
-                    System.out.println("You are already in the room, please select other number");
-                    loop=true;
-                }
-            }
-            catch (Exception e){
-                System.out.println("Please enter a number");
-                loop = true;
             }
         }
         while (loop);
-               String charselect = "";
-        boolean selectedCorrect = false;
+        String charselect = "";
         HashSet<GameCharacter> existedCharacters = room.existChracterForThatPlayer(player);
-        do {
-            System.out.println(player + " please choose your characters to Model.Room " + roompicked);
-            Scanner input = new Scanner(System.in);
-            System.out.println("In the list: " + room.existChracterForThatPlayer(player));
-            charselect = input.nextLine();
-            for (GameCharacter character: existedCharacters){
-                if (charselect.equalsIgnoreCase(character.getName())){
-                    selectedCorrect = true;
-                }
-            }
-            if (!selectedCorrect){
-                System.out.println("Please select correct character");
-            }
+        List<GameCharacter> existedCharactersList = new ArrayList<>();
+        for (GameCharacter character: existedCharacters){
+            existedCharactersList.add(character);
         }
-        while (!selectedCorrect);
+        charselect = GameCharacterWindow.display(existedCharactersList, "Please select one of below characters to go to that room" );
         GameCharacter selectedCharacter = new ToughGuy();
         for (GameCharacter character: existedCharacters){
             if (charselect.equalsIgnoreCase(character.getName())){
@@ -64,24 +52,26 @@ public class Sprint extends Item {
             }
         }
         room.leave(selectedCharacter);
-        System.out.println(selectedCharacter + " has lefted " + room.getName());
+        SimpleMessageWindow.display(selectedCharacter + " has lefted " + room.getName());
         affectedRoomNumber = roompicked;
         affectedGameCharacter = selectedCharacter;
 
     }
 
     public void afterEffect(GameBroad gameBroad){
-        System.out.println("--------------------------------Sprint-----------------------------------");
-        System.out.println("Due to Sprint has been used, aftereffect(entering destination is triggerd)");
+        List<String> messages = new ArrayList<>();
+        messages.add("Due to Sprint has been used, aftereffect(entering destination is triggerd)");
         if (gameBroad.matchRoom(affectedRoomNumber).isFull()){
             gameBroad.matchRoom(4).enter(affectedGameCharacter);
-            System.out.println("Due to " + gameBroad.matchRoom(affectedRoomNumber).getName() + " is full, " + affectedGameCharacter + " will go to Parking instead.");
-            System.out.println("------------------------------------------------------------------------------");
+            messages.add(affectedGameCharacter + " wanted to enter " + gameBroad.matchRoom(affectedRoomNumber).getName());
+            messages.add("However, Due to " + gameBroad.matchRoom(affectedRoomNumber).getName() + " is full, " + affectedGameCharacter + " will go to Parking instead.");
+            messages.add("------------------------------------------------------------------------------");
         }else {
             gameBroad.matchRoom(affectedRoomNumber).enter(affectedGameCharacter);
-            System.out.println(affectedGameCharacter + " has entered " + gameBroad.matchRoom(affectedRoomNumber).getName());
-            System.out.println("------------------------------------------------------------------------------");
+            messages.add(affectedGameCharacter + " has entered " + gameBroad.matchRoom(affectedRoomNumber).getName());
+            messages.add("------------------------------------------------------------------------------");
         }
+        MultiMessagesWindow.display(messages, "--------------------------------Sprint-----------------------------------");
     }
 
     public static void main(String[] args) {

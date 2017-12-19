@@ -105,6 +105,9 @@ public class Main extends Application {
 
         //playersSceneRedSetUp;
         viewRoomButtonRed.setText("Red - Rooms");
+        viewRoomButtonRed.setOnAction(event -> {
+            viewRooms();
+        });
         viewItemListButtonRed.setText("Items");
         okButtonRed.setText("Ok");
         VBox playerRedLayout = new VBox();
@@ -114,6 +117,9 @@ public class Main extends Application {
 
         //playersSceneYellowSetUp;
         viewRoomButtonYellow.setText("Yellow - Rooms");
+        viewRoomButtonYellow.setOnAction(event -> {
+            viewRooms();
+        });
         viewItemListButtonYellow.setText("Items");
         okButtonYellow.setText("Ok");
         VBox playerYellowLayout = new VBox();
@@ -122,15 +128,20 @@ public class Main extends Application {
 
         //playersSceneBlueSetUp;
         viewRoomButtonBlue.setText("Blue - Rooms");
+        viewRoomButtonBlue.setOnAction(event -> {
+            viewRooms();
+        });
         viewItemListButtonBlue.setText("Items");
         okButtonBlue.setText("Ok");
-
         VBox playerBlueLayout = new VBox();
         playerBlueLayout.getChildren().addAll(viewRoomButtonBlue, viewItemListButtonBlue, okButtonBlue);
         playerBlueScene = new Scene(playerBlueLayout, 800, 600);
 
         //playersSceneGreenSetUp;
         viewRoomButtonGreen.setText("Green - Rooms");
+        viewRoomButtonGreen.setOnAction(event -> {
+            viewRooms();
+        });
         viewItemListButtonGreen.setText("Items");
         okButtonGreen.setText("Ok");
         VBox playerGreenLayout = new VBox();
@@ -138,7 +149,10 @@ public class Main extends Application {
         playerGreenScene = new Scene(playerGreenLayout, 800, 600);
 
         //playersSceneBrownSetUp;
-        viewItemListButtonBrown.setText("Brown - Rooms");
+        viewRoomButtonBrown.setText("Brown - Rooms");
+        viewRoomButtonBrown.setOnAction(event -> {
+            viewRooms();
+        });
         viewItemListButtonBrown.setText("Items");
         okButtonBrown.setText("Ok");
         VBox playerBrownLayout = new VBox();
@@ -147,7 +161,10 @@ public class Main extends Application {
 
 
         //playersSceneBlackSetUp;
-        viewItemListButtonBlack.setText("Black - Rooms");
+        viewRoomButtonBlack.setText("Black - Rooms");
+        viewRoomButtonBlack.setOnAction(event -> {
+            viewRooms();
+        });
         viewItemListButtonBlack.setText("Items");
         okButtonBlack.setText("Ok");
         VBox playerBlackLayout = new VBox();
@@ -183,17 +200,25 @@ public class Main extends Application {
 
         //ParkingSearchScene;
         Label parkingSeachLabel = new Label();
-        parkingSeachLabel.setText("Now we proceed to to parking seach, players that in ROOM No.4 parking will vote to decide who do the searching, The winner will search around the parking and will find" +
-                " three items, he/she will be able to keep one item, and give one item to the other player, and return one back to the Parking. " +
+        parkingSeachLabel.setText("Now we proceed to to parking seach, " +
+                "\nplayers that in ROOM No.4 parking will vote to decide who do the searching, " +
+                "\nThe winner will search around the parking and will find" +
+                " three items, " +
+                "\nhe/she will be able to keep one item, and give one item to the other player, and return one back to the Parking. " +
                 "\n(Note: if the vote result in TIE, no searching will perform) " +
                 "\nIf you understand, please click Ok to proceed.");
+        Button viewRoomParking = new Button();
+        viewRoomParking.setText("Room");
+        viewRoomParking.setOnAction(event -> {
+            viewRooms();
+        });
         Button ok3 = new Button();
         ok3.setText("OK");
         ok3.setOnAction(event -> {
             searchStart();
         });
         VBox parkingSeachLayout = new VBox();
-        parkingSeachLayout.getChildren().addAll(parkingSeachLabel, ok3);
+        parkingSeachLayout.getChildren().addAll(parkingSeachLabel,viewRoomParking, ok3);
         parkingSearchScene = new Scene(parkingSeachLayout, WIDTH, HEIGHT);
 
 
@@ -203,35 +228,69 @@ public class Main extends Application {
                 "find out where the zombies are coming (only chief has this information." +
                 "\n(Note: if the vote result in TIE, no chief will be elected) " +
                 "\nIf you understand, please click Ok to proceed.");
+        Button viewRoomButtonChief = new Button();
+        viewRoomButtonChief.setText("Room");
+        viewRoomButtonChief.setOnAction(event -> {
+            viewRooms();
+        });
         Button ok4 = new Button();
         ok4.setText("OK");
         ok4.setOnAction(event -> {
             chiefSelect();
         });
         VBox chiefSelectLayout = new VBox();
-        chiefSelectLayout.getChildren().addAll(chiefSelectLabel, ok4);
+        chiefSelectLayout.getChildren().addAll(chiefSelectLabel,viewRoomButtonChief, ok4);
         chiefSelectScene = new Scene(chiefSelectLayout, WIDTH,HEIGHT);
 
         //ChracterMovingScene
         Label movingLabel = new Label();
         movingLabel.setText("The chief will at the result now. If no chief is eleced, a ramdom player will start the turn first");
+        Button viewRoomMoving = new Button();
+        viewRoomMoving.setText("Room");
+        viewRoomMoving.setOnAction(event -> {
+            viewRooms();
+        });
         Button ok5 = new Button();
         ok5.setText("OK");
         VBox movingLayout = new VBox();
-        movingLayout.getChildren().addAll(movingLabel, ok5);
+        movingLayout.getChildren().addAll(movingLabel,viewRoomMoving, ok5);
         movingScene = new Scene(movingLayout,WIDTH,HEIGHT);
 
         //ZombieAttackScene
         Label zombieAttackLabel = new Label();
         zombieAttackLabel.setText("Now we will reveal where the zomies will go to ");
+        Button viewRoomAttack = new Button();
+        viewRoomAttack.setText("Room");
+        viewRoomAttack.setOnAction(event -> {
+            viewRooms();
+        });
         Button ok6 = new Button();
         ok6.setText("OK");
         VBox zombieAttackLayout = new VBox();
-        zombieAttackLayout.getChildren().addAll(zombieAttackLabel, ok6);
+        zombieAttackLayout.getChildren().addAll(zombieAttackLabel,viewRoomAttack, ok6);
         zombieAttackScene = new Scene(zombieAttackLayout,WIDTH,HEIGHT);
 
 
-
+        //fallenRoomScene
+        Label fallenRoomLabel =  new Label();
+        fallenRoomLabel.setText("--------------------Zombies attacked ----------------------"+
+                "\nFor each room, when characters' strength is less than zombies number, zombies attacked successfully." +
+                "\nIf zombies attacked successfully, one character will be eaten by the zombies"+
+                "\nNote: Parking has no defends, so as long as there is zombies there, one character will be eaten(and no item except thread is allowed)"+
+                "\nNote: Supermarket has too many entraces (weak defends), so as long as there are more than four zombies there, one character will be eaten (less than four: the same rule as the other room"+
+        "\nIf you have understood, please type OK to move to the next step");
+        Button viewRoomFallen = new Button();
+        viewRoomFallen.setText("Room");
+        viewRoomFallen.setOnAction(event -> {
+            viewRooms();
+        });
+        Button ok7 = new Button("OK");
+        ok7.setOnAction(event -> {
+            zombieAttacked();
+        });
+        VBox fallenRoomLayout = new VBox();
+        fallenRoomLayout.getChildren().addAll(fallenRoomLabel,viewRoomFallen, ok7);
+        fallenRoomScene = new Scene(fallenRoomLayout,WIDTH,HEIGHT);
 
     }
 
@@ -242,8 +301,17 @@ public class Main extends Application {
     public void playerselectRoom() {
         mainWindow.setScene(playerRedScene);
         availableRoomSelect();
-
     }
+
+    public void viewRooms(){
+        List<String> rooms = new ArrayList<>();
+        for (int i=0; i<gameBroad.getRooms().size(); i++){
+            rooms.add(gameBroad.getRooms().get(i).toString());
+        }
+        MultiMessagesWindow.display(rooms, "Room Current Status");
+    }
+
+
 
     public void availableRoomSelect() {
         for (int i = 0; i < gameBroad.totalCharatersRemain(); i += gameBroad.getPlayersNumber()) {
@@ -259,6 +327,7 @@ public class Main extends Application {
                 int selectedRoom = 0;
                 boolean yes = true;
                 do {
+                    yes = true;
                     selectedRoom = numberWindow.display(dices, gameBroad.getPlayers().get(q) + " get " + pairofDice.getDieOneFace() + " and "
                             + pairofDice.getDieTwoFace() + " please select your which room you want to go to");
                     if (gameBroad.matchRoom(selectedRoom).isFull()) {
@@ -272,7 +341,7 @@ public class Main extends Application {
                     characterOpitons.add(gameBroad.getPlayers().get(q).getCharactersselect().get(k));
                 }
                 String selectedCharacter = GameCharacterWindow.display(characterOpitons, gameBroad.getPlayers().get(q) +
-                        "please select one of these characters into " + gameBroad.matchRoom(selectedRoom).getName());
+                        "please select one of these characters into " + ((gameBroad.matchRoom(selectedRoom).isFull())? "Parking":gameBroad.matchRoom(selectedRoom).getName()));
                 if (gameBroad.matchRoom(selectedRoom).isFull()) {
                     gameBroad.matchRoom(4).enter(gameBroad.getPlayers().get(q).selectchoose(selectedCharacter));
                     gameBroad.getPlayers().get(q).selectchooseremove(selectedCharacter);
@@ -333,7 +402,7 @@ public class Main extends Application {
             if (teamHasThreat(searchteam)) {
                 boolean voteYes = YesNoWindow.display("Voting result can be changed by item THREAT, anyone want to change the result?");
                 if (voteYes) {
-                    boolean moreThreatused = false;
+                    boolean moreThreatused ;
                     do {
                         int numThreat = 0;
                         for (int i=0; i<searchTeam.size();i++) {
@@ -549,7 +618,7 @@ public class Main extends Application {
             options.add(5);
             options.add(6);
             startplayerroomnumber = numberWindow.display(options,"Please choose the room number that you will go to" );
-            SimpleMessageWindow.display("After reviewing the monitor, the chief will go to Model.Room " + startplayerroomnumber);
+            SimpleMessageWindow.display("After reviewing the monitor, the chief will go to Room " + startplayerroomnumber);
         }
         if (teamHasSecurityCamera(gameBroad.getPlayers())) {
            boolean usedCameraTeam = YesNoWindow.display("The results can be viewed by using item SecurityCamera, anyone want to use Security Camera?(y/n)");
@@ -557,7 +626,7 @@ public class Main extends Application {
                 for (int i=0; i<gameBroad.getPlayers().size(); i++) {
                     Playable player = gameBroad.getPlayers().get(i);
                     mainWindow.setScene(actualPlayerScenes.get(i));
-                    boolean usedCamera = YesNoWindow.display(player + " please confirm you want to use your SecurityCamera Model.Item to view the result(y/n)");
+                    boolean usedCamera = YesNoWindow.display(player + " please confirm you want to use your SecurityCamera Item to view the result(y/n)");
                     if (usedCamera) {
                         if (player.hasSecurityCamera()) {
                             List<String> messages = new ArrayList<>();
@@ -627,7 +696,7 @@ public class Main extends Application {
             Playable actualPlayer = gameBroad.getPlayers().get(i);
             Room destination2 = gameBroad.matchRoom(roomspicked.get(q));
             mainWindow.setScene(actualPlayerScenes.get(i));
-            charselect = GameCharacterWindow.display(characterNotInTheRoom(destination2, actualPlayer),actualPlayer + " please choose your characters to Model.Room " + destination2.getName() + ": " +
+            charselect = GameCharacterWindow.display(characterNotInTheRoom(destination2, actualPlayer),actualPlayer + " please choose your characters to Room " + destination2.getName() + ": " +
                     destination2.getName());
             GameCharacter selectedCharacter2 =  gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect);
             Room leavingroom2 = gameBroad.inWhichRoom(selectedCharacter2);
@@ -648,7 +717,7 @@ public class Main extends Application {
             Playable actualPlayer2 = gameBroad.getPlayers().get(i);
             Room destination3 = gameBroad.matchRoom(roomspicked.get(q));
             mainWindow.setScene(actualPlayerScenes.get(i));
-            charselect = GameCharacterWindow.display(characterNotInTheRoom(destination3, actualPlayer2),actualPlayer2 + " please choose your characters to Model.Room " + destination3.getName() + ": " +
+            charselect = GameCharacterWindow.display(characterNotInTheRoom(destination3, actualPlayer2),actualPlayer2 + " please choose your characters to Room " + destination3.getName() + ": " +
                     destination3.getName() );
             GameCharacter selectedCharacter2 = gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect);
             Room leavingRoom2 = gameBroad.inWhichRoom(selectedCharacter2);
@@ -699,6 +768,173 @@ public class Main extends Application {
     }
 
 
+    public void zombieAttacked() {
+        int count = 0;
+        for (int i = 0; i < gameBroad.getRooms().size(); i++) {
+            if (gameBroad.getRooms().get(i).isFallen()) {
+                count++;
+                List<Item> usedItemsList = new ArrayList<>();
+                Room fallenRoom = gameBroad.getRooms().get(i);
+                HashSet<Playable> playersInTheRoom = gameBroad.WhoCan(fallenRoom.existCharacterColor());
+                List<Playable> playersInTheRoomList = new ArrayList<>();
+                for (Playable player : playersInTheRoom) {
+                    playersInTheRoomList.add(player);
+                }
+                List<Scene> playerScenes = matchThePlayerScenes(playersInTheRoomList);
+                SimpleMessageWindow.display(fallenRoom.getName() + " has fallen, one character will be eaten");
+                //using items to save the room
+                if (teamHasOtherItems(playersInTheRoom) && fallenRoom.getRoomNum() != 4) {
+                    boolean usedItemTeam = YesNoWindow.display("This result can change by using below items, anyone in the room want to use Items?(y/n)" +
+                            "\n---------------------------------------------------------------" +
+                            "\nAxe: kill one zombie" +
+                            "\nShortGun: kill two zombies" +
+                            "\nHardware: add one defend for a turn" +
+                            "\nSprint: escape to the other room" +
+                            "\nHidden: your character will not be killed nor can joined the voting" +
+                            "\n---------------------------------------------------------------");
+                    if (usedItemTeam) {
+                        boolean noMore = true;
+                        do {
+                            for (int q = 0; q < playersInTheRoomList.size(); q++) {
+                                Playable player = playersInTheRoomList.get(i);
+                                mainWindow.setScene(playerScenes.get(q));
+                                if (player.hasOthersItems()) {
+                                    int itemselected = 0;
+                                    boolean usedItemBoolean = YesNoWindow.display("Please confirm you want to use item.");
+                                    if (usedItemBoolean) {
+                                        List<Integer> options = new ArrayList<>();
+                                        for (int k = 1; k <= player.otherItemsList().size(); k++) {
+                                            options.add(k);
+                                        }
+                                        itemselected = numberWindow.display(options, player + " please select which items you want to use:" +
+                                                "\nYour item list: " + printTheListWithNumber(player.otherItemsList())
+                                                + "\nPlease select in (" + printTheOptions(player.otherItemsList()) + ")");
+                                        Item usedItem = player.otherItemsList().get(itemselected - 1);
+                                        usedItemsList.add(usedItem);
+                                        usedItem.effect(player, fallenRoom);
+                                        player.usedItem(usedItem);
+                                    }
+                                }
+                                mainWindow.setScene(zombieAttackScene);
+                                noMore = YesNoWindow.display("Please confirmed no more items will be used (y - no more item will be used/n - more item will be used)");
+                            }
+                        }
+                        while (!noMore);
+                    }
+                }
+                // items using ended
+                if (fallenRoom.isFallen()) {
+                    HashSet<Playable> newPlayersInTheRoom = gameBroad.WhoCan(fallenRoom.existCharacterColor());
+                    List<Playable> newPlayersInTheRoomList = new ArrayList<>();
+                    for (Playable player : newPlayersInTheRoom) {
+                        newPlayersInTheRoomList.add(player);
+                    }
+                    List<Scene> newPlayerScenes = matchThePlayerScenes(newPlayersInTheRoomList);
+                    SimpleMessageWindow.display(fallenRoom.getName() + " is still fallen, one character will be eaten");
+                    String vote = "";
+                    List<String> votes = new ArrayList<>();
+                    for (int x = 0; x < newPlayersInTheRoomList.size(); x++) {
+                        Playable player = newPlayersInTheRoomList.get(x);
+                        mainWindow.setScene(newPlayerScenes.get(x));
+                        vote = ChoosingColorWindow.display(newPlayersInTheRoomList, player + " please vote whose character will be eaten, In color the list:" + newPlayersInTheRoomList);
+                        votes.add(player.getColor());
+                        votes.add(vote);
+                    }
+                    fallenRoom.resetVoteResult();
+                    fallenRoom.voteResultAfterVote(votes);
+                    List<String> results = new ArrayList<>();
+                    for (int l = 0; l < votes.size(); l += 2) {
+                        results.add(gameBroad.matchPlayer(votes.get(l)) + " has voted " + votes.get(l + 1));
+                    }
+                    results.add("Summary: " + fallenRoom.getCurrentVoteResult());
+                    MultiMessagesWindow.display(results, "Voting Result");
+                    //using Threat to change result;
+                    if (teamHasThreat(newPlayersInTheRoom)) {
+                        boolean teamUsedThreat = YesNoWindow.display("Voting result can be changed by item THREAT, anyone want to change the result?(y/n)");
+                        if (teamUsedThreat) {
+                            boolean moreThreatused;
+                            do {
+                                int numThreat = 0;
+                                for (int x = 0; x < newPlayersInTheRoomList.size(); x++) {
+                                    Playable teammember = newPlayersInTheRoomList.get(x);
+                                    mainWindow.setScene(newPlayerScenes.get(x));
+                                    List<Integer> threadOptions = new ArrayList<>();
+                                    for (int q = 0; q <= teammember.threatNum(); q++) {
+                                        threadOptions.add(q);
+                                    }
+                                    numThreat = numberWindow.display(threadOptions, teammember + " please select how many THREAT you want use?");
+                                    String effectedColor = "";
+                                    for (int q = 0; q < votes.size(); q += 2) {
+                                        if (teammember.getColor().equalsIgnoreCase(votes.get(q))) {
+                                            effectedColor = votes.get(q + 1);
+                                        }
+                                    }
+                                    effectedColor = effectedColor.toUpperCase();
+                                    gameBroad.matchRoom(4).voteResultAfterItem(effectedColor, numThreat);
+                                    for (int q = 0; q < numThreat; q++) {
+                                        Item threat = gameBroad.matchItem(teammember, "Threat");
+                                        teammember.usedItem(threat);
+                                    }
+                                }
+                                SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(4).getCurrentVoteResult());
+                                moreThreatused = YesNoWindow.display("Please confirm no more THREAT will be used (y - there will be more THREAT/n - no more THREAT)");
+                            }
+                            while (moreThreatused);
+                        }
+                    }
+                    //result print
+                    Playable loser = new Playable();
+                    if (fallenRoom.winner().equals("TIE")) {
+                        SimpleMessageWindow.display("Result is TIE" +
+                                "\nThe result will be ramdomly choosed");
+                        List<Playable> losers = new ArrayList<>();
+                        for (Playable player : newPlayersInTheRoom) {
+                            losers.add(player);
+                        }
+                        Random generator = new Random();
+                        int num = generator.nextInt(losers.size());
+                        loser = losers.get(num);
+                        SimpleMessageWindow.display(loser + " has been chosed, one of character his/her character in the room will be eaten. ");
+                    } else {
+                        String winnercolor = fallenRoom.winner();
+                        SimpleMessageWindow.display("Voting Result: " + fallenRoom.getCurrentVoteResult() +
+                                "\n" + gameBroad.matchPlayer(winnercolor) + " get most vote and one of his/her character in the room will be eaten.");
+                        ;
+                        loser = gameBroad.matchPlayer(winnercolor);
+                    }
+                    //the chosen player lost his/her character in the room
+                    String deathCharacterStr = "";
+                    HashSet<GameCharacter> availableOptionsSet = fallenRoom.existChracterForThatPlayer(loser);
+                    List<GameCharacter> availableOptions = new ArrayList<GameCharacter>();
+                    for (GameCharacter character : availableOptionsSet) {
+                        availableOptions.add(character);
+                    }
+                    deathCharacterStr = GameCharacterWindow.display(availableOptions, loser + " please selected your character in this room");
+                    GameCharacter deathCharacter = gameBroad.matchGameCharacter(loser, deathCharacterStr);
+                    loser.removeCharacter(deathCharacter);
+                    fallenRoom.leave(deathCharacter);
+                    SimpleMessageWindow.display(loser + " has lost his/her " + deathCharacterStr
+                            + "\nZombies have their feast, and returned back to somewhere else to find their next target!" +
+                            "\n(The number of zombies in this room has returned to zero)");
+                }
+                //after effect for certain items
+                for (Item item : usedItemsList) {
+                    item.afterEffect(gameBroad);
+                }
+                usedItemsList.clear();
+            }
+        }
+                if (count == 0) {
+                    SimpleMessageWindow.display("No room has fallen this turn, but more zombies are still approaching.");
+                        }
+                for (Playable player : gameBroad.getPlayers()) {
+                    if (player.remaingCharacter() == 0) {
+                        SimpleMessageWindow.display("Due to " + player + " has no more character, " + player + " has been removed from the Game Broad.");
+                        gameBroad.removePlayer(player);
+                    }
+                }
+
+    }
 
 
 
@@ -736,12 +972,13 @@ public class Main extends Application {
      * @param objects the list
      */
 
-    public static void printTheListWithNumber(List<Item> objects) {
+    public static String  printTheListWithNumber(List<Item> objects) {
+        String fin ="";
         int start = 1;
         for (Object o : objects) {
-            System.out.print(start + "." + o + ", ");
+            fin += start + "." + o + ", ";
         }
-
+        return  fin;
     }
 
     /**
@@ -750,12 +987,13 @@ public class Main extends Application {
      * @param objects the list
      */
 
-    public static void printTheOptions(List<Item> objects) {
+    public static String  printTheOptions(List<Item> objects) {
+        String fin = "";
         int start = 1;
         for (Object o : objects) {
-            System.out.print(start + ".");
+            fin = start + ".";
         }
-
+        return fin;
     }
 
     public static List<GameCharacter> characterNotInTheRoom(Room room, Playable player) {

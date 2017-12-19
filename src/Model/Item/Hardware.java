@@ -1,8 +1,12 @@
 package Model.Item;
 
+import Controller.MultiMessagesWindow;
 import Model.Playable.*;
 import Model.Room.*;
 import Model.Game.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Hardware extends Item {
     public Hardware() {
@@ -10,22 +14,23 @@ public class Hardware extends Item {
     }
 
     public void effect(Playable player, Room room) {
-        System.out.println("--------------------------------Hareware-------------------------------------");
-        System.out.println("You have choosed Hareware");
-        System.out.println("The defend of this room has temporarily increased by 1");
+        List <String> messages = new ArrayList<>();
+        messages.add("You have choosed Hareware");
+        messages.add("The defend of this room has temporarily increased by 1");
         room.zombieKilled();
-        System.out.println("A zomie has temporarly moved to somewhere else");
+        messages.add("A zomie has temporarly moved to somewhere else");
         affectedRoomNumber = room.getRoomNum();
-        System.out.println("------------------------------------------------------------------------------");
-
+        messages.add("------------------------------------------------------------------------------");
+        MultiMessagesWindow.display(messages,"--------------------------------Hareware-------------------------------------");
     }
 
     public void afterEffect(GameBroad gameBroad){
-        System.out.println("------------------------------Hareware----------------------------------------");
-        System.out.println("Due to Hareware has been used, aftereffect is triggerd");
+        List <String> messages = new ArrayList<>();
+        messages.add("Due to Hareware has been used, aftereffect is triggerd");
         gameBroad.matchRoom(affectedRoomNumber).zombieApproached();
-        System.out.println("The zombie left has returned");
-        System.out.println("------------------------------------------------------------------------------");
+        messages.add("The zombie left has returned");
+        messages.add("------------------------------------------------------------------------------");
+        MultiMessagesWindow.display(messages,"------------------------------Hareware----------------------------------------");
     }
 
 

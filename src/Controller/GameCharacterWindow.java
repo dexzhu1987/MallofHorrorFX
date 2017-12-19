@@ -17,7 +17,6 @@ public class GameCharacterWindow {
 
     public static String display(List<GameCharacter> opitons, String message){
         Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Please select your character");
         window.setMinWidth(250);
         Label label = new Label();
