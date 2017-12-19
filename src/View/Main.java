@@ -364,7 +364,7 @@ public class Main extends Application {
                 dices.add(pairofDice.getDieTwoFace());
                 List<GameCharacter> characterOpitons = new ArrayList<>();
                 int selectedRoom = 0;
-                boolean yes = true;
+                boolean yes;
                 do {
                     yes = true;
                     selectedRoom = numberWindow.display(dices, gameBroad.getPlayers().get(q) + " get " + pairofDice.getDieOneFace() + " and "
@@ -443,6 +443,7 @@ public class Main extends Application {
                 if (voteYes) {
                     boolean moreThreatused ;
                     do {
+                        moreThreatused =false;
                         int numThreat = 0;
                         for (int i=0; i<searchTeam.size();i++) {
                             mainWindow.setScene(playersScenes.get(i));
@@ -839,7 +840,7 @@ public class Main extends Application {
                                 mainWindow.setScene(playerScenes.get(q));
                                 if (player.hasOthersItems()) {
                                     int itemselected = 0;
-                                    boolean usedItemBoolean = YesNoWindow.display("Please confirm you want to use item.");
+                                    boolean usedItemBoolean = YesNoWindow.display(player + " please confirm you want to use item.");
                                     if (usedItemBoolean) {
                                         List<Integer> options = new ArrayList<>();
                                         for (int k = 1; k <= player.otherItemsList().size(); k++) {
@@ -893,6 +894,7 @@ public class Main extends Application {
                         if (teamUsedThreat) {
                             boolean moreThreatused;
                             do {
+                                moreThreatused = false;
                                 int numThreat = 0;
                                 for (int x = 0; x < newPlayersInTheRoomList.size(); x++) {
                                     Playable teammember = newPlayersInTheRoomList.get(x);
@@ -952,6 +954,7 @@ public class Main extends Application {
                     GameCharacter deathCharacter = gameBroad.matchGameCharacter(loser, deathCharacterStr);
                     loser.removeCharacter(deathCharacter);
                     fallenRoom.leave(deathCharacter);
+                    fallenRoom.setCurrentZombienumber(0);
                     SimpleMessageWindow.display(loser + " has lost his/her " + deathCharacterStr
                             + "\nZombies have their feast, and returned back to somewhere else to find their next target!" +
                             "\n(The number of zombies in this room has returned to zero)");
@@ -1061,7 +1064,7 @@ public class Main extends Application {
         String fin = "";
         int start = 1;
         for (Object o : objects) {
-            fin = start + ".";
+            fin += start + ".";
             start++;
         }
         return fin;

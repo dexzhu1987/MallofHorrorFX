@@ -14,9 +14,6 @@ public class Sprint extends Item {
 
     @Override
     public void effect(Playable player, Room room) {
-        System.out.println("");
-        System.out.println();
-        System.out.println();
         int roompicked = 0;
         boolean loop = false;
         do {
