@@ -207,6 +207,14 @@ public class GameBroad{
 
     }
 
+    public Playable[] getTotalPlayerslist() {
+        return totalPlayerslist;
+    }
+
+    public void setTotalPlayerslist(Playable[] totalPlayerslist) {
+        this.totalPlayerslist = totalPlayerslist;
+    }
+
     public Room mostModel(){
         int q = 0;
         int maxPeople = rooms.get(0).modelNumber();

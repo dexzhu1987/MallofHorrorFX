@@ -29,7 +29,7 @@ public class Main extends Application {
             viewRoomButtonBlack = new Button(), viewItemListButtonBlack = new Button(), okButtonBlack = new Button();
     List<Scene> playersenes = new ArrayList<>();
     Scene welcomeScene, playerRedScene, playerYellowScene, playerBlueScene, playerGreenScene, playerBrownScene, playerBlackScene,
-            getStartItemScene, parkingSearchScene, chiefSelectScene, movingScene, zombieAttackScene,fallenRoomScene;
+            getStartItemScene, parkingSearchScene, chiefSelectScene, movingScene, zombieAttackScene,fallenRoomScene ,winnerScene;
     Stage mainWindow;
     static int numberOfPlayers;
     final static int WIDTH = 800;
@@ -109,6 +109,9 @@ public class Main extends Application {
             viewRooms();
         });
         viewItemListButtonRed.setText("Items");
+        viewItemListButtonRed.setOnAction(event -> {
+            viewItem(gameBroad.getTotalPlayerslist()[0]);
+        });
         okButtonRed.setText("Ok");
         VBox playerRedLayout = new VBox();
         playerRedLayout.getChildren().addAll(viewRoomButtonRed, viewItemListButtonRed, okButtonRed);
@@ -121,6 +124,9 @@ public class Main extends Application {
             viewRooms();
         });
         viewItemListButtonYellow.setText("Items");
+        viewItemListButtonYellow.setOnAction(event -> {
+            viewItem(gameBroad.getTotalPlayerslist()[1]);
+        });
         okButtonYellow.setText("Ok");
         VBox playerYellowLayout = new VBox();
         playerYellowLayout.getChildren().addAll(viewRoomButtonYellow, viewItemListButtonYellow, okButtonYellow);
@@ -132,6 +138,9 @@ public class Main extends Application {
             viewRooms();
         });
         viewItemListButtonBlue.setText("Items");
+        viewItemListButtonBlue.setOnAction(event -> {
+            viewItem(gameBroad.getTotalPlayerslist()[2]);
+        });
         okButtonBlue.setText("Ok");
         VBox playerBlueLayout = new VBox();
         playerBlueLayout.getChildren().addAll(viewRoomButtonBlue, viewItemListButtonBlue, okButtonBlue);
@@ -143,6 +152,9 @@ public class Main extends Application {
             viewRooms();
         });
         viewItemListButtonGreen.setText("Items");
+        viewItemListButtonGreen.setOnAction(event -> {
+            viewItem(gameBroad.getTotalPlayerslist()[3]);
+        });
         okButtonGreen.setText("Ok");
         VBox playerGreenLayout = new VBox();
         playerGreenLayout.getChildren().addAll(viewRoomButtonGreen, viewItemListButtonGreen, okButtonGreen);
@@ -154,6 +166,9 @@ public class Main extends Application {
             viewRooms();
         });
         viewItemListButtonBrown.setText("Items");
+        viewItemListButtonBrown.setOnAction(event -> {
+            viewItem(gameBroad.getTotalPlayerslist()[4]);
+        });
         okButtonBrown.setText("Ok");
         VBox playerBrownLayout = new VBox();
         playerBrownLayout.getChildren().addAll(viewRoomButtonBrown, viewItemListButtonBrown, okButtonBrown);
@@ -166,6 +181,9 @@ public class Main extends Application {
             viewRooms();
         });
         viewItemListButtonBlack.setText("Items");
+        viewItemListButtonBlack.setOnAction(event -> {
+            viewItem(gameBroad.getTotalPlayerslist()[5]);
+        });
         okButtonBlack.setText("Ok");
         VBox playerBlackLayout = new VBox();
         playerBlackLayout.getChildren().addAll(viewRoomButtonBlack, viewItemListButtonBlack, okButtonBlack);
@@ -200,7 +218,8 @@ public class Main extends Application {
 
         //ParkingSearchScene;
         Label parkingSeachLabel = new Label();
-        parkingSeachLabel.setText("Now we proceed to to parking seach, " +
+        parkingSeachLabel.setText("Welcome to a new round." +
+                "\nWe will proceed parking seach first, " +
                 "\nplayers that in ROOM No.4 parking will vote to decide who do the searching, " +
                 "\nThe winner will search around the parking and will find" +
                 " three items, " +
@@ -292,6 +311,22 @@ public class Main extends Application {
         fallenRoomLayout.getChildren().addAll(fallenRoomLabel,viewRoomFallen, ok7);
         fallenRoomScene = new Scene(fallenRoomLayout,WIDTH,HEIGHT);
 
+
+        Label winner = new Label();
+        winner.setText("After a long ... we have only four survivor in the mall"+
+        "\nClick Ok to find out who's the winner");
+        Button viewRoomWinner = new Button("Room");
+        viewRoomWinner.setOnAction(event -> {
+            viewRooms();
+        });
+        Button ok8 = new Button("OK");
+        ok8.setOnAction(event -> {
+            whosTheWinner();
+        });
+        VBox winnerLayout = new VBox();
+        winnerLayout.getChildren().addAll(winner, ok8);
+        winnerScene = new Scene(winnerLayout, WIDTH,HEIGHT);
+
     }
 
     public void welcomeScene() {
@@ -311,7 +346,11 @@ public class Main extends Application {
         MultiMessagesWindow.display(rooms, "Room Current Status");
     }
 
-
+    public void viewItem(Playable player){
+       String itemList = player.getCurrentItem().toString();
+       SimpleMessageWindow.display("You have below Items:" +
+               "\n" + itemList);
+    }
 
     public void availableRoomSelect() {
         for (int i = 0; i < gameBroad.totalCharatersRemain(); i += gameBroad.getPlayersNumber()) {
@@ -456,7 +495,6 @@ public class Main extends Application {
                 options.add(3);
                 int itemselect = numberWindow.display(options, "You get 1." + itemtemplist.get(0) + ", 2." + itemtemplist.get(1) + " and 3." +
                         itemtemplist.get(2) + ". Please select the item you want to keep (1,2,or 3)");
-                        System.out.println();
                 SimpleMessageWindow.display("You get " + itemtemplist.get(itemselect - 1));
                 gameBroad.matchPlayer(winnercolor).getItem(itemtemplist.get(itemselect - 1));
                 itemtemplist.remove(itemselect - 1);
@@ -480,14 +518,15 @@ public class Main extends Application {
                 SimpleMessageWindow.display("Other players will be joining the game now, type OK to continue");
                 SimpleMessageWindow.display("Player " + givecolor + " get an item from player " + winnercolor);
             }
-            mainWindow.setScene(chiefSelectScene);
         }
+        mainWindow.setScene(chiefSelectScene);
     }
 
     public void chiefSelect(){
         int currentVotingRoomNumber = 5;
         if (gameBroad.matchRoom(5).isEmpty() ){
             System.out.println("Due to SecurityHQ is empty, no chief election will be performed");
+
         }
         else {
             //voting begins
@@ -793,10 +832,11 @@ public class Main extends Application {
                             "\nHidden: your character will not be killed nor can joined the voting" +
                             "\n---------------------------------------------------------------");
                     if (usedItemTeam) {
-                        boolean noMore = true;
+                        boolean noMore;
                         do {
+                            noMore = true;
                             for (int q = 0; q < playersInTheRoomList.size(); q++) {
-                                Playable player = playersInTheRoomList.get(i);
+                                Playable player = playersInTheRoomList.get(q);
                                 mainWindow.setScene(playerScenes.get(q));
                                 if (player.hasOthersItems()) {
                                     int itemselected = 0;
@@ -815,9 +855,9 @@ public class Main extends Application {
                                         player.usedItem(usedItem);
                                     }
                                 }
-                                mainWindow.setScene(zombieAttackScene);
-                                noMore = YesNoWindow.display("Please confirmed no more items will be used (y - no more item will be used/n - more item will be used)");
                             }
+                            mainWindow.setScene(zombieAttackScene);
+                            noMore = YesNoWindow.display("Please confirmed no more items will be used (y - no more item will be used/n - more item will be used)");
                         }
                         while (!noMore);
                     }
@@ -933,9 +973,39 @@ public class Main extends Application {
                         gameBroad.removePlayer(player);
                     }
                 }
+                SimpleMessageWindow.display("One round has been finished, game will move back to parking search, " +
+                        "\nOnce there are less than four character in the game, the one with most victory points won.");
+                if (gameBroad.totalCharatersRemain()>4){
+                mainWindow.setScene(parkingSearchScene);
+                }else {
+                    mainWindow.setScene(winnerScene);
+                }
 
     }
 
+    public void whosTheWinner(){
+        int mostPoints = gameBroad.getPlayers().get(0).totalVictoryPoints();
+        int q = 0;
+        int count =0;
+        for (int i=0; i<gameBroad.getPlayers().size();i++){
+            if (mostPoints<gameBroad.getPlayers().get(i).totalVictoryPoints()){
+                mostPoints = gameBroad.getPlayers().get(i).totalVictoryPoints();
+                q = i;
+            }
+        }
+        for (Playable player: gameBroad.getPlayers()){
+            if(mostPoints == player.totalVictoryPoints()){
+                count++;
+            }
+        }
+        if (count>1){
+            SimpleMessageWindow.display("Result is TIE, ");
+        }
+        else {
+            Playable winner  = gameBroad.getPlayers().get(q);
+            SimpleMessageWindow.display("Congratulations! Winner is " + winner + " with a victory points" + mostPoints);
+        }
+    }
 
 
 
@@ -977,6 +1047,7 @@ public class Main extends Application {
         int start = 1;
         for (Object o : objects) {
             fin += start + "." + o + ", ";
+            start++;
         }
         return  fin;
     }
@@ -992,6 +1063,7 @@ public class Main extends Application {
         int start = 1;
         for (Object o : objects) {
             fin = start + ".";
+            start++;
         }
         return fin;
     }
