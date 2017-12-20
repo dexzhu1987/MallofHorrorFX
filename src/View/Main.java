@@ -339,11 +339,13 @@ public class Main extends Application {
     }
 
     public void viewRooms(){
-        List<String> rooms = new ArrayList<>();
-        for (int i=0; i<gameBroad.getRooms().size(); i++){
-            rooms.add(gameBroad.getRooms().get(i).toString());
-        }
-        MultiMessagesWindow.display(rooms, "Room Current Status");
+          RoomView.display(gameBroad.getRooms());
+
+//        List<String> rooms = new ArrayList<>();
+//        for (int i=0; i<gameBroad.getRooms().size(); i++){
+//            rooms.add(gameBroad.getRooms().get(i).toString());
+//        }
+//        MultiMessagesWindow.display(rooms, "Room Current Status");
     }
 
     public void viewItem(Playable player){
@@ -672,6 +674,8 @@ public class Main extends Application {
                             messages.add(dices.toString());
                             messages.add("Each number means the correspoding room will have one zombie");
                             MultiMessagesWindow.display(messages, "Zombies will be approaching:");
+                            Item securityCamera = gameBroad.matchItem(player, "SecurityCamera");
+                            player.usedItem(securityCamera);
                         } else {
                             SimpleMessageWindow.display("You do not have a Security Camera");
                         }
