@@ -3,6 +3,7 @@ package Controller;
 import Model.Room.*;
 import java.util.*;
 import Model.Character.*;
+import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -23,18 +24,15 @@ public class RoomView {
         window.setMinWidth(250);
 
         GridPane layout = new GridPane();
+        layout.setPadding(new Insets(10, 20, 10, 20));
+        layout.setVgap(10);
 
         Label label = new Label();
         label.setText("Current Room Status");
         GridPane.setConstraints(label,1,0);
-
-
-
-
+        layout.setHalignment(label, HPos.CENTER);
 
         VBox room1= new VBox();
-        room1.setMinWidth(170);
-        room1.setMaxHeight(110);
         room1.setPadding(new Insets(10, 10, 10, 10));
         Label roomName1 = new Label("ROOM:1 Rest Room");
         StackPane capacitystack1 = new StackPane();
@@ -51,8 +49,6 @@ public class RoomView {
         GridPane.setConstraints(room1,0,1);
 
         VBox room2= new VBox();
-        room2.setMinWidth(170);
-        room2.setMaxHeight(110);
         room2.setPadding(new Insets(10, 10, 10, 10));
         Label roomName2 = new Label("ROOM:2 Cachou");
         StackPane capacitystack2 = new StackPane();
@@ -69,8 +65,6 @@ public class RoomView {
         GridPane.setConstraints(room2,1,1);
 
         VBox room3= new VBox();
-        room3.setMinWidth(170);
-        room3.setMaxHeight(110);
         room2.setPadding(new Insets(10, 10, 10, 10));
         Label roomName3 = new Label("ROOM:3 Megatoys");
         StackPane capacitystack3 = new StackPane();
@@ -87,8 +81,6 @@ public class RoomView {
         GridPane.setConstraints(room3,2,1);
 
         VBox room4= new VBox();
-        room4.setMinWidth(170);
-        room4.setMaxHeight(110);
         room4.setPadding(new Insets(10, 10, 10, 10));
         Label roomName4 = new Label("ROOM:4 Parking");
         StackPane capacitystack4 = new StackPane();
@@ -105,8 +97,6 @@ public class RoomView {
         GridPane.setConstraints(room4,0,2);
 
         VBox room5= new VBox();
-        room5.setMinWidth(170);
-        room5.setMaxHeight(110);
         room5.setPadding(new Insets(10, 10, 10, 10));
         Label roomName5 = new Label("ROOM:5 SecurityHQ");
         StackPane capacitystack5 = new StackPane();
@@ -123,8 +113,6 @@ public class RoomView {
         GridPane.setConstraints(room5,1,2);
 
         VBox room6= new VBox();
-        room6.setMinWidth(170);
-        room6.setMaxHeight(110);
         room6.setPadding(new Insets(10, 10, 10, 10));
         Label roomName6 = new Label("ROOM:6 SuperMarket");
         StackPane capacitystack6 = new StackPane();
@@ -147,9 +135,23 @@ public class RoomView {
             window.close();
         });
         GridPane.setConstraints(ok,1,3);
+        layout.setHalignment(ok, HPos.CENTER);
+
         layout.getChildren().addAll(label,room1,room2,room3,room4,room5,room6,ok);
 
 
+        List<VBox> roomAll = new ArrayList<>();
+        roomAll.add(room1);
+        roomAll.add(room2);
+        roomAll.add(room3);
+        roomAll.add(room4);
+        roomAll.add(room5);
+        roomAll.add(room6);
+
+        for (VBox room: roomAll){
+            room.setMinWidth(236);
+            room.setMinHeight(190);
+        }
 
 
         Label redGunMan = new Label("Red Gun Man");
@@ -237,9 +239,11 @@ public class RoomView {
             int col =0;
             int row =0;
             for (int k=0; k<roomLabel.size(); k++){
+                currentPane.setMinHeight(100);
+                currentPane.setHgap(10);
                 currentPane.add(roomLabel.get(k),col,row);
                 col++;
-                if (col>4){
+                if (col>1){
                     row++;
                     col=0;
                 }
@@ -253,7 +257,7 @@ public class RoomView {
 
 
 
-        Scene scene = new Scene(layout,600,400);
+        Scene scene = new Scene(layout,750,475);
         window.setScene(scene);
         window.showAndWait();
 

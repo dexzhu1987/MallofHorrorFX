@@ -1,0 +1,31 @@
+#firstLayout{
+    -fx-background-image: url("firstbackground.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#startGame {
+    -fx-background-image: url('play.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 115 65;
+    -fx-background-position: center center;
+    -fx-min-height: 50px;
+    -fx-min-width: 100px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#howToPlay {
+    -fx-background-image: url('about.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 115 65;
+    -fx-background-position: center center;
+    -fx-min-height: 50px;
+    -fx-min-width: 100px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-cursor: hand;
+}
+

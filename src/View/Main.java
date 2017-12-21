@@ -10,12 +10,17 @@ import Model.Room.Room;
 import javafx.application.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
+import javafx.scene.layout.BackgroundImage;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 import static Model.Game.Game.characterCorrectSelectForCertianList;
 
@@ -61,7 +66,7 @@ public class Main extends Application {
         numberOfPlayersOptions.add(5);
         numberOfPlayersOptions.add(6);
 
-        startGame.setText("Start Game");
+        startGame.setText("");
         startGame.setOnAction(event -> {
             gameBroad.setPlayersNumber(numberWindow.display(numberOfPlayersOptions, "please select how many players"));
             welcomeScene();
@@ -71,29 +76,32 @@ public class Main extends Application {
                 actualOkButton.add(allOkButtons.get(i));
             }
         });
+        startGame.setId("startGame");
 
-        howTOPlay.setText("How to Play");
-
+        howTOPlay.setText("");
 //        VBox firstlayout = new VBox();
 //        firstlayout.setAlignment(Pos.CENTER);
 //        firstlayout.getChildren().addAll(startGame, howTOPlay);
 //        Scene firstscene = new Scene(firstlayout, WIDTH, HEIGHT);
 //        primaryStage.setScene(firstscene);
 //        mainWindow.show();
+        howTOPlay.setId("howToPlay");
 
-        GridPane firstlayout = new GridPane();
-        GridPane.setRowIndex(startGame, 1);
-        GridPane.setRowIndex(howTOPlay, 2);
-        firstlayout.setHgap(5);
-        firstlayout.setVgap(5);
-        firstlayout.setAlignment(Pos.CENTER);
-        howTOPlay.setLayoutY(200);
-        Scene firstscene = new Scene(firstlayout, 800, 600);
+        AnchorPane firstlayout = new AnchorPane();
+        AnchorPane.setBottomAnchor(startGame,190.0);
+        AnchorPane.setLeftAnchor(startGame,350.0);
+        AnchorPane.setBottomAnchor(howTOPlay,115.0);
+        AnchorPane.setLeftAnchor(howTOPlay,350.0);
+
+        howTOPlay.setLayoutY(250);
+        firstlayout.setId("firstLayout");
         firstlayout.getChildren().addAll(startGame, howTOPlay);
+        Scene firstscene = new Scene(firstlayout, 800, 600);
+        firstscene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
         primaryStage.setScene(firstscene);
         primaryStage.show();
 
-        Button ok1 = new Button("OK");
+        Button ok1 = new Button(    "OK");
         ok1.setOnAction(event -> {
             playerselectRoom();
         });
