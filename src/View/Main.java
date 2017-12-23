@@ -10,11 +10,14 @@ import Model.Room.Room;
 import javafx.application.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
 
+import java.net.URL;
 import java.util.*;
 
 import static Model.Game.Game.characterCorrectSelectForCertianList;
@@ -32,8 +35,8 @@ public class Main extends Application {
             getStartItemScene, parkingSearchScene, chiefSelectScene, movingScene, zombieAttackScene,fallenRoomScene ,winnerScene;
     Stage mainWindow;
     static int numberOfPlayers;
-    final static int WIDTH = 800;
-    final static int HEIGHT = 600;
+    final static int WIDTH = 1200;
+    final static int HEIGHT = 800;
     final GameBroad gameBroad = new GameBroad(0);
     List<Scene> allPlayerScenes = new ArrayList<>();
     final Label welcome = new Label();
@@ -73,6 +76,9 @@ public class Main extends Application {
         });
 
         howTOPlay.setText("How to Play");
+        howTOPlay.setOnAction(event -> {
+            openRule();
+        });
 
 //        VBox firstlayout = new VBox();
 //        firstlayout.setAlignment(Pos.CENTER);
@@ -82,13 +88,15 @@ public class Main extends Application {
 //        mainWindow.show();
 
         GridPane firstlayout = new GridPane();
+        Image bgimg = new Image("Images/zombie-background.jpg", WIDTH,HEIGHT,false,false);
         GridPane.setRowIndex(startGame, 1);
         GridPane.setRowIndex(howTOPlay, 2);
         firstlayout.setHgap(5);
         firstlayout.setVgap(5);
+        firstlayout.setBackground(new Background(new BackgroundImage(bgimg, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT)));
         firstlayout.setAlignment(Pos.CENTER);
         howTOPlay.setLayoutY(200);
-        Scene firstscene = new Scene(firstlayout, 800, 600);
+        Scene firstscene = new Scene(firstlayout,WIDTH, HEIGHT);
         firstlayout.getChildren().addAll(startGame, howTOPlay);
         primaryStage.setScene(firstscene);
         primaryStage.show();
@@ -97,6 +105,7 @@ public class Main extends Application {
         ok1.setOnAction(event -> {
             playerselectRoom();
         });
+
         VBox welcomePlayerslayout = new VBox();
         welcomePlayerslayout.setAlignment(Pos.CENTER);
         welcomePlayerslayout.getChildren().addAll(welcome, ok1);
@@ -327,6 +336,23 @@ public class Main extends Application {
         winnerLayout.getChildren().addAll(winner, ok8);
         winnerScene = new Scene(winnerLayout, WIDTH,HEIGHT);
 
+    }
+
+    public void openRule(){
+        Stage Window = new Stage();
+        Image ruleImg = new Image("Images/Rule.jpg", 1200, 2300, false, false);
+
+        StackPane layout = new StackPane();
+        ScrollPane scroll = new ScrollPane();
+        layout.setAlignment(Pos.CENTER);
+        scroll.setContent(new ImageView(ruleImg));
+        scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+
+        Scene rule = new Scene(layout, 1200, 750);
+        layout.getChildren().addAll(scroll);
+        Window.setScene(rule);
+        Window.show();
     }
 
     public void welcomeScene() {
