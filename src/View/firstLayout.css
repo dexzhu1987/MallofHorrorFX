@@ -13,7 +13,7 @@
     -fx-background-position: center center;
     -fx-min-height: 50px;
     -fx-min-width: 100px;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
 
@@ -25,7 +25,7 @@
     -fx-background-position: center center;
     -fx-min-height: 50px;
     -fx-min-width: 100px;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
 

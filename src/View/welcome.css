@@ -1,0 +1,19 @@
+#welcome{
+    -fx-background-image: url("welcomebg.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#ok1{
+ -fx-background-image: url('okbutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 150 75;
+    -fx-background-position: center center;
+    -fx-min-height: 75px;
+    -fx-min-width: 150px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+
+}

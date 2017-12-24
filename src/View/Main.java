@@ -79,12 +79,7 @@ public class Main extends Application {
         startGame.setId("startGame");
 
         howTOPlay.setText("");
-//        VBox firstlayout = new VBox();
-//        firstlayout.setAlignment(Pos.CENTER);
-//        firstlayout.getChildren().addAll(startGame, howTOPlay);
-//        Scene firstscene = new Scene(firstlayout, WIDTH, HEIGHT);
-//        primaryStage.setScene(firstscene);
-//        mainWindow.show();
+
         howTOPlay.setId("howToPlay");
 
         AnchorPane firstlayout = new AnchorPane();
@@ -105,10 +100,14 @@ public class Main extends Application {
         ok1.setOnAction(event -> {
             playerselectRoom();
         });
-        VBox welcomePlayerslayout = new VBox();
-        welcomePlayerslayout.setAlignment(Pos.CENTER);
+        ok1.setId("ok1");
+        AnchorPane welcomePlayerslayout = new AnchorPane();
+        welcomePlayerslayout.setId("welcome");
+        AnchorPane.setBottomAnchor(ok1,75.0);
+        AnchorPane.setRightAnchor(ok1,75.0);
         welcomePlayerslayout.getChildren().addAll(welcome, ok1);
         welcomeScene = new Scene(welcomePlayerslayout, WIDTH, HEIGHT);
+        welcomeScene.getStylesheets().add(this.getClass().getResource("welcome.css").toExternalForm());
 
 
         //playersSceneRedSetUp;

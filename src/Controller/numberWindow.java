@@ -7,33 +7,65 @@ import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.geometry.*;
+import java.io.*;
+import javafx.scene.text.*;
+import javafx.application.Application;
 
 public class numberWindow {
     static int theNumber;
 
-    public static int display(List<Integer> opitons, String message){
+    public static int display(List<Integer> opitons, String message) {
         Stage window = new Stage();
         window.setTitle("Please select your number");
         window.setMinWidth(250);
         Label label = new Label();
         label.setText(message);
+        label.setId("text");
+        label.setWrapText(true);
+        label.setPadding(new Insets(30, 10, 30, 10));
+
+
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 38);
+            label.setFont(f); // use this font with our label
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+
 
         Button numberZeroButton = new Button("0");
+        numberZeroButton.setId("0");
         Button numberOneButton = new Button("1");
+        numberOneButton.setId("1");
         Button numberTwoButton = new Button("2");
+        numberTwoButton.setId("2");
         Button numberThreeButton = new Button("3");
+        numberThreeButton.setId("3");
         Button numberFourButton = new Button("4");
+        numberFourButton.setId("4");
         Button numberFiveButton = new Button("5");
+        numberFiveButton.setId("5");
         Button numberSixButton = new Button("6");
-
+        numberSixButton.setId("6");
 
         Button numberZeroButton2 = new Button("0");
+        numberZeroButton2.setId("0");
         Button numberOneButton2 = new Button("1");
+        numberOneButton2.setId("1");
         Button numberTwoButton2 = new Button("2");
+        numberTwoButton2.setId("2");
         Button numberThreeButton2 = new Button("3");
+        numberThreeButton2.setId("3");
         Button numberFourButton2 = new Button("4");
+        numberFourButton2.setId("4");
         Button numberFiveButton2 = new Button("5");
+        numberFiveButton2.setId("5");
         Button numberSixButton2 = new Button("6");
+        numberSixButton2.setId("6");
 
 //        Button numberOneButton3 = new Button("1");
 //        Button numberTwoButton3 = new Button("2");
@@ -310,16 +342,29 @@ public class numberWindow {
 
 
         VBox layout = new VBox(10);
-        layout.getChildren().clear();
-        layout.getChildren().add(label);
+        layout.setPadding(new Insets(10, 20, 10, 20));
+
+        FlowPane numbers = new FlowPane();
+        numbers.setPadding(new Insets(10, 20, 10, 20));
+        numbers.setHgap(60);
+        numbers.setVgap(30);
+        numbers.setAlignment(Pos.CENTER);
+
 
         for (int i=0; i<optionsButton.size(); i++){
-            layout.getChildren().add(optionsButton.get(i));
+            numbers.getChildren().add(optionsButton.get(i));
         }
+
+        layout.getChildren().clear();
+        layout.getChildren().addAll(label, numbers);
 
 
         layout.setAlignment(Pos.CENTER);
-        Scene scene = new Scene(layout);
+        layout.setId("numberwindowbg");
+        Scene scene = new Scene(layout,400,300);
+        File f = new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));;
         window.setScene(scene);
         window.showAndWait();
 

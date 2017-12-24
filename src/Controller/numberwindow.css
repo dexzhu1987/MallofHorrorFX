@@ -1,0 +1,113 @@
+#numberwindowbg{
+    -fx-background-image: url("numberwindowbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 400 300;
+    -fx-background-position: center center;
+}
+
+#0 {
+    -fx-background-image: url('numberzerobutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+     -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#1 {
+    -fx-background-image: url('numberonebutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#2 {
+    -fx-background-image: url('numbertwobutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 55;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#3 {
+    -fx-background-image: url('numberthreebutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#4 {
+    -fx-background-image: url('numberfourbutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#5 {
+    -fx-background-image: url('numberfivebutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#6 {
+    -fx-background-image: url('numbersixbutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#text{
+-fx-background-color: #010101;
+-fx-text-fill: #00FE00;
+-fx-font-family: digital-7;
+
+
+}
