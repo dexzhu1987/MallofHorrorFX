@@ -12,13 +12,13 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.BackgroundImage;
-
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -78,7 +78,7 @@ public class Main extends Application {
         });
         startGame.setId("startGame");
 
-        howTOPlay.setText("");
+
 
         howTOPlay.setId("howToPlay");
 
@@ -88,8 +88,21 @@ public class Main extends Application {
         AnchorPane.setBottomAnchor(howTOPlay,115.0);
         AnchorPane.setLeftAnchor(howTOPlay,350.0);
 
-        howTOPlay.setLayoutY(250);
+
         firstlayout.setId("firstLayout");
+        howTOPlay.setText("How to Play");
+        howTOPlay.setOnAction(event -> {
+            openRule();
+        });
+
+//        VBox firstlayout = new VBox();
+//        firstlayout.setAlignment(Pos.CENTER);
+//        firstlayout.getChildren().addAll(startGame, howTOPlay);
+//        Scene firstscene = new Scene(firstlayout, WIDTH, HEIGHT);
+//        primaryStage.setScene(firstscene);
+//        mainWindow.show();
+
+
         firstlayout.getChildren().addAll(startGame, howTOPlay);
         Scene firstscene = new Scene(firstlayout, 800, 600);
         firstscene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
@@ -105,6 +118,8 @@ public class Main extends Application {
         welcomePlayerslayout.setId("welcome");
         AnchorPane.setBottomAnchor(ok1,75.0);
         AnchorPane.setRightAnchor(ok1,75.0);
+
+
         welcomePlayerslayout.getChildren().addAll(welcome, ok1);
         welcomeScene = new Scene(welcomePlayerslayout, WIDTH, HEIGHT);
         welcomeScene.getStylesheets().add(this.getClass().getResource("welcome.css").toExternalForm());
@@ -334,6 +349,23 @@ public class Main extends Application {
         winnerLayout.getChildren().addAll(winner, ok8);
         winnerScene = new Scene(winnerLayout, WIDTH,HEIGHT);
 
+    }
+
+    public void openRule(){
+        Stage Window = new Stage();
+        Image ruleImg = new Image("Images/Rule.jpg", 1200, 2300, false, false);
+
+        StackPane layout = new StackPane();
+        ScrollPane scroll = new ScrollPane();
+        layout.setAlignment(Pos.CENTER);
+        scroll.setContent(new ImageView(ruleImg));
+        scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+
+        Scene rule = new Scene(layout, 1200, 750);
+        layout.getChildren().addAll(scroll);
+        Window.setScene(rule);
+        Window.show();
     }
 
     public void welcomeScene() {
