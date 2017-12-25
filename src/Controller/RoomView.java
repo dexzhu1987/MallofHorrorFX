@@ -1,6 +1,10 @@
 package Controller;
 
 import Model.Room.*;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.*;
 import Model.Character.*;
 import javafx.geometry.HPos;
@@ -8,10 +12,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.geometry.Insets;
@@ -23,160 +25,164 @@ public class RoomView {
         window.setTitle("View Room");
         window.setMinWidth(250);
 
-        GridPane layout = new GridPane();
-        layout.setPadding(new Insets(10, 20, 10, 20));
-        layout.setVgap(10);
+        AnchorPane layout = new AnchorPane();
 
-        Label label = new Label();
-        label.setText("Current Room Status");
-        GridPane.setConstraints(label,1,0);
-        layout.setHalignment(label, HPos.CENTER);
 
-        VBox room1= new VBox();
-        room1.setPadding(new Insets(10, 10, 10, 10));
-        Label roomName1 = new Label("ROOM:1 Rest Room");
-        StackPane capacitystack1 = new StackPane();
-        Label capacity1 = new Label("Capacity: 3");
-        capacitystack1.getChildren().add(capacity1);
-        capacitystack1.setAlignment(Pos.CENTER_RIGHT);
         GridPane roomHas1 = new GridPane();
-        StackPane currentZombiestack1 = new StackPane();
-        Label currentZombie1 = new Label("CurrentZombie:       ");
         Label currentZombieNum1 = new Label(Integer.toString(rooms.get(0).getCurrentZombienumber()) );
-        currentZombiestack1.getChildren().addAll(currentZombie1,currentZombieNum1);
-        currentZombiestack1.setAlignment(Pos.CENTER_RIGHT);
-        room1.getChildren().addAll(roomName1,capacitystack1,roomHas1,currentZombiestack1);
-        GridPane.setConstraints(room1,0,1);
+        AnchorPane.setLeftAnchor(roomHas1,33.0);
+        AnchorPane.setTopAnchor(roomHas1,106.0);
+        AnchorPane.setLeftAnchor(currentZombieNum1,215.0);
+        AnchorPane.setTopAnchor(currentZombieNum1,158.0);
 
-        VBox room2= new VBox();
-        room2.setPadding(new Insets(10, 10, 10, 10));
-        Label roomName2 = new Label("ROOM:2 Cachou");
-        StackPane capacitystack2 = new StackPane();
-        Label capacity2 = new Label("Capacity: 4");
-        capacitystack2.getChildren().add(capacity2);
-        capacitystack2.setAlignment(Pos.CENTER_RIGHT);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum1.setFont(f); // use this font with our label
+            currentZombieNum1.setStyle( "-fx-text-fill: red;");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         GridPane roomHas2 = new GridPane();
-        StackPane currentZombiestack2 = new StackPane();
-        Label currentZombie2 = new Label("CurrentZombie:       ");
         Label currentZombieNum2 = new Label(Integer.toString(rooms.get(1).getCurrentZombienumber()) );
-        currentZombiestack2.getChildren().addAll(currentZombie2,currentZombieNum2);
-        currentZombiestack2.setAlignment(Pos.CENTER_RIGHT);
-        room2.getChildren().addAll(roomName2,capacitystack2,roomHas2,currentZombiestack2);
-        GridPane.setConstraints(room2,1,1);
+        AnchorPane.setLeftAnchor(roomHas2,286.0);
+        AnchorPane.setTopAnchor(roomHas2,106.0);
+        AnchorPane.setLeftAnchor(currentZombieNum2,470.0);
+        AnchorPane.setTopAnchor(currentZombieNum2,158.0);
 
-        VBox room3= new VBox();
-        room2.setPadding(new Insets(10, 10, 10, 10));
-        Label roomName3 = new Label("ROOM:3 Megatoys");
-        StackPane capacitystack3 = new StackPane();
-        Label capacity3 = new Label("Capacity: 4");
-        capacitystack3.getChildren().add(capacity3);
-        capacitystack3.setAlignment(Pos.CENTER_RIGHT);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum2.setFont(f); // use this font with our label
+            currentZombieNum2.setStyle( "-fx-text-fill: red;");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
         GridPane roomHas3 = new GridPane();
-        StackPane currentZombiestack3 = new StackPane();
-        Label currentZombie3 = new Label("CurrentZombie:       ");
         Label currentZombieNum3 = new Label(Integer.toString(rooms.get(2).getCurrentZombienumber()) );
-        currentZombiestack3.getChildren().addAll(currentZombie3,currentZombieNum3);
-        currentZombiestack3.setAlignment(Pos.CENTER_RIGHT);
-        room3.getChildren().addAll(roomName3,capacitystack3,roomHas3,currentZombiestack3);
-        GridPane.setConstraints(room3,2,1);
+        AnchorPane.setLeftAnchor(roomHas3,535.0);
+        AnchorPane.setTopAnchor(roomHas3,106.0);
+        AnchorPane.setLeftAnchor(currentZombieNum3,706.0);
+        AnchorPane.setTopAnchor(currentZombieNum3,158.0);
 
-        VBox room4= new VBox();
-        room4.setPadding(new Insets(10, 10, 10, 10));
-        Label roomName4 = new Label("ROOM:4 Parking");
-        StackPane capacitystack4 = new StackPane();
-        Label capacity4 = new Label("Capacity: 99");
-        capacitystack4.getChildren().add(capacity4);
-        capacitystack4.setAlignment(Pos.CENTER_RIGHT);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum3.setFont(f); // use this font with our label
+            currentZombieNum3.setStyle( "-fx-text-fill: red;");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         GridPane roomHas4 = new GridPane();
-        StackPane currentZombiestack4 = new StackPane();
-        Label currentZombie4 = new Label("CurrentZombie:       ");
         Label currentZombieNum4 = new Label(Integer.toString(rooms.get(3).getCurrentZombienumber()) );
-        currentZombiestack4.getChildren().addAll(currentZombie4,currentZombieNum4);
-        currentZombiestack4.setAlignment(Pos.CENTER_RIGHT);
-        room4.getChildren().addAll(roomName4,capacitystack4,roomHas4,currentZombiestack4);
-        GridPane.setConstraints(room4,0,2);
+        AnchorPane.setLeftAnchor(roomHas4,33.0);
+        AnchorPane.setTopAnchor(roomHas4,277.0);
+        AnchorPane.setLeftAnchor(currentZombieNum4,215.0);
+        AnchorPane.setTopAnchor(currentZombieNum4,330.0);
 
-        VBox room5= new VBox();
-        room5.setPadding(new Insets(10, 10, 10, 10));
-        Label roomName5 = new Label("ROOM:5 SecurityHQ");
-        StackPane capacitystack5 = new StackPane();
-        Label capacity5 = new Label("Capacity: 5");
-        capacitystack5.getChildren().add(capacity5);
-        capacitystack5.setAlignment(Pos.CENTER_RIGHT);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum4.setFont(f); // use this font with our label
+            currentZombieNum4.setStyle( "-fx-text-fill: red;");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
         GridPane roomHas5 = new GridPane();
-        StackPane currentZombiestack5 = new StackPane();
-        Label currentZombie5 = new Label("CurrentZombie:       ");
         Label currentZombieNum5 = new Label(Integer.toString(rooms.get(4).getCurrentZombienumber()) );
-        currentZombiestack5.getChildren().addAll(currentZombie5,currentZombieNum5);
-        currentZombiestack5.setAlignment(Pos.CENTER_RIGHT);
-        room5.getChildren().addAll(roomName5,capacitystack5,roomHas5,currentZombiestack5);
-        GridPane.setConstraints(room5,1,2);
+        AnchorPane.setLeftAnchor(roomHas5,286.0);
+        AnchorPane.setTopAnchor(roomHas5,277.0);
+        AnchorPane.setLeftAnchor(currentZombieNum5,466.0);
+        AnchorPane.setTopAnchor(currentZombieNum5,330.0);
 
-        VBox room6= new VBox();
-        room6.setPadding(new Insets(10, 10, 10, 10));
-        Label roomName6 = new Label("ROOM:6 SuperMarket");
-        StackPane capacitystack6 = new StackPane();
-        Label capacity6 = new Label("Capacity: 6");
-        capacitystack6.getChildren().add(capacity6);
-        capacitystack6.setAlignment(Pos.CENTER_RIGHT);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum5.setFont(f); // use this font with our label
+            currentZombieNum5.setStyle( "-fx-text-fill: red;");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         GridPane roomHas6 = new GridPane();
-        StackPane currentZombiestack6 = new StackPane();
-        Label currentZombie6 = new Label("CurrentZombie:       ");
         Label currentZombieNum6 = new Label(Integer.toString(rooms.get(5).getCurrentZombienumber()) );
-        currentZombiestack6.getChildren().addAll(currentZombie6,currentZombieNum6);
-        currentZombiestack6.setAlignment(Pos.CENTER_RIGHT);
-        room6.getChildren().addAll(roomName6,capacitystack6,roomHas6,currentZombiestack6);
-        VBox confirm= new VBox();
-        GridPane.setConstraints(room6,2,2);
+        AnchorPane.setLeftAnchor(roomHas6,535.0);
+        AnchorPane.setTopAnchor(roomHas6,277.0);
+        AnchorPane.setLeftAnchor(currentZombieNum6,710.0);
+        AnchorPane.setTopAnchor(currentZombieNum6,330.0);
 
-        Button ok = new Button("OK");
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum6.setFont(f); // use this font with our label
+            currentZombieNum6.setStyle( "-fx-text-fill: red;");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        Button ok = new Button("");
+        ok.setId("roomViewOk");
         //Clicking will set answer and close window
         ok.setOnAction(e -> {
             window.close();
         });
-        GridPane.setConstraints(ok,1,3);
-        layout.setHalignment(ok, HPos.CENTER);
-
-        layout.getChildren().addAll(label,room1,room2,room3,room4,room5,room6,ok);
+        AnchorPane.setLeftAnchor(ok,325.0);
+        AnchorPane.setBottomAnchor(ok,40.0);
 
 
-        List<VBox> roomAll = new ArrayList<>();
-        roomAll.add(room1);
-        roomAll.add(room2);
-        roomAll.add(room3);
-        roomAll.add(room4);
-        roomAll.add(room5);
-        roomAll.add(room6);
+        Button redGunMan = new Button("");
+        redGunMan.setId("redgunmanbttn");
+        Button redToughGuy = new Button("");
+        redToughGuy.setId("redtoughguybttn");
+        Button redModel = new Button("");
+        redModel.setId("redmodelbttn");
 
-        for (VBox room: roomAll){
-            room.setMinWidth(236);
-            room.setMinHeight(190);
-        }
+        Button yellowGunMan = new Button("");
+        yellowGunMan.setId("yellowGunManbttn");
+        Button yellowToughGuy = new Button("");
+        yellowToughGuy.setId("yellowToughGuybttn");
+        Button yellowModel = new Button("");
+        yellowModel.setId("yellowModelbttn");
 
+        Button blueGunMan = new Button("");
+        blueGunMan.setId("blueGunManbttn");
+        Button blueToughGuy = new Button("");
+        blueToughGuy.setId("blueToughGuybttn");
+        Button blueModel = new Button("");
+        blueModel.setId("blueModelbttn");
 
-        Label redGunMan = new Label("Red Gun Man");
-        Label redToughGuy = new Label("Red Tough Guy");
-        Label redModel = new Label("Red Model");
+        Button greenGunMan = new Button("");
+        greenGunMan.setId("greenGunManbttn");
+        Button greenToughGuy = new Button("");
+        greenToughGuy.setId("greenToughGuybttn");
+        Button greenModel = new Button("");
+        greenModel.setId("greenModelbttn");
 
-        Label yellowGunMan = new Label("Yellow Gun Man");
-        Label yellowToughGuy = new Label("Yellow Tough Guy");
-        Label yellowModel = new Label("Yellow Model");
+        Button brownGunMan = new Button("");
+        brownGunMan.setId("brownGunManbttn");
+        Button brownToughGuy = new Button("");
+        brownToughGuy.setId("brownToughGuybttn");
+        Button brownModel = new Button("");
+        brownModel.setId("brownModelbttn");
 
-        Label blueGunMan = new Label("Blue Gun Man");
-        Label blueToughGuy = new Label("Blue Tough Guy");
-        Label blueModel = new Label("Blue Model");
-
-        Label greenGunMan = new Label("Green Gun Man");
-        Label greenToughGuy = new Label("Green Tough Guy");
-        Label greenModel = new Label("Green Model");
-
-        Label brownGunMan = new Label("Brown Gun Man");
-        Label brownToughGuy = new Label("Brown Tough Guy");
-        Label brownModel = new Label("Brown Model");
-
-        Label blackGunMan = new Label("Black Gun Man");
-        Label blackToughGuy = new Label("Black Tough Guy");
-        Label blackModel = new Label("Black  Model");
+        Button blackGunMan = new Button("");
+        blackGunMan.setId("blackGunManbttn");
+        Button blackToughGuy = new Button("");
+        blackToughGuy.setId("blackToughGuybttn");
+        Button blackModel = new Button("");
+        blackModel.setId("blackModelbttn");
 
         List<GridPane> roomHasList = new ArrayList<>();
         roomHasList.add(roomHas1);
@@ -187,7 +193,7 @@ public class RoomView {
         roomHasList.add(roomHas6);
 
         for (int i=0; i<rooms.size(); i++ ) {
-            List<Label> roomLabel = new ArrayList<>();
+            List<Button> roomLabel = new ArrayList<>();
             for (int q = 0; q < rooms.get(i).getRoomCharaters().size(); q++) {
                 GameCharacter currentCharacter = rooms.get(i).getRoomCharaters().get(q);
                 String characterName = currentCharacter.getName();
@@ -241,9 +247,10 @@ public class RoomView {
             for (int k=0; k<roomLabel.size(); k++){
                 currentPane.setMinHeight(100);
                 currentPane.setHgap(10);
+                currentPane.setVgap(3);
                 currentPane.add(roomLabel.get(k),col,row);
                 col++;
-                if (col>1){
+                if (col>2){
                     row++;
                     col=0;
                 }
@@ -252,12 +259,16 @@ public class RoomView {
 
 
 
+        layout.getChildren().addAll(roomHas1,roomHas2,roomHas3,roomHas4,roomHas5,roomHas6,
+                currentZombieNum1,currentZombieNum2,currentZombieNum3,currentZombieNum4,currentZombieNum5,currentZombieNum6,ok);
 
 
 
-
-
+        layout.setId("viewRoombg");
         Scene scene = new Scene(layout,750,475);
+        File f = new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));;
         window.setScene(scene);
         window.showAndWait();
 

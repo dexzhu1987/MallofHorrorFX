@@ -90,7 +90,7 @@ public class Main extends Application {
 
 
         firstlayout.setId("firstLayout");
-        howTOPlay.setText("How to Play");
+        howTOPlay.setText("");
         howTOPlay.setOnAction(event -> {
             openRule();
         });
@@ -126,75 +126,110 @@ public class Main extends Application {
 
 
         //playersSceneRedSetUp;
-        viewRoomButtonRed.setText("Red - Rooms");
+        viewRoomButtonRed.setText("");
         viewRoomButtonRed.setOnAction(event -> {
             viewRooms();
         });
-        viewItemListButtonRed.setText("Items");
+        viewRoomButtonRed.setId("redRmBttn");
+        viewItemListButtonRed.setText("");
         viewItemListButtonRed.setOnAction(event -> {
             viewItem(gameBroad.getTotalPlayerslist()[0]);
         });
-        okButtonRed.setText("Ok");
-        VBox playerRedLayout = new VBox();
-        playerRedLayout.getChildren().addAll(viewRoomButtonRed, viewItemListButtonRed, okButtonRed);
+        viewItemListButtonRed.setId("redItemBttn");
+        AnchorPane playerRedLayout = new AnchorPane();
+        AnchorPane.setBottomAnchor(viewRoomButtonRed,125.0);
+        AnchorPane.setRightAnchor(viewRoomButtonRed,270.0);
+        AnchorPane.setBottomAnchor(viewItemListButtonRed,125.0);
+        AnchorPane.setRightAnchor(viewItemListButtonRed,125.0);
+        playerRedLayout.getChildren().addAll(viewRoomButtonRed, viewItemListButtonRed);
+        playerRedLayout.setId("playerRed");
         playerRedScene = new Scene(playerRedLayout, 800, 600);
+        playerRedScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
 
         //playersSceneYellowSetUp;
-        viewRoomButtonYellow.setText("Yellow - Rooms");
+        viewRoomButtonYellow.setText("");
         viewRoomButtonYellow.setOnAction(event -> {
             viewRooms();
         });
-        viewItemListButtonYellow.setText("Items");
+        viewRoomButtonYellow.setId("yellowRmBttn");
+        viewItemListButtonYellow.setText("");
         viewItemListButtonYellow.setOnAction(event -> {
             viewItem(gameBroad.getTotalPlayerslist()[1]);
         });
-        okButtonYellow.setText("Ok");
-        VBox playerYellowLayout = new VBox();
-        playerYellowLayout.getChildren().addAll(viewRoomButtonYellow, viewItemListButtonYellow, okButtonYellow);
+        viewItemListButtonYellow.setId("yellowItemBttn");
+        AnchorPane playerYellowLayout = new AnchorPane();
+        AnchorPane.setBottomAnchor(viewRoomButtonYellow,125.0);
+        AnchorPane.setRightAnchor(viewRoomButtonYellow,270.0);
+        AnchorPane.setBottomAnchor(viewItemListButtonYellow,125.0);
+        AnchorPane.setRightAnchor(viewItemListButtonYellow,125.0);
+        playerYellowLayout.getChildren().addAll(viewRoomButtonYellow, viewItemListButtonYellow);
+        playerYellowLayout.setId("playerYellow");
         playerYellowScene = new Scene(playerYellowLayout, 800, 600);
+        playerYellowScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
         //playersSceneBlueSetUp;
         viewRoomButtonBlue.setText("Blue - Rooms");
         viewRoomButtonBlue.setOnAction(event -> {
             viewRooms();
         });
+        viewRoomButtonBlue.setId("blueRmBttn");
         viewItemListButtonBlue.setText("Items");
         viewItemListButtonBlue.setOnAction(event -> {
             viewItem(gameBroad.getTotalPlayerslist()[2]);
         });
-        okButtonBlue.setText("Ok");
-        VBox playerBlueLayout = new VBox();
-        playerBlueLayout.getChildren().addAll(viewRoomButtonBlue, viewItemListButtonBlue, okButtonBlue);
+        viewItemListButtonBlue.setId("blueItemBttn");
+        AnchorPane playerBlueLayout = new AnchorPane();
+        AnchorPane.setBottomAnchor(viewRoomButtonBlue,125.0);
+        AnchorPane.setRightAnchor(viewRoomButtonBlue,270.0);
+        AnchorPane.setBottomAnchor(viewItemListButtonBlue,125.0);
+        AnchorPane.setRightAnchor(viewItemListButtonBlue,125.0);
+        playerBlueLayout.getChildren().addAll(viewRoomButtonBlue, viewItemListButtonBlue);
+        playerBlueLayout.setId("playerBlue");
         playerBlueScene = new Scene(playerBlueLayout, 800, 600);
+        playerBlueScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
         //playersSceneGreenSetUp;
-        viewRoomButtonGreen.setText("Green - Rooms");
+        viewRoomButtonGreen.setText("");
         viewRoomButtonGreen.setOnAction(event -> {
             viewRooms();
         });
-        viewItemListButtonGreen.setText("Items");
+        viewRoomButtonGreen.setId("greenRmBttn");
+        viewItemListButtonGreen.setText("");
         viewItemListButtonGreen.setOnAction(event -> {
             viewItem(gameBroad.getTotalPlayerslist()[3]);
         });
-        okButtonGreen.setText("Ok");
-        VBox playerGreenLayout = new VBox();
-        playerGreenLayout.getChildren().addAll(viewRoomButtonGreen, viewItemListButtonGreen, okButtonGreen);
+        viewItemListButtonGreen.setId("greenItemBttn");
+        AnchorPane playerGreenLayout = new AnchorPane();
+        AnchorPane.setBottomAnchor(viewRoomButtonGreen,125.0);
+        AnchorPane.setRightAnchor(viewRoomButtonGreen,270.0);
+        AnchorPane.setBottomAnchor(viewItemListButtonGreen,125.0);
+        AnchorPane.setRightAnchor(viewItemListButtonGreen,125.0);
+        playerGreenLayout.getChildren().addAll(viewRoomButtonGreen, viewItemListButtonGreen);
+        playerGreenLayout.setId("playerGreen");
         playerGreenScene = new Scene(playerGreenLayout, 800, 600);
+        playerGreenScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
         //playersSceneBrownSetUp;
         viewRoomButtonBrown.setText("Brown - Rooms");
         viewRoomButtonBrown.setOnAction(event -> {
             viewRooms();
         });
+        viewRoomButtonBrown.setId("brownRmBttn");
         viewItemListButtonBrown.setText("Items");
         viewItemListButtonBrown.setOnAction(event -> {
             viewItem(gameBroad.getTotalPlayerslist()[4]);
         });
-        okButtonBrown.setText("Ok");
-        VBox playerBrownLayout = new VBox();
-        playerBrownLayout.getChildren().addAll(viewRoomButtonBrown, viewItemListButtonBrown, okButtonBrown);
+        viewItemListButtonBrown.setId("brownItemBttn");
+        AnchorPane playerBrownLayout = new AnchorPane();
+        AnchorPane.setBottomAnchor(viewRoomButtonBrown,125.0);
+        AnchorPane.setRightAnchor(viewRoomButtonBrown,270.0);
+        AnchorPane.setBottomAnchor(viewItemListButtonBrown,125.0);
+        AnchorPane.setRightAnchor(viewItemListButtonBrown,125.0);
+        playerBrownLayout.getChildren().addAll(viewRoomButtonBrown, viewItemListButtonBrown);
+        playerBrownLayout.setId("playerBrown");
         playerBrownScene = new Scene(playerBrownLayout, 800, 600);
+        playerBrownScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
 
         //playersSceneBlackSetUp;
@@ -202,14 +237,21 @@ public class Main extends Application {
         viewRoomButtonBlack.setOnAction(event -> {
             viewRooms();
         });
+        viewRoomButtonBlack.setId("blackRmBttn");
         viewItemListButtonBlack.setText("Items");
         viewItemListButtonBlack.setOnAction(event -> {
             viewItem(gameBroad.getTotalPlayerslist()[5]);
         });
-        okButtonBlack.setText("Ok");
-        VBox playerBlackLayout = new VBox();
-        playerBlackLayout.getChildren().addAll(viewRoomButtonBlack, viewItemListButtonBlack, okButtonBlack);
+       viewItemListButtonBlack.setId("blackItemBttn");
+        AnchorPane playerBlackLayout = new AnchorPane();
+        AnchorPane.setBottomAnchor(viewRoomButtonBlack,125.0);
+        AnchorPane.setRightAnchor(viewRoomButtonBlack,270.0);
+        AnchorPane.setBottomAnchor(viewItemListButtonBlack,125.0);
+        AnchorPane.setRightAnchor(viewItemListButtonBlack,125.0);
+        playerBlackLayout.getChildren().addAll(viewRoomButtonBlack, viewItemListButtonBlack);
+        playerBlackLayout.setId("playerBlack");
         playerBlackScene = new Scene(playerBlackLayout, 800, 600);
+        playerBlackScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
 
         allPlayerScenes.add(playerRedScene);

@@ -108,6 +108,326 @@
 -fx-background-color: #010101;
 -fx-text-fill: #00FE00;
 -fx-font-family: digital-7;
+}
 
 
+
+
+#characterwindowbg{
+    -fx-background-image: url("numberwindowbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 600 400;
+    -fx-background-position: center center;
+}
+
+#model {
+    -fx-background-image: url('modelbutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#toughGuy {
+    -fx-background-image: url('toughGuyButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#gunMan {
+    -fx-background-image: url('gunManButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+
+
+#viewRoombg{
+    -fx-background-image: url("roomViewBg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 750 475;
+    -fx-background-position: center center;
+}
+
+#redgunmanbttn {
+    -fx-background-image: url('redgunmanbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#redtoughguybttn{
+    -fx-background-image: url('redtoughguybttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#redmodelbttn{
+    -fx-background-image: url('redmodelbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#yellowGunManbttn{
+    -fx-background-image: url('yellowGunManbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#yellowToughGuybttn{
+    -fx-background-image: url('yellowToughGuybttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#yellowModelbttn{
+    -fx-background-image: url('yellowModelbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blueGunManbttn{
+    -fx-background-image: url('blueGunManbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blueToughGuybttn{
+    -fx-background-image: url('blueToughGuybttn.png');
+    -fx-background-repeat: stretch
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blueModelbttn{
+    -fx-background-image: url('blueModelbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#greenGunManbttn{
+    -fx-background-image: url('greenGunManbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#greenToughGuybttn{
+    -fx-background-image: url('greenToughGuybttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#greenModelbttn{
+    -fx-background-image: url('greenModelbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#brownGunManbttn{
+    -fx-background-image: url('brownGunManbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#brownToughGuybttn{
+    -fx-background-image: url('brownToughGuybttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#brownModelbttn{
+    -fx-background-image: url('brownModelbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blackGunManbttn{
+    -fx-background-image: url('blackGunManbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blackToughGuybttn{
+    -fx-background-image: url('blackToughGuybttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blackModelbttn.png{
+    -fx-background-image: url('blackModelbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 45;
+    -fx-background-position: center center;
+    -fx-min-height: 45px;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+     -fx-max-height: 45px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#roomViewOk{
+    -fx-background-image: url('okBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 75 25;
+    -fx-background-position: center center;
+    -fx-min-height: 25px;
+    -fx-min-width: 75px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
 }

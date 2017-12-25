@@ -1,14 +1,20 @@
 package Controller;
 
 import Model.Character.GameCharacter;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,10 +27,27 @@ public class GameCharacterWindow {
         window.setMinWidth(250);
         Label label = new Label();
         label.setText(message);
+        label.setId("text");
+        label.setWrapText(true);
+        label.setPadding(new Insets(20, 10, 20, 10));
+
+
+
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 20);
+            label.setFont(f); // use this font with our label
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         Button numberOneButton = new Button("Gun Man");
+        numberOneButton.setId("gunMan");
         Button numberTwoButton = new Button("Tough Guy");
+        numberTwoButton.setId("toughGuy");
         Button numberThreeButton = new Button("Model");
+        numberThreeButton.setId("model");
 
         //Clicking will set answer and close window
         numberOneButton.setOnAction(e -> {
@@ -59,17 +82,28 @@ public class GameCharacterWindow {
 
 
         VBox layout = new VBox(10);
-        layout.getChildren().clear();
+        layout.setPadding(new Insets(10, 20, 10, 20));
 
-        layout.getChildren().add(label);
+        FlowPane numbers = new FlowPane();
+        numbers.setPadding(new Insets(10, 10, 10, 10));
+        numbers.setHgap(10);
+        numbers.setVgap(30);
+        numbers.setAlignment(Pos.CENTER);
 
         for (int i=0; i<optionsButton.size(); i++){
-            layout.getChildren().add(optionsButton.get(i));
+            numbers.getChildren().add(optionsButton.get(i));
         }
 
 
+        layout.getChildren().clear();
+        layout.getChildren().addAll(label, numbers);
+
         layout.setAlignment(Pos.CENTER);
-        Scene scene = new Scene(layout);
+        layout.setId("characterwindowbg");
+        Scene scene = new Scene(layout,600,400);
+        File f = new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
+        scene.getStylesheets().clear();
+        scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));;
         window.setScene(scene);
         window.showAndWait();
 

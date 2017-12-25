@@ -9,7 +9,7 @@
     -fx-background-image: url('play.png');
     -fx-background-repeat: stretch;
     -fx-background-radius: 6, 5;
-    -fx-background-size: 115 65;
+    -fx-background-size: 100 50;
     -fx-background-position: center center;
     -fx-min-height: 50px;
     -fx-min-width: 100px;
@@ -21,7 +21,7 @@
     -fx-background-image: url('about.png');
     -fx-background-repeat: stretch;
     -fx-background-radius: 6, 5;
-    -fx-background-size: 115 65;
+    -fx-background-size: 100 50;
     -fx-background-position: center center;
     -fx-min-height: 50px;
     -fx-min-width: 100px;
@@ -29,3 +29,188 @@
     -fx-cursor: hand;
 }
 
+#playerRed{
+    -fx-background-image: url("redbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#playerYellow{
+    -fx-background-image: url("yellowbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#playerBlue{
+    -fx-background-image: url("bluebg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#playerGreen{
+    -fx-background-image: url("greenbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#playerBrown{
+    -fx-background-image: url("brownbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#playerBlack{
+    -fx-background-image: url("blackbg.png");
+       -fx-background-repeat: stretch;
+       -fx-background-size: 800 600;
+       -fx-background-position: center center;
+}
+
+#redRmBttn{
+    -fx-background-image: url('redHmBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#redItemBttn{
+    -fx-background-image: url('reditemBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#yellowRmBttn{
+    -fx-background-image: url('yellowHmBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#yellowItemBttn{
+    -fx-background-image: url('yellowitemBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blueRmBttn{
+    -fx-background-image: url('blueHmBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blueItemBttn{
+    -fx-background-image: url('blueitemBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#greenRmBttn{
+    -fx-background-image: url('greenHmBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#greenItemBttn{
+    -fx-background-image: url('greenitemBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#brownRmBttn{
+    -fx-background-image: url('brownHmBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#brownItemBttn{
+    -fx-background-image: url('brownitemBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blackRmBttn{
+    -fx-background-image: url('blackHmBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blackItemBttn{
+    -fx-background-image: url('blackitemBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 7, 6;
+    -fx-background-size: 120 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 120px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
