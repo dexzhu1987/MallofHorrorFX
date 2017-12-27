@@ -28,7 +28,7 @@ public class numberWindow {
         try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 38);
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
             label.setFont(f); // use this font with our label
         } catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -431,3 +431,236 @@
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
+
+
+
+
+#viewitembg{
+    -fx-background-image: url("viewitembg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 670 520;
+    -fx-background-position: center center;
+}
+
+#threat{
+    -fx-background-image: url('Threat.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 140 200;
+    -fx-background-position: center center;
+    -fx-min-height: 200px;
+    -fx-min-width: 140px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#securityCamera{
+    -fx-background-image: url('securityCamera.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 140 200;
+    -fx-background-position: center center;
+    -fx-min-height: 200px;
+    -fx-min-width: 140px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#axe{
+        -fx-background-image: url('axe.png');
+        -fx-background-repeat: stretch;
+        -fx-background-radius: 6, 5;
+        -fx-background-size: 140 200;
+        -fx-background-position: center center;
+        -fx-min-height: 200px;
+        -fx-min-width: 140px;
+        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+        -fx-cursor: hand;
+ }
+
+#shotGun {
+              -fx-background-image: url('shortGun.png');
+              -fx-background-repeat: stretch;
+              -fx-background-radius: 6, 5;
+              -fx-background-size: 140 200;
+              -fx-background-position: center center;
+              -fx-min-height: 200px;
+              -fx-min-width: 140px;
+              -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+              -fx-cursor: hand;
+          }
+
+#hareware {
+              -fx-background-image: url('hardware.png');
+              -fx-background-repeat: stretch;
+              -fx-background-radius: 6, 5;
+              -fx-background-size: 140 200;
+              -fx-background-position: center center;
+              -fx-min-height: 200px;
+              -fx-min-width: 140px;
+              -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+              -fx-cursor: hand;
+          }
+
+#hidden {
+            -fx-background-image: url('hidden.png');
+            -fx-background-repeat: stretch;
+            -fx-background-radius: 6, 5;
+            -fx-background-size: 140 200;
+            -fx-background-position: center center;
+            -fx-min-height: 200px;
+            -fx-min-width: 140px;
+            -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+            -fx-cursor: hand;
+        }
+
+#sprint {
+            -fx-background-image: url('sprint.png');
+            -fx-background-repeat: stretch;
+            -fx-background-radius: 6, 5;
+            -fx-background-size: 140 200;
+            -fx-background-position: center center;
+            -fx-min-height: 200px;
+            -fx-min-width: 140px;
+            -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+            -fx-cursor: hand;
+        }
+
+
+
+
+
+#red {
+    -fx-background-image: url('redbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#yellow {
+    -fx-background-image: url('yellowbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 55;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blue {
+    -fx-background-image: url('bluebttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#green {
+    -fx-background-image: url('greenbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#brown {
+    -fx-background-image: url('brownbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#black {
+    -fx-background-image: url('blackbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 55;
+    -fx-background-position: center center;
+    -fx-min-height: 55px;
+    -fx-min-width: 55px;
+    -fx-max-width: 55px;
+    -fx-max-height: 55px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#yesbttn{
+    -fx-background-image: url('yesbttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 50;
+    -fx-background-position: center center;
+    -fx-min-height: 50px;
+    -fx-min-width: 100px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#nobttn{
+    -fx-background-image: url('nobttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 50;
+    -fx-background-position: center center;
+    -fx-min-height: 50px;
+    -fx-min-width: 100px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#simplemsgbg{
+    -fx-background-image: url("messagebg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 400 300;
+    -fx-background-position: center center;
+}
+
+#msgokbttn{
+    -fx-background-image: url('okbutton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 75 37.5;
+    -fx-background-position: center center;
+    -fx-min-height: 37.5px;
+    -fx-min-width: 75px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#multiplemsgbg{
+    -fx-background-image: url("messagebg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 600 450;
+    -fx-background-position: center center;
+}

@@ -430,9 +430,7 @@ public class Main extends Application {
     }
 
     public void viewItem(Playable player){
-       String itemList = player.getCurrentItem().toString();
-       SimpleMessageWindow.display("You have below Items:" +
-               "\n" + itemList);
+       ItemViewWindow.display(player.getCurrentItem());
     }
 
     public void availableRoomSelect() {
@@ -1054,11 +1052,16 @@ public class Main extends Application {
                 if (count == 0) {
                     SimpleMessageWindow.display("No room has fallen this turn, but more zombies are still approaching.");
                         }
+                HashSet<Playable> removedPlayers = new HashSet<>();
+                removedPlayers.clear();
                 for (Playable player : gameBroad.getPlayers()) {
                     if (player.remaingCharacter() == 0) {
-                        SimpleMessageWindow.display("Due to " + player + " has no more character, " + player + " has been removed from the Game Broad.");
-                        gameBroad.removePlayer(player);
+                        removedPlayers.add(player);
                     }
+                }
+                for (Playable player: removedPlayers){
+                    SimpleMessageWindow.display("Due to " + player + " has no more character, " + player + " has been removed from the Game Broad.");
+                    gameBroad.getPlayers().remove(player);
                 }
                 SimpleMessageWindow.display("One round has been finished, game will move back to parking search, " +
                         "\nOnce there are less than four character in the game, the one with most victory points won.");
