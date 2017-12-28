@@ -78,7 +78,7 @@ public class YesNoWindow {
         FlowPane answers = new FlowPane();
         answers.setPadding(new Insets(10, 20, 10, 20));
         answers.setHgap(100);
-        answers.setVgap(30);
+        answers.setVgap(40);
         answers.setAlignment(Pos.CENTER);
 
 

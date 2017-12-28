@@ -77,6 +77,16 @@ public class GameBroad{
         return rooms;
     }
 
+    public List<Integer> roomsOptions(Playable player){
+      List<Integer> roomOptions = new ArrayList<>();
+      for (int i=0; i<rooms.size(); i++){
+       if (!rooms.get(i).allInThisRoom(player)){
+           roomOptions.add(rooms.get(i).getRoomNum());
+       }
+      }
+      return roomOptions;
+    }
+
     public List<Playable> getPlayers() {
         return players;
     }
@@ -242,18 +252,45 @@ public class GameBroad{
     public static void main(String[] args) {
         GameBroad gameBroad = new GameBroad(2);
 
-        gameBroad.getRooms().get(0).enter(new Model());
-        gameBroad.getRooms().get(1).enter(new Model());
-        gameBroad.getRooms().get(1).enter(new Model());
-        gameBroad.getRooms().get(1).enter(new Model());
-        gameBroad.getRooms().get(2).enter(new Model());
-        gameBroad.getRooms().get(2).enter(new ToughGuy());
-        gameBroad.getRooms().get(2).enter(new ToughGuy());
+//        gameBroad.getRooms().get(0).enter(new Model());
+//        gameBroad.getRooms().get(1).enter(new Model());
+//        gameBroad.getRooms().get(1).enter(new Model());
+//        gameBroad.getRooms().get(1).enter(new Model());
+//        gameBroad.getRooms().get(2).enter(new Model());
+//        gameBroad.getRooms().get(2).enter(new ToughGuy());
+//        gameBroad.getRooms().get(2).enter(new ToughGuy());
+//
+//        gameBroad.printRooms();
+//
+//        System.out.println(gameBroad.mostPeople().getName());
+//        System.out.println(gameBroad.mostModel().getName());
+        GameCharacter c1=new Model();
+        GameCharacter c2=new GunMan();
+        GameCharacter c3=new ToughGuy();
+        GameCharacter c4=new GunMan();
+        GameCharacter c5=new Model();
+        c1.setOwnercolor("RED");
+        c2.setOwnercolor("RED");
+        c3.setOwnercolor("RED");
+        c4.setOwnercolor("YELLOW");
+        c5.setOwnercolor("YELLOW");
+        gameBroad.matchRoom(6).enter(c1);
+        gameBroad.matchRoom(5).enter(c2);
+        gameBroad.matchRoom(6).enter(c3);
+        gameBroad.matchRoom(5).enter(c4);
+        gameBroad.matchRoom(5).enter(c5);
 
-        gameBroad.printRooms();
 
-        System.out.println(gameBroad.mostPeople().getName());
-        System.out.println(gameBroad.mostModel().getName());
+
+        Playable player = new Playable();
+        for (int q = 0; q < player.getGameCharacters().size(); q++) {
+            player.getGameCharacters().get(q).setOwnercolor("RED");
+            player.getCharactersselect().get(q).setOwnercolor("RED");
+        }
+//        GameCharacter gunman = new GunMan();
+////        gunman.setOwnercolor("RED");
+////        player.removeCharacter(gunman);
+        System.out.println(gameBroad.roomsOptions(player));
 
         //launch();///
     }

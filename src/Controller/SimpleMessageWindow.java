@@ -51,7 +51,7 @@ public class SimpleMessageWindow {
             window.close();
         });
         AnchorPane.setLeftAnchor(ok,162.5);
-        AnchorPane.setBottomAnchor(ok,10.0);
+        AnchorPane.setBottomAnchor(ok,25.0);
 
 
 

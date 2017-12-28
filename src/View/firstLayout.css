@@ -214,3 +214,84 @@
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
+
+
+
+#starterItemLayout{
+    -fx-background-image: url("searchingperiod.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+ }
+
+#text{
+ -fx-background-color: #010101;
+ -fx-text-fill: #00FE00;
+ -fx-font-family: digital-7;
+ }
+
+#msgokbttn{
+     -fx-background-image: url('okbutton.png');
+     -fx-background-repeat: stretch;
+     -fx-background-radius: 6, 5;
+     -fx-background-size: 75 37.5;
+     -fx-background-position: center center;
+     -fx-min-height: 37.5px;
+     -fx-min-width: 75px;
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+     -fx-cursor: hand;
+ }
+
+#viewRoomCommon{
+     -fx-background-image: url('roomviewBttn.png');
+     -fx-background-repeat: stretch;
+     -fx-background-radius: 6, 5;
+     -fx-background-size: 75 37.5;
+     -fx-background-position: center center;
+     -fx-min-height: 37.5px;
+     -fx-min-width: 75px;
+     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+     -fx-cursor: hand;
+}
+
+#parkingSeachLayout{
+    -fx-background-image: url("searchingperiod.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+ }
+
+#chiefSelectLayout{
+    -fx-background-image: url("chiefelectionbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#movingLayout{
+    -fx-background-image: url("movingbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#zombieAttackLayout{
+    -fx-background-image: url("zomibieapproachedbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#fallenRoomLayout{
+    -fx-background-image: url("zomibieapproachedbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+
+#winnerLayout{
+    -fx-background-image: url("winnerbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}

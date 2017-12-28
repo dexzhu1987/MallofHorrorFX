@@ -121,6 +121,15 @@ public abstract class Room {
         return false;
     }
 
+    public boolean allInThisRoom(Playable player){
+        for (int i=0; i<player.getGameCharacters().size();i++){
+          if (!inTheRoom(player.getGameCharacters().get(i))){
+              return false;
+          }
+        }
+        return true;
+    }
+
     /**
      * count how many models in the room
      * @return the number of the model in the room
@@ -229,9 +238,6 @@ public abstract class Room {
         else {
             return "TIE";
         }
-
-
-
     }
 
     @Override
@@ -254,43 +260,54 @@ public abstract class Room {
         GameCharacter c2=new GunMan();
         GameCharacter c3=new ToughGuy();
         GameCharacter c4=new GunMan();
-//        GameCharacter c5=new Model();
+        GameCharacter c5=new Model();
         c1.setOwnercolor("RED");
         c2.setOwnercolor("YELLOW");
-        c3.setOwnercolor("YELLOW");
+        c3.setOwnercolor("RED");
         c4.setOwnercolor("YELLOW");
-//        c5.setOwnercolor("YELLOW");
+        c5.setOwnercolor("YELLOW");
         r1.enter(c1);
         r1.enter(c2);
         r1.enter(c3);
         r1.enter(c4);
-//        r1.enter(c5);
-        System.out.println(r1);
-        r1.resetVoteResult();
-        System.out.println(r1.getCurrentVoteResult());
-        List<String> votes = new ArrayList<>();
-        votes.add("RED");
-        votes.add("yellow");
-        votes.add("YELLOW");
-        votes.add("RED");
-        r1.voteResultAfterVote(votes);
-        System.out.println(r1.getCurrentVoteResult());
-        System.out.println(r1.winner());
-        r1.voteResultAfterItem("RED",3);
-        r1.voteResultAfterItem("YELLOW",2);
-        System.out.println(r1.getCurrentVoteResult());
-        System.out.println(r1.winner());
-        String red = "red";
-        String RED = red.toUpperCase();
-        System.out.println(RED);
-//        System.out.println(r1.modelNumber());
-//        r1.zombieApproached();
-//        r1.zombieApproached();
-//        r1.zombieApproached();
-//        r1.zombieApproached();
-//
-//
+        r1.enter(c5);
 //        System.out.println(r1);
-//        System.out.println(r1.isFallen());
+//        r1.resetVoteResult();
+//        System.out.println(r1.getCurrentVoteResult());
+//        List<String> votes = new ArrayList<>();
+//        votes.add("RED");
+//        votes.add("yellow");
+//        votes.add("YELLOW");
+//        votes.add("RED");
+//        r1.voteResultAfterVote(votes);
+//        System.out.println(r1.getCurrentVoteResult());
+//        System.out.println(r1.winner());
+//        r1.voteResultAfterItem("RED",3);
+//        r1.voteResultAfterItem("YELLOW",2);
+//        System.out.println(r1.getCurrentVoteResult());
+//        System.out.println(r1.winner());
+//        String red = "red";
+//        String RED = red.toUpperCase();
+//        System.out.println(RED);
+////        System.out.println(r1.modelNumber());
+////        r1.zombieApproached();
+////        r1.zombieApproached();
+////        r1.zombieApproached();
+////        r1.zombieApproached();
+////
+////
+////        System.out.println(r1);
+////        System.out.println(r1.isFallen());
+        Playable player = new Playable();
+        for (int q = 0; q < player.getGameCharacters().size(); q++) {
+            player.getGameCharacters().get(q).setOwnercolor("RED");
+            player.getCharactersselect().get(q).setOwnercolor("RED");
+        }
+        GameCharacter gunman = new GunMan();
+        gunman.setOwnercolor("RED");
+        player.removeCharacter(gunman);
+        System.out.println(player.getGameCharacters());
+        System.out.println(r1.allInThisRoom(player));
+
     }
 }

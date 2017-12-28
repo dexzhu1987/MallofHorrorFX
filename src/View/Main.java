@@ -14,11 +14,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Font;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.BackgroundImage;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.List;
 
@@ -45,6 +50,8 @@ public class Main extends Application {
     final static List<Scene> actualPlayerScenes = new ArrayList<>();
     List<Button> allOkButtons = new ArrayList<>();
     final static List<Button> actualOkButton = new ArrayList<>();
+    final static List<String> colors = new ArrayList<>();
+    final static List<String> actualcolors= new ArrayList<>();
 
     ;
 
@@ -74,6 +81,7 @@ public class Main extends Application {
             for (int i = 0; i < gameBroad.getPlayersNumber(); i++) {
                 actualPlayerScenes.add(allPlayerScenes.get(i));
                 actualOkButton.add(allOkButtons.get(i));
+                actualcolors.add(colors.get(i));
             }
         });
         startGame.setId("startGame");
@@ -109,7 +117,7 @@ public class Main extends Application {
         primaryStage.setScene(firstscene);
         primaryStage.show();
 
-        Button ok1 = new Button(    "OK");
+        Button ok1 = new Button(    "");
         ok1.setOnAction(event -> {
             playerselectRoom();
         });
@@ -261,6 +269,13 @@ public class Main extends Application {
         allPlayerScenes.add(playerBrownScene);
         allPlayerScenes.add(playerBlackScene);
 
+        colors.add("Red");
+        colors.add("Yellow");
+        colors.add("Blue");
+        colors.add("Green");
+        colors.add("Brown");
+        colors.add("Black");
+
         allOkButtons.add(okButtonRed);
         allOkButtons.add(okButtonYellow);
         allOkButtons.add(okButtonBlue);
@@ -269,18 +284,39 @@ public class Main extends Application {
         allOkButtons.add(okButtonBlack);
 
         //getStarterItemScene;
+        AnchorPane starterItemLayout = new AnchorPane();
         Label starterItemLabel = new Label();
-        starterItemLabel.setText("Each player gonna have one starter Item, and the information should be kept to the player himself/herself, please click Ok to proceed");
+        starterItemLabel.setText("Each player gonna have one starter Item, and the information should be kept to the player himself/herself. Please click CONTINUE to proceed");
+        starterItemLabel.setId("text");
+        starterItemLabel.setWrapText(true);
+        starterItemLabel.setPadding(new Insets(30, 10, 30, 10));
+        AnchorPane.setTopAnchor(starterItemLabel,100.0);
+        AnchorPane.setLeftAnchor(starterItemLabel,70.0);
+        AnchorPane.setRightAnchor(starterItemLabel,70.0);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            starterItemLabel.setFont(f); // use this font with our label
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         Button ok2 = new Button();
-        ok2.setText("OK");
+        ok2.setText("");
+        ok2.setId("msgokbttn");
         ok2.setOnAction(event -> {
             eachplayerGetStarterItem();
         });
-        VBox starterItemLayout = new VBox();
+        AnchorPane.setLeftAnchor(ok2,362.5);
+        AnchorPane.setBottomAnchor(ok2,35.0);
         starterItemLayout.getChildren().addAll(starterItemLabel, ok2);
+        starterItemLayout.setId("starterItemLayout");
         getStartItemScene = new Scene(starterItemLayout, WIDTH, HEIGHT);
+        getStartItemScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
         //ParkingSearchScene;
+        AnchorPane parkingSeachLayout = new AnchorPane();
+
         Label parkingSeachLabel = new Label();
         parkingSeachLabel.setText("Welcome to a new round." +
                 "\nWe will proceed parking seach first, " +
@@ -289,107 +325,248 @@ public class Main extends Application {
                 " three items, " +
                 "\nhe/she will be able to keep one item, and give one item to the other player, and return one back to the Parking. " +
                 "\n(Note: if the vote result in TIE, no searching will perform) " +
-                "\nIf you understand, please click Ok to proceed.");
+                "\nIf you understand, please click CONTINUE to proceed.");
+
+        parkingSeachLabel.setId("text");
+        parkingSeachLabel.setWrapText(true);
+        parkingSeachLabel.setPadding(new Insets(30, 10, 30, 10));
+        AnchorPane.setTopAnchor(parkingSeachLabel,100.0);
+        AnchorPane.setLeftAnchor(parkingSeachLabel,70.0);
+        AnchorPane.setRightAnchor(parkingSeachLabel,70.0);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            parkingSeachLabel.setFont(f); // use this font with our label
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         Button viewRoomParking = new Button();
-        viewRoomParking.setText("Room");
+        viewRoomParking.setText("");
+
+        viewRoomParking.setId("viewRoomCommon");
+        AnchorPane.setLeftAnchor(viewRoomParking,150.0);
+        AnchorPane.setBottomAnchor(viewRoomParking,35.0);
+
         viewRoomParking.setOnAction(event -> {
             viewRooms();
         });
         Button ok3 = new Button();
-        ok3.setText("OK");
+        ok3.setText("");
+
+        ok3.setId("msgokbttn");
+        AnchorPane.setRightAnchor(ok3,150.0);
+        AnchorPane.setBottomAnchor(ok3,35.0);
+
         ok3.setOnAction(event -> {
             searchStart();
         });
-        VBox parkingSeachLayout = new VBox();
         parkingSeachLayout.getChildren().addAll(parkingSeachLabel,viewRoomParking, ok3);
+
+        parkingSeachLayout.setId("parkingSeachLayout");
+
         parkingSearchScene = new Scene(parkingSeachLayout, WIDTH, HEIGHT);
+
+        parkingSearchScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
 
         //ChiefSelectScene
+        AnchorPane chiefSelectLayout = new AnchorPane();
         Label chiefSelectLabel = new Label();
         chiefSelectLabel.setText("Now we proceed to chief selection, players that in ROOM No.5 SecurityHQ will vote to decide who will be the chief, The chief will be able to look at the cameras and " +
                 "find out where the zombies are coming (only chief has this information." +
                 "\n(Note: if the vote result in TIE, no chief will be elected) " +
-                "\nIf you understand, please click Ok to proceed.");
+                "\nIf you understand, please click CONTINUE to proceed.");
+        chiefSelectLabel.setId("text");
+        chiefSelectLabel.setWrapText(true);
+        chiefSelectLabel.setPadding(new Insets(30, 10, 30, 10));
+        AnchorPane.setTopAnchor(chiefSelectLabel,100.0);
+        AnchorPane.setLeftAnchor(chiefSelectLabel,70.0);
+        AnchorPane.setRightAnchor(chiefSelectLabel,70.0);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            chiefSelectLabel.setFont(f); // use this font with our label
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         Button viewRoomButtonChief = new Button();
-        viewRoomButtonChief.setText("Room");
+        viewRoomButtonChief.setText("");
+        viewRoomButtonChief.setId("viewRoomCommon");
+        AnchorPane.setLeftAnchor(viewRoomButtonChief,150.0);
+        AnchorPane.setBottomAnchor(viewRoomButtonChief,35.0);
+        viewRoomButtonChief.setText("");
         viewRoomButtonChief.setOnAction(event -> {
             viewRooms();
         });
         Button ok4 = new Button();
-        ok4.setText("OK");
+        ok4.setText("");
+        ok4.setId("msgokbttn");
+        AnchorPane.setRightAnchor(ok4,150.0);
+        AnchorPane.setBottomAnchor(ok4,35.0);
         ok4.setOnAction(event -> {
             chiefSelect();
         });
-        VBox chiefSelectLayout = new VBox();
         chiefSelectLayout.getChildren().addAll(chiefSelectLabel,viewRoomButtonChief, ok4);
+        chiefSelectLayout.setId("chiefSelectLayout");
         chiefSelectScene = new Scene(chiefSelectLayout, WIDTH,HEIGHT);
+        chiefSelectScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
         //ChracterMovingScene
+        AnchorPane movingLayout = new AnchorPane();
         Label movingLabel = new Label();
         movingLabel.setText("The chief will at the result now. If no chief is eleced, a ramdom player will start the turn first");
+        movingLabel.setId("text");
+        movingLabel.setWrapText(true);
+        movingLabel.setPadding(new Insets(30, 10, 30, 10));
+        AnchorPane.setTopAnchor(movingLabel,100.0);
+        AnchorPane.setLeftAnchor(movingLabel,70.0);
+        AnchorPane.setRightAnchor(movingLabel,70.0);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            movingLabel.setFont(f); // use this font with our label
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         Button viewRoomMoving = new Button();
-        viewRoomMoving.setText("Room");
+        viewRoomMoving.setText("");
+        viewRoomMoving.setId("viewRoomCommon");
+        AnchorPane.setLeftAnchor(viewRoomMoving,150.0);
+        AnchorPane.setBottomAnchor(viewRoomMoving,35.0);
         viewRoomMoving.setOnAction(event -> {
             viewRooms();
         });
         Button ok5 = new Button();
-        ok5.setText("OK");
-        VBox movingLayout = new VBox();
+        ok5.setText("");
+        ok5.setId("msgokbttn");
+        AnchorPane.setRightAnchor(ok5,150.0);
+        AnchorPane.setBottomAnchor(ok5,35.0);
         movingLayout.getChildren().addAll(movingLabel,viewRoomMoving, ok5);
+        movingLayout.setId("movingLayout");
         movingScene = new Scene(movingLayout,WIDTH,HEIGHT);
+        movingScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
         //ZombieAttackScene
+        AnchorPane zombieAttackLayout = new AnchorPane();
         Label zombieAttackLabel = new Label();
         zombieAttackLabel.setText("Now we will reveal where the zomies will go to ");
+        zombieAttackLabel.setId("text");
+        zombieAttackLabel.setWrapText(true);
+        zombieAttackLabel.setPadding(new Insets(30, 10, 30, 10));
+        AnchorPane.setTopAnchor(zombieAttackLabel,100.0);
+        AnchorPane.setLeftAnchor(zombieAttackLabel,70.0);
+        AnchorPane.setRightAnchor(zombieAttackLabel,70.0);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            zombieAttackLabel.setFont(f); // use this font with our label
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         Button viewRoomAttack = new Button();
-        viewRoomAttack.setText("Room");
+        viewRoomAttack.setText("");
+        viewRoomAttack.setId("viewRoomCommon");
+        AnchorPane.setLeftAnchor(viewRoomAttack,150.0);
+        AnchorPane.setBottomAnchor(viewRoomAttack,35.0);
         viewRoomAttack.setOnAction(event -> {
             viewRooms();
         });
         Button ok6 = new Button();
-        ok6.setText("OK");
-        VBox zombieAttackLayout = new VBox();
+        ok6.setText("");
+        ok6.setId("msgokbttn");
+        AnchorPane.setRightAnchor(ok6,150.0);
+        AnchorPane.setBottomAnchor(ok6,35.0);
         zombieAttackLayout.getChildren().addAll(zombieAttackLabel,viewRoomAttack, ok6);
+        zombieAttackLayout.setId("zombieAttackLayout");
         zombieAttackScene = new Scene(zombieAttackLayout,WIDTH,HEIGHT);
+        zombieAttackScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
 
         //fallenRoomScene
+        AnchorPane fallenRoomLayout = new AnchorPane();
         Label fallenRoomLabel =  new Label();
         fallenRoomLabel.setText("--------------------Zombies attacked ----------------------"+
                 "\nFor each room, when characters' strength is less than zombies number, zombies attacked successfully." +
                 "\nIf zombies attacked successfully, one character will be eaten by the zombies"+
                 "\nNote: Parking has no defends, so as long as there is zombies there, one character will be eaten(and no item except thread is allowed)"+
                 "\nNote: Supermarket has too many entraces (weak defends), so as long as there are more than four zombies there, one character will be eaten (less than four: the same rule as the other room"+
-        "\nIf you have understood, please type OK to move to the next step");
+        "\nIf you have understood, please type CONTINUE to move to the next step");
+        fallenRoomLabel.setId("text");
+        fallenRoomLabel.setWrapText(true);
+        fallenRoomLabel.setPadding(new Insets(30, 10, 30, 10));
+        AnchorPane.setTopAnchor(fallenRoomLabel,100.0);
+        AnchorPane.setLeftAnchor(fallenRoomLabel,70.0);
+        AnchorPane.setRightAnchor(fallenRoomLabel,70.0);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            fallenRoomLabel.setFont(f); // use this font with our label
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         Button viewRoomFallen = new Button();
-        viewRoomFallen.setText("Room");
+        viewRoomFallen.setText("");
+        viewRoomFallen.setId("viewRoomCommon");
+        AnchorPane.setLeftAnchor(viewRoomFallen,150.0);
+        AnchorPane.setBottomAnchor(viewRoomFallen,35.0);
         viewRoomFallen.setOnAction(event -> {
             viewRooms();
         });
-        Button ok7 = new Button("OK");
+        Button ok7 = new Button("");
+        ok7.setId("msgokbttn");
+        AnchorPane.setRightAnchor(ok7,150.0);
+        AnchorPane.setBottomAnchor(ok7,35.0);
         ok7.setOnAction(event -> {
             zombieAttacked();
         });
-        VBox fallenRoomLayout = new VBox();
         fallenRoomLayout.getChildren().addAll(fallenRoomLabel,viewRoomFallen, ok7);
+        fallenRoomLayout.setId("fallenRoomLayout");
         fallenRoomScene = new Scene(fallenRoomLayout,WIDTH,HEIGHT);
+        fallenRoomScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
 
+        AnchorPane winnerLayout = new AnchorPane();
         Label winner = new Label();
         winner.setText("After a long ... we have only four survivor in the mall"+
         "\nClick Ok to find out who's the winner");
-        Button viewRoomWinner = new Button("Room");
+        winner.setId("text");
+        winner.setWrapText(true);
+        winner.setPadding(new Insets(30, 10, 30, 10));
+        AnchorPane.setTopAnchor(winner,100.0);
+        AnchorPane.setLeftAnchor(winner,70.0);
+        AnchorPane.setRightAnchor(winner,70.0);
+        try {
+            // load a custom font from a specific location (change path!)
+            // 12 is the size to use
+            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            winner.setFont(f); // use this font with our label
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Button viewRoomWinner = new Button("");
+        viewRoomWinner.setId("viewRoomCommon");
+        AnchorPane.setLeftAnchor(viewRoomWinner,150.0);
+        AnchorPane.setBottomAnchor(viewRoomWinner,35.0);
         viewRoomWinner.setOnAction(event -> {
             viewRooms();
         });
-        Button ok8 = new Button("OK");
+        Button ok8 = new Button("");
+        ok8.setId("msgokbttn");
+        AnchorPane.setRightAnchor(ok8,150.0);
+        AnchorPane.setBottomAnchor(ok8,35.0);
         ok8.setOnAction(event -> {
             whosTheWinner();
         });
-        VBox winnerLayout = new VBox();
         winnerLayout.getChildren().addAll(winner, ok8);
+        winnerLayout.setId("winnerLayout");
         winnerScene = new Scene(winnerLayout, WIDTH,HEIGHT);
+        winnerScene.getStylesheets().add(this.getClass().getResource("firstLayout.css").toExternalForm());
 
     }
 
@@ -449,7 +626,7 @@ public class Main extends Application {
                 do {
                     yes = true;
                     selectedRoom = numberWindow.display(dices, gameBroad.getPlayers().get(q) + " get " + pairofDice.getDieOneFace() + " and "
-                            + pairofDice.getDieTwoFace() + " please select your which room you want to go to");
+                            + pairofDice.getDieTwoFace() + " please select which room you want to go to");
                     if (gameBroad.matchRoom(selectedRoom).isFull()) {
                         yes = YesNoWindow.display(gameBroad.matchRoom(selectedRoom).getName() +
                                 " is Full, are you sure? (Your character will be asigned to Parking instead)");
@@ -481,7 +658,7 @@ public class Main extends Application {
         gameBroad.getItemDeck().shuffle();
         for (int i = 0; i < gameBroad.getPlayers().size(); i++) {
             mainWindow.setScene(actualPlayerScenes.get(i));
-            SimpleMessageWindow.display(gameBroad.getPlayers().get(i) + " have received an starter item, please click Ok to see it (Keep it to yourself)");
+            SimpleMessageWindow.display(gameBroad.getPlayers().get(i) + " have received an starter item, please click CONTINUE to see it (Keep it to yourself)");
             Item starterItem = gameBroad.getItemDeck().deal();
             gameBroad.getPlayers().get(i).getItem(starterItem);
             SimpleMessageWindow.display("You have received " + starterItem + ". It has been received added to your item list");
@@ -499,14 +676,14 @@ public class Main extends Application {
             for (Playable player : searchteam) {
                 searchTeam.add(player);
             }
-            SimpleMessageWindow.display(searchteam + " please vote who can search");
+            SimpleMessageWindow.display(searchteam + " is/are in the parking");
             List<Scene> playersScenes = matchThePlayerScenes(searchTeam);
             List<String> votes = new ArrayList<>();
             String vote = "";
             for (int i = 0; i < searchteam.size(); i++) {
                 mainWindow.setScene(playersScenes.get(i));
                 Playable teammember = searchTeam.get(i);
-                vote = ChoosingColorWindow.display(searchTeam, teammember + " please vote color in the list:" + searchteam);
+                vote = ChoosingColorWindow.display(searchTeam, teammember + " please vote who can search");
                 votes.add(teammember.getColor());
                 votes.add(vote);
             }
@@ -562,7 +739,7 @@ public class Main extends Application {
                 String winnercolor = gameBroad.matchRoom(4).winner();
                 SimpleMessageWindow.display("Winner is " + gameBroad.matchPlayer(winnercolor));
                 SimpleMessageWindow.display(gameBroad.matchPlayer(winnercolor) + " searched the parking and " +
-                            "found below items(only winning player can see the result and arrange items),please type OK to move to next step)");
+                            "found below items(only winning player can see the result and arrange items),please click CONTINUE to move to next step)");
                 gameBroad.getItemDeck().shuffle();
                 Item item1 = gameBroad.getItemDeck().deal();
                 Item item2 = gameBroad.getItemDeck().deal();
@@ -577,8 +754,13 @@ public class Main extends Application {
                 options.add(3);
                 int itemselect = numberWindow.display(options, "You get 1." + itemtemplist.get(0) + ", 2." + itemtemplist.get(1) + " and 3." +
                         itemtemplist.get(2) + ". Please select the item you want to keep (1,2,or 3)");
-                SimpleMessageWindow.display("You get " + itemtemplist.get(itemselect - 1));
-                gameBroad.matchPlayer(winnercolor).getItem(itemtemplist.get(itemselect - 1));
+                if (gameBroad.matchPlayer(winnercolor).getCurrentItem().size()<6){
+                    SimpleMessageWindow.display("You get " + itemtemplist.get(itemselect - 1));
+                    gameBroad.matchPlayer(winnercolor).getItem(itemtemplist.get(itemselect - 1));
+                }
+                else {
+                    SimpleMessageWindow.display("You get " + itemtemplist.get(itemselect - 1) + ". However, due to your bag is full, you cannot carry more items.(Your throw the item on the ground)");
+                }
                 itemtemplist.remove(itemselect - 1);
                 options.remove(2);
                 int itemgiveselect =numberWindow.display(options,  "Remaining items: " + " 1." + itemtemplist.get(0) + ", 2." + itemtemplist.get(1)
@@ -588,16 +770,22 @@ public class Main extends Application {
                 for (Playable other: others){
                     othersList.add(other);
                 }
-               String givecolor =ChoosingColorWindow.display(othersList, "Please select who you want give in the List: " + others);
+                 String givecolor =ChoosingColorWindow.display(othersList, "Please select who you want give in the List: " + others);
                 Item giveItem = itemtemplist.get(itemgiveselect - 1);
-                gameBroad.matchPlayer(givecolor).getItem(itemtemplist.get(itemgiveselect - 1));
+                if (gameBroad.matchPlayer(givecolor).getCurrentItem().size()<6){
+                    gameBroad.matchPlayer(givecolor).getItem(itemtemplist.get(itemgiveselect - 1));
+                }
                 itemtemplist.remove(itemgiveselect - 1);
                 gameBroad.getItemDeck().addBackItem(itemtemplist.get(0));
                 String ok1 = "";
                 SimpleMessageWindow.display(gameBroad.matchPlayer(givecolor) + " you have received an item from " + gameBroad.matchPlayer(winnercolor)
-                    + " Pleaese click OK to view the item (keep it to yourself)");
-                SimpleMessageWindow.display("You have received " + giveItem);
-                SimpleMessageWindow.display("Other players will be joining the game now, type OK to continue");
+                    + " Pleaese click CONTINUE to view the item (keep it to yourself)");
+                if (gameBroad.matchPlayer(givecolor).getCurrentItem().size()<6){
+                    SimpleMessageWindow.display("You have received " + giveItem);
+                } else {
+                    SimpleMessageWindow.display("You should have received " + giveItem + ". Howver, due to your bag is full. You cannot carry more items.");
+                }
+                SimpleMessageWindow.display("Other players will be joining the game now, please click CONTINUE");
                 SimpleMessageWindow.display("Player " + givecolor + " get an item from player " + winnercolor);
             }
         }
@@ -617,14 +805,14 @@ public class Main extends Application {
             for (Playable player : team) {
                 chiefTeam.add(player);
             }
-            SimpleMessageWindow.display(chiefTeam + " please vote who will be the chief");
+            SimpleMessageWindow.display(chiefTeam + " are in the SecurityHQ");
             List<Scene> playersScenes = matchThePlayerScenes(chiefTeam);
             List<String> votes = new ArrayList<>();
             String vote = "";
             for (int i = 0; i < chiefTeam.size(); i++) {
                 mainWindow.setScene(playersScenes.get(i));
                 Playable teammember = chiefTeam.get(i);
-                vote = ChoosingColorWindow.display(chiefTeam, teammember + " please vote color in the list:" + chiefTeam);
+                vote = ChoosingColorWindow.display(chiefTeam, teammember + " please vote who will be the chief." );
                 votes.add(teammember.getColor());
                 votes.add(vote);
             }
@@ -712,13 +900,7 @@ public class Main extends Application {
                     MultiMessagesWindow.display(messages, "Zombies will be approaching:");
                 }
             }
-            List <Integer> options = new ArrayList<>();
-            options.add(1);
-            options.add(2);
-            options.add(3);
-            options.add(4);
-            options.add(5);
-            options.add(6);
+            List <Integer> options = gameBroad.roomsOptions(startActPlayer);
             startplayerroomnumber = numberWindow.display(options,startActPlayer + " please choose your room number");
         } else {
             String winnercolor = gameBroad.matchRoom(currentVotingRoomNumber).winner();
@@ -727,16 +909,10 @@ public class Main extends Application {
                         "found zombies are approaching to rooms(only winning player can see the result),please click OK to move to next step)");
             List<String> messages = new ArrayList<>();
             messages.add(dices.toString());
-            messages.add("If you have remember the results, please type OK to continue");
+            messages.add("If you have remember the results, please click CONTINUE");
             MultiMessagesWindow.display(messages,"Each number means the correspoding room will have one zombie");
             mainWindow.setScene(actualPlayerScenes.get(startplayer));
-            List <Integer> options = new ArrayList<>();
-            options.add(1);
-            options.add(2);
-            options.add(3);
-            options.add(4);
-            options.add(5);
-            options.add(6);
+            List <Integer> options = gameBroad.roomsOptions(gameBroad.matchPlayer(winnercolor));
             startplayerroomnumber = numberWindow.display(options,"Please choose the room number that you will go to" );
             SimpleMessageWindow.display("After reviewing the monitor, the chief will go to Room " + startplayerroomnumber);
         }
@@ -768,26 +944,14 @@ public class Main extends Application {
         //first half of players
         for (int i = startplayer+1; i<gameBroad.getPlayers().size(); i++){
             mainWindow.setScene(actualPlayerScenes.get(i));
-            List <Integer> options = new ArrayList<>();
-            options.add(1);
-            options.add(2);
-            options.add(3);
-            options.add(4);
-            options.add(5);
-            options.add(6);
+            List <Integer> options = gameBroad.roomsOptions(gameBroad.getPlayers().get(i));
             int roompicked = numberWindow.display(options,gameBroad.getPlayers().get(i) + " please choose your room number");
             roomspicked.add(roompicked);
         }
         //other half players
         for (int i = 0; i<startplayer; i++){
             mainWindow.setScene(actualPlayerScenes.get(i));
-            List <Integer> options = new ArrayList<>();
-            options.add(1);
-            options.add(2);
-            options.add(3);
-            options.add(4);
-            options.add(5);
-            options.add(6);
+            List <Integer> options = gameBroad.roomsOptions(gameBroad.getPlayers().get(i));
             int roompicked = numberWindow.display(options,gameBroad.getPlayers().get(i) + " please choose your room number");
             roomspicked.add(roompicked);
         }
@@ -857,10 +1021,9 @@ public class Main extends Application {
         }
        mainWindow.setScene(zombieAttackScene);
        List<String> messages = new ArrayList<>();
-       messages.add("Zombies will be approaching rooms ");
-       messages.add("Dices result" + dices);
-       messages.add("Each number means the correspoding room will have one zombie");
-       messages.add("As a result, zomebie are entering");
+       messages.add("Zombies will be approaching rooms number: ");
+       messages.add(" " + dices);
+       messages.add("As a result");
         for (int dice: dices){
             gameBroad.matchRoom(dice).zombieApproached();
             messages.add("A zombie has approached " + gameBroad.matchRoom(dice).getName() );
@@ -876,7 +1039,7 @@ public class Main extends Application {
             gameBroad.mostPeople().zombieApproached();
             messages2.add("As a result, one zombie has approached " + gameBroad.mostPeople().getName());
         }
-        messages2.add("---------------------------------------------------------------------------------------------------------");
+        messages2.add("----------------------------------------");
         messages2.add("For the room with most models (they are more likely to scream), one more zombie will attracted to there");
         if (gameBroad.mostModel().getRoomNum()==7){
             messages2.add("Result is TIE, no zombie will be attacted");
@@ -906,14 +1069,7 @@ public class Main extends Application {
                 SimpleMessageWindow.display(fallenRoom.getName() + " has fallen, one character will be eaten");
                 //using items to save the room
                 if (teamHasOtherItems(playersInTheRoom) && fallenRoom.getRoomNum() != 4) {
-                    boolean usedItemTeam = YesNoWindow.display("This result can change by using below items, anyone in the room want to use Items?(y/n)" +
-                            "\n---------------------------------------------------------------" +
-                            "\nAxe: kill one zombie" +
-                            "\nShortGun: kill two zombies" +
-                            "\nHardware: add one defend for a turn" +
-                            "\nSprint: escape to the other room" +
-                            "\nHidden: your character will not be killed nor can joined the voting" +
-                            "\n---------------------------------------------------------------");
+                    boolean usedItemTeam = YesNoWindow.display("This result can change by using below items, anyone in the room want to use Items?(y/n)");
                     if (usedItemTeam) {
                         boolean noMore;
                         do {
@@ -959,7 +1115,7 @@ public class Main extends Application {
                     for (int x = 0; x < newPlayersInTheRoomList.size(); x++) {
                         Playable player = newPlayersInTheRoomList.get(x);
                         mainWindow.setScene(newPlayerScenes.get(x));
-                        vote = ChoosingColorWindow.display(newPlayersInTheRoomList, player + " please vote whose character will be eaten, In color the list:" + newPlayersInTheRoomList);
+                        vote = ChoosingColorWindow.display(newPlayersInTheRoomList, player + " please vote whose character will be eaten");
                         votes.add(player.getColor());
                         votes.add(vote);
                     }
@@ -1053,15 +1209,24 @@ public class Main extends Application {
                     SimpleMessageWindow.display("No room has fallen this turn, but more zombies are still approaching.");
                         }
                 HashSet<Playable> removedPlayers = new HashSet<>();
+                HashSet<Integer> removedScenes = new HashSet<>();
                 removedPlayers.clear();
-                for (Playable player : gameBroad.getPlayers()) {
+                removedScenes.clear();
+                for (int i=0; i<gameBroad.getPlayers().size();i++) {
+                    Playable player = gameBroad.getPlayers().get(i);
                     if (player.remaingCharacter() == 0) {
                         removedPlayers.add(player);
+                        removedScenes.add(i);
                     }
                 }
                 for (Playable player: removedPlayers){
                     SimpleMessageWindow.display("Due to " + player + " has no more character, " + player + " has been removed from the Game Broad.");
                     gameBroad.getPlayers().remove(player);
+                }
+                for (Integer num: removedScenes){
+                    int index = num;
+                    actualPlayerScenes.remove(index);
+                    actualcolors.remove(index);
                 }
                 SimpleMessageWindow.display("One round has been finished, game will move back to parking search, " +
                         "\nOnce there are less than four character in the game, the one with most victory points won.");
@@ -1093,7 +1258,7 @@ public class Main extends Application {
         }
         else {
             Playable winner  = gameBroad.getPlayers().get(q);
-            SimpleMessageWindow.display("Congratulations! Winner is " + winner + " with a victory points" + mostPoints);
+            SimpleMessageWindow.display("Congratulations! Winner is " + winner + " with a victory points: " + mostPoints);
         }
     }
 
@@ -1170,16 +1335,9 @@ public class Main extends Application {
 
     public static List<Scene> matchThePlayerScenes(List<Playable> players) {
         List<Scene> playerScenes = new ArrayList<>();
-        List<String> colors = new ArrayList<>();
-        colors.add("Red");
-        colors.add("Yellow");
-        colors.add("Blue");
-        colors.add("Green");
-        colors.add("Brown");
-        colors.add("Black");
         for (int i = 0; i < players.size(); i++) {
-            for (int q = 0; q < colors.size(); q++) {
-                if (players.get(i).getColor().equalsIgnoreCase(colors.get(q))) {
+            for (int q = 0; q < actualcolors.size(); q++) {
+                if (players.get(i).getColor().equalsIgnoreCase(actualcolors.get(q))) {
                     playerScenes.add(actualPlayerScenes.get(q));
                 }
             }
