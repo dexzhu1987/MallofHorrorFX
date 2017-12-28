@@ -21,7 +21,6 @@ public class Axe extends Item {
         int orignalZombieNumber =room.getCurrentZombienumber();
         room.zombieKilled();
         messages.add("Zombies number has dropped from " + orignalZombieNumber + " to "  + room.getCurrentZombienumber());
-        messages.add("------------------------------------------------------------------------------");
-        MultiMessagesWindow.display(messages,  "-----------------------------Axe------------------------------------------");
+        MultiMessagesWindow.display(messages,  "----------------------Axe----------------------");
     }
 }

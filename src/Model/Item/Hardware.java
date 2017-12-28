@@ -20,8 +20,7 @@ public class Hardware extends Item {
         room.zombieKilled();
         messages.add("A zomie has temporarly moved to somewhere else");
         affectedRoomNumber = room.getRoomNum();
-        messages.add("------------------------------------------------------------------------------");
-        MultiMessagesWindow.display(messages,"--------------------------------Hareware-------------------------------------");
+        MultiMessagesWindow.display(messages,"-------------------------Hareware----------------------------");
     }
 
     public void afterEffect(GameBroad gameBroad){
@@ -29,8 +28,7 @@ public class Hardware extends Item {
         messages.add("Due to Hareware has been used, aftereffect is triggerd");
         gameBroad.matchRoom(affectedRoomNumber).zombieApproached();
         messages.add("The zombie left has returned");
-        messages.add("------------------------------------------------------------------------------");
-        MultiMessagesWindow.display(messages,"------------------------------Hareware----------------------------------------");
+        MultiMessagesWindow.display(messages,"------------------------Hareware------------------------------");
     }
 
 

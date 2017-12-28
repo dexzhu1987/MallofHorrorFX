@@ -40,10 +40,6 @@ public class ItemViewWindow {
 
             AnchorPane layout = new AnchorPane();
 
-            FlowPane flowPane = new FlowPane();
-            flowPane.setPadding(new Insets(90, 10, 10, 10));
-            flowPane.setVgap(5);
-            flowPane.setHgap(10);
 
 
             Button threat = new Button();
@@ -195,37 +191,49 @@ public class ItemViewWindow {
                     case 6:
                         for (int i=0; i<itemsBttns.size(); i++){
                             if (items.get(5).getName().equalsIgnoreCase(itemsBttns.get(i).getId())){
-                                flowPane.getChildren().add(itemsBttns.get(i));
+                                layout.getChildren().add(itemsBttns.get(i));
+                                AnchorPane.setTopAnchor(itemsBttns.get(i),295.0);
+                                AnchorPane.setLeftAnchor(itemsBttns.get(i),160.0);
                             }
                         }
                     case 5:
                         for (int i=0; i<itemsBttns.size(); i++){
                             if (items.get(4).getName().equalsIgnoreCase(itemsBttns2.get(i).getId())){
-                                flowPane.getChildren().add(itemsBttns2.get(i));
+                                layout.getChildren().add(itemsBttns2.get(i));
+                                AnchorPane.setTopAnchor(itemsBttns2.get(i),295.0);
+                                AnchorPane.setLeftAnchor(itemsBttns2.get(i),10.0);
                             }
                         }
                     case 4:
                         for (int i=0; i<itemsBttns.size(); i++){
                             if (items.get(3).getName().equalsIgnoreCase(itemsBttns3.get(i).getId())){
-                                flowPane.getChildren().add(itemsBttns3.get(i));
+                                layout.getChildren().add(itemsBttns3.get(i));
+                                AnchorPane.setTopAnchor(itemsBttns3.get(i),90.0);
+                                AnchorPane.setLeftAnchor(itemsBttns3.get(i),460.0);
                             }
                         }
                     case 3:
                         for (int i=0; i<itemsBttns.size(); i++){
                             if (items.get(2).getName().equalsIgnoreCase(itemsBttns4.get(i).getId())){
-                                flowPane.getChildren().add(itemsBttns4.get(i));
+                                layout.getChildren().add(itemsBttns4.get(i));
+                                AnchorPane.setTopAnchor(itemsBttns4.get(i),90.0);
+                                AnchorPane.setLeftAnchor(itemsBttns4.get(i),310.0);
                             }
                         }
                     case 2:
                         for (int i=0; i<itemsBttns.size(); i++){
                             if (items.get(1).getName().equalsIgnoreCase(itemsBttns5.get(i).getId())){
-                                flowPane.getChildren().add(itemsBttns5.get(i));
+                                layout.getChildren().add(itemsBttns5.get(i));
+                                AnchorPane.setTopAnchor(itemsBttns5.get(i),90.0);
+                                AnchorPane.setLeftAnchor(itemsBttns5.get(i),160.0);
                             }
                         }
                     case 1:
                         for (int i=0; i<itemsBttns.size(); i++){
                             if (items.get(0).getName().equalsIgnoreCase(itemsBttns6.get(i).getId())){
-                                flowPane.getChildren().add(itemsBttns6.get(i));
+                                layout.getChildren().add(itemsBttns6.get(i));
+                                AnchorPane.setTopAnchor(itemsBttns6.get(i),90.0);
+                                AnchorPane.setLeftAnchor(itemsBttns6.get(i),10.0);
                             }
                         }
                 }
@@ -242,7 +250,7 @@ public class ItemViewWindow {
             AnchorPane.setLeftAnchor(ok,292.5);
             AnchorPane.setBottomAnchor(ok,20.0);
 
-            layout.getChildren().addAll(flowPane,ok);
+            layout.getChildren().addAll(ok);
             layout.setId("viewitembg");
             Scene scene = new Scene(layout,670,520);
             File f = new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\numberwindow.css");

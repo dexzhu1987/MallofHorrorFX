@@ -22,7 +22,7 @@ public class Hidden extends Item {
         for (GameCharacter character: existedCharacters){
             existedCharactersList.add(character);
         }
-        charselect = GameCharacterWindow.display(existedCharactersList, "-------------------------------Hidden------------------------------------------"+
+        charselect = GameCharacterWindow.display(existedCharactersList, "---------------------------Hidden------------------------------"+
                 "\nYou have choosed Hidden"+
                 "\nYou will be hiding during the whole process, (you will not be eaten nor can join the voting)"+
                 "\nCosider your character temporaly leaving the room"+
@@ -43,9 +43,8 @@ public class Hidden extends Item {
         List<String> messages = new ArrayList<>();
         messages.add("Due to Hidden has been used, aftereffect(entering back to the room is triggerd)");
         gameBroad.matchRoom(affectedRoomNumber).enter(affectedGameCharacter);
-        messages.add(affectedGameCharacter + " has entered back to " + gameBroad.matchRoom(affectedRoomNumber).getName());
-        messages.add("------------------------------------------------------------------------------");
-        MultiMessagesWindow.display(messages,"--------------------------------Hidden-----------------------------------------" );
+        messages.add(affectedGameCharacter + " has entered back to " + gameBroad.matchRoom(affectedRoomNumber).getName());;
+        MultiMessagesWindow.display(messages,"--------------------------Hidden---------------------------------" );
     }
 
     public static void main(String[] args) {

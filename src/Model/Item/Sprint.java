@@ -25,7 +25,7 @@ public class Sprint extends Item {
             opitons.add(4);
             opitons.add(5);
             opitons.add(6);
-            roompicked = numberWindow.display(opitons, "-------------------------------Sprint---------------------------------------"+
+            roompicked = numberWindow.display(opitons, "-------------------Sprint----------------------"+
                     "\nYou have choosed Sprint"+
                     "\nYou can eacaped from this room to other any room"+
                     "\nPlease choose your room number that you want to go to");
@@ -62,13 +62,11 @@ public class Sprint extends Item {
             gameBroad.matchRoom(4).enter(affectedGameCharacter);
             messages.add(affectedGameCharacter + " wanted to enter " + gameBroad.matchRoom(affectedRoomNumber).getName());
             messages.add("However, Due to " + gameBroad.matchRoom(affectedRoomNumber).getName() + " is full, " + affectedGameCharacter + " will go to Parking instead.");
-            messages.add("------------------------------------------------------------------------------");
         }else {
             gameBroad.matchRoom(affectedRoomNumber).enter(affectedGameCharacter);
             messages.add(affectedGameCharacter + " has entered " + gameBroad.matchRoom(affectedRoomNumber).getName());
-            messages.add("------------------------------------------------------------------------------");
         }
-        MultiMessagesWindow.display(messages, "--------------------------------Sprint-----------------------------------");
+        MultiMessagesWindow.display(messages, "-------------------------Sprint--------------------------");
     }
 
     public static void main(String[] args) {

@@ -20,7 +20,6 @@ public class ShotGun extends Item {
         room.zombieKilled();
         room.zombieKilled();
         messeges.add("Zombies number has dropped from " + orignalZombieNumber + " to "  + room.getCurrentZombienumber());
-        messeges.add("------------------------------------------------------------------------------");
-        MultiMessagesWindow.display(messeges,"--------------------------------ShortGun-----------------------------------");
+        MultiMessagesWindow.display(messeges,"-------------------------ShortGun-----------------------------");
     }
 }
