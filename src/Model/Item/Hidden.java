@@ -22,7 +22,7 @@ public class Hidden extends Item {
         for (GameCharacter character: existedCharacters){
             existedCharactersList.add(character);
         }
-        charselect = GameCharacterWindow.display(existedCharactersList, "---------------------------Hidden------------------------------"+
+        charselect = GameCharacterWindow.display(player, existedCharactersList, "---------------------------Hidden------------------------------"+
                 "\nYou have choosed Hidden"+
                 "\nYou will be hiding during the whole process, (you will not be eaten nor can join the voting)"+
                 "\nCosider your character temporaly leaving the room"+

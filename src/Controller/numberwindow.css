@@ -159,6 +159,201 @@
     -fx-cursor: hand;
 }
 
+#yellowModelSqrButton {
+    -fx-background-image: url('yellowModelSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#yellowToughGuySqrButton {
+    -fx-background-image: url('yellowToughGuySqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#yellowGunManSqrButton {
+    -fx-background-image: url('yellowGunManSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blueModelSqrButton {
+    -fx-background-image: url('blueModelSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blueToughGuySqrButton {
+    -fx-background-image: url('blueToughGuySqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blueGunManSqrButton {
+    -fx-background-image: url('blueGunManSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#greenModelSqrButton {
+    -fx-background-image: url('greenModelSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#greenToughGuySqrButton{
+    -fx-background-image: url('greenToughGuySqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#greenGunManSqrButton {
+    -fx-background-image: url('greenGunManSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#brownModelSqrButton {
+    -fx-background-image: url('brownModelSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#brownToughGuySqrButton {
+    -fx-background-image: url('brownToughGuySqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#brownGunManSqrButton {
+    -fx-background-image: url('brownGunManSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blackModelSqrButton {
+    -fx-background-image: url('blackModelSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blackToughGuySqrButton {
+    -fx-background-image: url('blackToughGuySqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#blackGunManSqrButton {
+    -fx-background-image: url('blackGunManSqrButton.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: 170;
+    -fx-background-position: center center;
+    -fx-min-height: 170px;
+    -fx-min-width: 170px;
+    -fx-max-width: 170px;
+    -fx-max-height: 170px
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
 
 
 #viewRoombg{

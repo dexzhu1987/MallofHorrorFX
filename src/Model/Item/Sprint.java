@@ -41,7 +41,7 @@ public class Sprint extends Item {
         for (GameCharacter character: existedCharacters){
             existedCharactersList.add(character);
         }
-        charselect = GameCharacterWindow.display(existedCharactersList, "Please select one of below characters to go to that room" );
+        charselect = GameCharacterWindow.display(player, existedCharactersList, "Please select one of below characters to go to that room" );
         GameCharacter selectedCharacter = new ToughGuy();
         for (GameCharacter character: existedCharacters){
             if (charselect.equalsIgnoreCase(character.getName())){

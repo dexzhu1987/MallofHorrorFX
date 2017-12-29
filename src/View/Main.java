@@ -644,7 +644,7 @@ public class Main extends Application {
                 for (int k = 0; k < gameBroad.getPlayers().get(q).getCharactersselect().size(); k++) {
                     characterOpitons.add(gameBroad.getPlayers().get(q).getCharactersselect().get(k));
                 }
-                String selectedCharacter = GameCharacterWindow.display(characterOpitons, gameBroad.getPlayers().get(q) +
+                String selectedCharacter = GameCharacterWindow.display(gameBroad.getPlayers().get(q), characterOpitons, gameBroad.getPlayers().get(q) +
                         "please select one of these characters into " + ((gameBroad.matchRoom(selectedRoom).isFull())? "Parking":gameBroad.matchRoom(selectedRoom).getName()));
                 if (gameBroad.matchRoom(selectedRoom).isFull()) {
                     gameBroad.matchRoom(4).enter(gameBroad.getPlayers().get(q).selectchoose(selectedCharacter));
@@ -970,7 +970,7 @@ public class Main extends Application {
         Playable startActualPlayer = gameBroad.getPlayers().get(startplayer);
         Room destination = gameBroad.matchRoom(startplayerroomnumber);
         mainWindow.setScene(actualPlayerScenes.get(startplayer));
-        String charselect = GameCharacterWindow.display(characterNotInTheRoom(destination, startActualPlayer), gameBroad.getPlayers().get(startplayer) + " please choose your characters to Room " + startplayerroomnumber + ": " +
+        String charselect = GameCharacterWindow.display(startActualPlayer, characterNotInTheRoom(destination, startActualPlayer), gameBroad.getPlayers().get(startplayer) + " please choose your characters to Room " + startplayerroomnumber + ": " +
                 gameBroad.matchRoom(startplayerroomnumber).getName() );
         GameCharacter selectedCharacter = gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect);
         Room leavingroom = gameBroad.inWhichRoom(selectedCharacter);
@@ -991,7 +991,7 @@ public class Main extends Application {
             Playable actualPlayer = gameBroad.getPlayers().get(i);
             Room destination2 = gameBroad.matchRoom(roomspicked.get(q));
             mainWindow.setScene(actualPlayerScenes.get(i));
-            charselect = GameCharacterWindow.display(characterNotInTheRoom(destination2, actualPlayer),actualPlayer + " please choose your characters to " +
+            charselect = GameCharacterWindow.display(actualPlayer, characterNotInTheRoom(destination2, actualPlayer),actualPlayer + " please choose your characters to " +
                     destination2.getName());
             GameCharacter selectedCharacter2 =  gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect);
             Room leavingroom2 = gameBroad.inWhichRoom(selectedCharacter2);
@@ -1012,7 +1012,7 @@ public class Main extends Application {
             Playable actualPlayer2 = gameBroad.getPlayers().get(i);
             Room destination3 = gameBroad.matchRoom(roomspicked.get(q));
             mainWindow.setScene(actualPlayerScenes.get(i));
-            charselect = GameCharacterWindow.display(characterNotInTheRoom(destination3, actualPlayer2),actualPlayer2 + " please choose your characters to "
+            charselect = GameCharacterWindow.display(actualPlayer2, characterNotInTheRoom(destination3, actualPlayer2),actualPlayer2 + " please choose your characters to "
                     + destination3.getName() );
             GameCharacter selectedCharacter2 = gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect);
             Room leavingRoom2 = gameBroad.inWhichRoom(selectedCharacter2);
@@ -1200,7 +1200,7 @@ public class Main extends Application {
                     for (GameCharacter character : availableOptionsSet) {
                         availableOptions.add(character);
                     }
-                    deathCharacterStr = GameCharacterWindow.display(availableOptions, loser + " please selected your character in this room");
+                    deathCharacterStr = GameCharacterWindow.display(loser, availableOptions, loser + " please selected your character in this room");
                     GameCharacter deathCharacter = gameBroad.matchGameCharacter(loser, deathCharacterStr);
                     loser.removeCharacter(deathCharacter);
                     fallenRoom.leave(deathCharacter);

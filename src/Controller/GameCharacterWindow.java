@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.Character.GameCharacter;
+import Model.Playable.Playable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -21,7 +22,7 @@ import java.util.List;
 public class GameCharacterWindow {
     static String theCharacter;
 
-    public static String display(List<GameCharacter> opitons, String message){
+    public static String display(Playable player, List<GameCharacter> opitons, String message){
         Stage window = new Stage();
         window.setTitle("Please select your character");
         window.setMinWidth(250);
@@ -43,11 +44,44 @@ public class GameCharacterWindow {
         }
 
         Button numberOneButton = new Button("Gun Man");
-        numberOneButton.setId("gunMan");
         Button numberTwoButton = new Button("Tough Guy");
-        numberTwoButton.setId("toughGuy");
         Button numberThreeButton = new Button("Model");
-        numberThreeButton.setId("model");
+
+
+        String color = player.getColor();
+
+        switch (color){
+            case "YELLOW":
+                numberOneButton.setId("yellowGunManSqrButton");
+                numberTwoButton.setId("yellowToughGuySqrButton");
+                numberThreeButton.setId("yellowModelSqrButton");
+                break;
+            case "BLUE":
+                numberOneButton.setId("blueGunManSqrButton");
+                numberTwoButton.setId("blueToughGuySqrButton");
+                numberThreeButton.setId("blueModelSqrButton");
+                break;
+            case "GREEN":
+                numberOneButton.setId("greenGunManSqrButton");
+                numberTwoButton.setId("greenToughGuySqrButton");
+                numberThreeButton.setId("greenModelSqrButton");
+                break;
+            case "BROWN":
+                numberOneButton.setId("brownGunManSqrButton");
+                numberTwoButton.setId("brownToughGuySqrButton");
+                numberThreeButton.setId("brownModelSqrButton");
+            case "BLACK":
+                numberOneButton.setId("blackGunManSqrButton");
+                numberTwoButton.setId("blackToughGuySqrButton");
+                numberThreeButton.setId("blackModelSqrButton");
+                break;
+            default:
+                numberOneButton.setId("gunMan");
+                numberTwoButton.setId("toughGuy");
+                numberThreeButton.setId("model");
+
+        }
+
 
         //Clicking will set answer and close window
         numberOneButton.setOnAction(e -> {
