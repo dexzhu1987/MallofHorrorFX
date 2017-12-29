@@ -360,7 +360,7 @@ public class numberWindow {
 
 
         layout.setAlignment(Pos.CENTER);
-        layout.setId("numberwindowbg");
+        layout.setId("simplemsgbg");
         Scene scene = new Scene(layout,400,300);
         File f = new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
         scene.getStylesheets().clear();

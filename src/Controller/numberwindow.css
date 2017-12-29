@@ -438,7 +438,7 @@
 #viewitembg{
     -fx-background-image: url("viewitembg.png");
     -fx-background-repeat: stretch;
-    -fx-background-size: 670 520;
+    -fx-background-size: 460 520;
     -fx-background-position: center center;
 }
 
@@ -664,3 +664,18 @@
     -fx-background-size: 600 450;
     -fx-background-position: center center;
 }
+
+#choosingitem{
+    -fx-background-image: url("itemGettingbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 460 520;
+    -fx-background-position: center center;
+}
+
+#ItemGettingWindow{
+     -fx-background-image: url("itemGettingbg.png");
+     -fx-background-repeat: stretch;
+     -fx-background-size: 300 358;
+     -fx-background-position: center center;
+}
+

@@ -193,7 +193,7 @@ public class ItemViewWindow {
                             if (items.get(5).getName().equalsIgnoreCase(itemsBttns.get(i).getId())){
                                 layout.getChildren().add(itemsBttns.get(i));
                                 AnchorPane.setTopAnchor(itemsBttns.get(i),295.0);
-                                AnchorPane.setLeftAnchor(itemsBttns.get(i),160.0);
+                                AnchorPane.setLeftAnchor(itemsBttns.get(i),310.0);
                             }
                         }
                     case 5:
@@ -201,15 +201,15 @@ public class ItemViewWindow {
                             if (items.get(4).getName().equalsIgnoreCase(itemsBttns2.get(i).getId())){
                                 layout.getChildren().add(itemsBttns2.get(i));
                                 AnchorPane.setTopAnchor(itemsBttns2.get(i),295.0);
-                                AnchorPane.setLeftAnchor(itemsBttns2.get(i),10.0);
+                                AnchorPane.setLeftAnchor(itemsBttns2.get(i),160.0);
                             }
                         }
                     case 4:
                         for (int i=0; i<itemsBttns.size(); i++){
                             if (items.get(3).getName().equalsIgnoreCase(itemsBttns3.get(i).getId())){
                                 layout.getChildren().add(itemsBttns3.get(i));
-                                AnchorPane.setTopAnchor(itemsBttns3.get(i),90.0);
-                                AnchorPane.setLeftAnchor(itemsBttns3.get(i),460.0);
+                                AnchorPane.setTopAnchor(itemsBttns3.get(i),295.0);
+                                    AnchorPane.setLeftAnchor(itemsBttns3.get(i),10.0);
                             }
                         }
                     case 3:
@@ -247,12 +247,12 @@ public class ItemViewWindow {
             ok.setOnAction(e -> {
                 window.close();
             });
-            AnchorPane.setLeftAnchor(ok,292.5);
+            AnchorPane.setLeftAnchor(ok,192.5);
             AnchorPane.setBottomAnchor(ok,20.0);
 
             layout.getChildren().addAll(ok);
             layout.setId("viewitembg");
-            Scene scene = new Scene(layout,670,520);
+            Scene scene = new Scene(layout,460,520);
             File f = new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
             scene.getStylesheets().clear();
             scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));;

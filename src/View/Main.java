@@ -319,12 +319,14 @@ public class Main extends Application {
 
         Label parkingSeachLabel = new Label();
         parkingSeachLabel.setText("Welcome to a new round." +
+                "\n"+
                 "\nWe will proceed parking seach first, " +
                 "\nplayers that in ROOM No.4 parking will vote to decide who do the searching, " +
                 "\nThe winner will search around the parking and will find" +
                 " three items, " +
                 "\nhe/she will be able to keep one item, and give one item to the other player, and return one back to the Parking. " +
                 "\n(Note: if the vote result in TIE, no searching will perform) " +
+                "\n"+
                 "\nIf you understand, please click CONTINUE to proceed.");
 
         parkingSeachLabel.setId("text");
@@ -374,9 +376,12 @@ public class Main extends Application {
         //ChiefSelectScene
         AnchorPane chiefSelectLayout = new AnchorPane();
         Label chiefSelectLabel = new Label();
-        chiefSelectLabel.setText("Now we proceed to chief selection, players that in ROOM No.5 SecurityHQ will vote to decide who will be the chief, The chief will be able to look at the cameras and " +
+        chiefSelectLabel.setText("Now we proceed to chief selection, players that in ROOM No.5 SecurityHQ will vote to decide who will be the chief, " +
+                "\n"+
+                "\nThe chief will be able to look at the cameras and " +
                 "find out where the zombies are coming (only chief has this information." +
                 "\n(Note: if the vote result in TIE, no chief will be elected) " +
+                "\n"+
                 "\nIf you understand, please click CONTINUE to proceed.");
         chiefSelectLabel.setId("text");
         chiefSelectLabel.setWrapText(true);
@@ -493,9 +498,11 @@ public class Main extends Application {
         fallenRoomLabel.setText("--------------------Zombies attacked ----------------------"+
                 "\nFor each room, when characters' strength is less than zombies number, zombies attacked successfully." +
                 "\nIf zombies attacked successfully, one character will be eaten by the zombies"+
+                "\n"+
                 "\nNote: Parking has no defends, so as long as there is zombies there, one character will be eaten(and no item except thread is allowed)"+
                 "\nNote: Supermarket has too many entraces (weak defends), so as long as there are more than four zombies there, one character will be eaten (less than four: the same rule as the other room"+
-        "\nIf you have understood, please type CONTINUE to move to the next step");
+                "\n"+
+                "\nIf you have understood, please type CONTINUE to move to the next step");
         fallenRoomLabel.setId("text");
         fallenRoomLabel.setWrapText(true);
         fallenRoomLabel.setPadding(new Insets(30, 10, 30, 10));
@@ -658,10 +665,10 @@ public class Main extends Application {
         gameBroad.getItemDeck().shuffle();
         for (int i = 0; i < gameBroad.getPlayers().size(); i++) {
             mainWindow.setScene(actualPlayerScenes.get(i));
-            SimpleMessageWindow.display(gameBroad.getPlayers().get(i) + " have received an starter item, please click CONTINUE to see it (Keep it to yourself)");
+            SimpleMessageWindow.display(gameBroad.getPlayers().get(i) + " have received an starter item (Keep it to yourself)");
             Item starterItem = gameBroad.getItemDeck().deal();
             gameBroad.getPlayers().get(i).getItem(starterItem);
-            SimpleMessageWindow.display("You have received " + starterItem + ". It has been received added to your item list");
+            ItemGettingWindow.display(starterItem);
         }
         mainWindow.setScene(parkingSearchScene);
     }
@@ -739,7 +746,7 @@ public class Main extends Application {
                 String winnercolor = gameBroad.matchRoom(4).winner();
                 SimpleMessageWindow.display("Winner is " + gameBroad.matchPlayer(winnercolor));
                 SimpleMessageWindow.display(gameBroad.matchPlayer(winnercolor) + " searched the parking and " +
-                            "found below items(only winning player can see the result and arrange items),please click CONTINUE to move to next step)");
+                            "found below items (only winning player can see the result and arrange items),please click CONTINUE to move to next step)");
                 gameBroad.getItemDeck().shuffle();
                 Item item1 = gameBroad.getItemDeck().deal();
                 Item item2 = gameBroad.getItemDeck().deal();
@@ -748,42 +755,45 @@ public class Main extends Application {
                 itemtemplist.add(item1);
                 itemtemplist.add(item2);
                 itemtemplist.add(item3);
-                List<Integer> options = new ArrayList<>();
-                options.add(1);
-                options.add(2);
-                options.add(3);
-                int itemselect = numberWindow.display(options, "You get 1." + itemtemplist.get(0) + ", 2." + itemtemplist.get(1) + " and 3." +
-                        itemtemplist.get(2) + ". Please select the item you want to keep (1,2,or 3)");
+//                List<Integer> options = new ArrayList<>();
+//                options.add(1);
+//                options.add(2);
+//                options.add(3);
+//                int itemselect = numberWindow.display(options, "You get 1." + itemtemplist.get(0) + ", 2." + itemtemplist.get(1) + " and 3." +
+//                        itemtemplist.get(2) + ". Please select the item you want to keep (1,2,or 3)");
+                Item itemselect = ChoosingItemWindow.display(itemtemplist,"Please choose the item you want to keep");
                 if (gameBroad.matchPlayer(winnercolor).getCurrentItem().size()<6){
-                    SimpleMessageWindow.display("You get " + itemtemplist.get(itemselect - 1));
-                    gameBroad.matchPlayer(winnercolor).getItem(itemtemplist.get(itemselect - 1));
+                    ItemGettingWindow.display(itemselect);
+                    gameBroad.matchPlayer(winnercolor).getItem(itemselect);
                 }
                 else {
-                    SimpleMessageWindow.display("You get " + itemtemplist.get(itemselect - 1) + ". However, due to your bag is full, you cannot carry more items.(Your throw the item on the ground)");
+                    SimpleMessageWindow.display("You get " + itemselect + ". However, due to your bag is full, you cannot carry more items.(Your throw the item on the ground)");
                 }
-                itemtemplist.remove(itemselect - 1);
-                options.remove(2);
-                int itemgiveselect =numberWindow.display(options,  "Remaining items: " + " 1." + itemtemplist.get(0) + ", 2." + itemtemplist.get(1)
-                + ". Please select the item you want to give (1 or 2)");
+//                itemtemplist.remove(itemselect - 1);
+//                options.remove(2);
+                itemtemplist.remove(itemselect);
+//                int itemgiveselect =numberWindow.display(options,  "Remaining items: " + " 1." + itemtemplist.get(0) + ", 2." + itemtemplist.get(1)
+//                + ". Please select the item you want to give (1 or 2)");
+                Item itemgiveselect = ChoosingItemWindow.display(itemtemplist, "Please select the item you want to give");
                 HashSet<Playable> others = gameBroad.RemainPlayers(gameBroad.matchPlayer(winnercolor));
                 List<Playable> othersList = new ArrayList<>();
                 for (Playable other: others){
                     othersList.add(other);
                 }
                  String givecolor =ChoosingColorWindow.display(othersList, "Please select who you want give in the List: " + others);
-                Item giveItem = itemtemplist.get(itemgiveselect - 1);
+//                Item giveItem = itemtemplist.get(itemgiveselect - 1);
                 if (gameBroad.matchPlayer(givecolor).getCurrentItem().size()<6){
-                    gameBroad.matchPlayer(givecolor).getItem(itemtemplist.get(itemgiveselect - 1));
+                    gameBroad.matchPlayer(givecolor).getItem(itemgiveselect);
                 }
-                itemtemplist.remove(itemgiveselect - 1);
+                itemtemplist.remove(itemgiveselect);
                 gameBroad.getItemDeck().addBackItem(itemtemplist.get(0));
                 String ok1 = "";
                 SimpleMessageWindow.display(gameBroad.matchPlayer(givecolor) + " you have received an item from " + gameBroad.matchPlayer(winnercolor)
-                    + " Pleaese click CONTINUE to view the item (keep it to yourself)");
+                    + " (keep it to yourself)");
                 if (gameBroad.matchPlayer(givecolor).getCurrentItem().size()<6){
-                    SimpleMessageWindow.display("You have received " + giveItem);
+                    ItemGettingWindow.display(itemgiveselect);
                 } else {
-                    SimpleMessageWindow.display("You should have received " + giveItem + ". Howver, due to your bag is full. You cannot carry more items.");
+                    SimpleMessageWindow.display("You should have received " + itemgiveselect + ". Howver, due to your bag is full. You cannot carry more items.");
                 }
                 SimpleMessageWindow.display("Other players will be joining the game now, please click CONTINUE");
                 SimpleMessageWindow.display("Player " + givecolor + " get an item from player " + winnercolor);
@@ -905,7 +915,7 @@ public class Main extends Application {
             String winnercolor = gameBroad.matchRoom(currentVotingRoomNumber).winner();
             startplayer = gameBroad.getPlayers().indexOf(gameBroad.matchPlayer(winnercolor));
             SimpleMessageWindow.display(gameBroad.matchPlayer(winnercolor) + " looked at the screens " +
-                        "found zombies are approaching to rooms(only winning player can see the result)");
+                        "found zombies are approaching to rooms (only winning player can see the result)");
             List<String> messages = new ArrayList<>();
             messages.add(dices.toString());
             messages.add("If you have remember the results, please click CONTINUE");
@@ -1068,6 +1078,7 @@ public class Main extends Application {
                 SimpleMessageWindow.display(fallenRoom.getName() + " has fallen, one character will be eaten");
                 //using items to save the room
                 if (teamHasOtherItems(playersInTheRoom) && fallenRoom.getRoomNum() != 4) {
+                    SimpleMessageWindow.display(playersInTheRoom + " is/are in the fallen room");
                     boolean usedItemTeam = YesNoWindow.display("This result can change by using items, anyone in the room want to use Items?(y/n)");
                     if (usedItemTeam) {
                         boolean noMore;
@@ -1077,20 +1088,18 @@ public class Main extends Application {
                                 Playable player = playersInTheRoomList.get(q);
                                 mainWindow.setScene(playerScenes.get(q));
                                 if (player.hasOthersItems()) {
-                                    int itemselected = 0;
+//                                    int itemselected = 0;
                                     boolean usedItemBoolean = YesNoWindow.display(player + " please confirm you want to use item.");
                                     if (usedItemBoolean) {
-                                        List<Integer> options = new ArrayList<>();
-                                        for (int k = 1; k <= player.otherItemsList().size(); k++) {
-                                            options.add(k);
-                                        }
-                                        itemselected = numberWindow.display(options, player + " please select which items you want to use:" +
-                                                "\nYour item list: " + printTheListWithNumber(player.otherItemsList())
-                                                + "\nPlease select in (" + printTheOptions(player.otherItemsList()) + ")");
-                                        Item usedItem = player.otherItemsList().get(itemselected - 1);
-                                        usedItemsList.add(usedItem);
-                                        usedItem.effect(player, fallenRoom);
-                                        player.usedItem(usedItem);
+//                                        List<Integer> options = new ArrayList<>();
+//                                        for (int k = 1; k <= player.otherItemsList().size(); k++) {
+//                                            options.add(k);
+//                                        }
+                                        Item itemselected = ChoosingItemWindow.display(player.otherItemsList(), "Please select the item you want to use");
+//                                        Item usedItem = player.otherItemsList().get(itemselected - 1);
+                                        usedItemsList.add(itemselected);
+                                        itemselected.effect(player, fallenRoom);
+                                        player.usedItem(itemselected);
                                     }
                                 }
                                 else {
