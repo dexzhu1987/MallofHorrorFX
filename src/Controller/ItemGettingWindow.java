@@ -35,7 +35,7 @@ public class ItemGettingWindow {
         try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
             label.setFont(f); // use this font with our label
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -89,7 +89,7 @@ public class ItemGettingWindow {
         layout.getChildren().addAll(ok,label);
         layout.setId("ItemGettingWindow");
         Scene scene = new Scene(layout,300,357.5);
-        File f = new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
+        File f = new File("..\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
         scene.getStylesheets().clear();
         scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));;
         window.setScene(scene);

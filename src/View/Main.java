@@ -286,7 +286,7 @@ public class Main extends Application {
         //getStarterItemScene;
         AnchorPane starterItemLayout = new AnchorPane();
         Label starterItemLabel = new Label();
-        starterItemLabel.setText("Each player gonna have one starter Item, and the information should be kept to the player himself/herself. Please click CONTINUE to proceed");
+        starterItemLabel.setText("Each player gonna have one starter Item, and the information should be kept to the player himself/herself.");
         starterItemLabel.setId("text");
         starterItemLabel.setWrapText(true);
         starterItemLabel.setPadding(new Insets(30, 10, 30, 10));
@@ -296,7 +296,7 @@ public class Main extends Application {
         try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
             starterItemLabel.setFont(f); // use this font with our label
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -338,7 +338,7 @@ public class Main extends Application {
         try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
             parkingSeachLabel.setFont(f); // use this font with our label
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -392,7 +392,7 @@ public class Main extends Application {
         try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
             chiefSelectLabel.setFont(f); // use this font with our label
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -432,7 +432,7 @@ public class Main extends Application {
         try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
             movingLabel.setFont(f); // use this font with our label
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -468,7 +468,7 @@ public class Main extends Application {
         try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
             zombieAttackLabel.setFont(f); // use this font with our label
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -512,7 +512,7 @@ public class Main extends Application {
         try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
             fallenRoomLabel.setFont(f); // use this font with our label
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -541,7 +541,7 @@ public class Main extends Application {
         AnchorPane winnerLayout = new AnchorPane();
         Label winner = new Label();
         winner.setText("After a long ... we have only four survivor in the mall"+
-        "\nClick Ok to find out who's the winner");
+        "\nClick Continue to find out who's the winner");
         winner.setId("text");
         winner.setWrapText(true);
         winner.setPadding(new Insets(30, 10, 30, 10));
@@ -551,7 +551,7 @@ public class Main extends Application {
         try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
             winner.setFont(f); // use this font with our label
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -746,7 +746,7 @@ public class Main extends Application {
                 String winnercolor = gameBroad.matchRoom(4).winner();
                 SimpleMessageWindow.display("Winner is " + gameBroad.matchPlayer(winnercolor));
                 SimpleMessageWindow.display(gameBroad.matchPlayer(winnercolor) + " searched the parking and " +
-                            "found below items (only winning player can see the result and arrange items),please click CONTINUE to move to next step)");
+                            "found below items (only winning player can see the result and arrange items)");
                 gameBroad.getItemDeck().shuffle();
                 Item item1 = gameBroad.getItemDeck().deal();
                 Item item2 = gameBroad.getItemDeck().deal();
@@ -795,7 +795,7 @@ public class Main extends Application {
                 } else {
                     SimpleMessageWindow.display("You should have received " + itemgiveselect + ". Howver, due to your bag is full. You cannot carry more items.");
                 }
-                SimpleMessageWindow.display("Other players will be joining the game now, please click CONTINUE");
+                SimpleMessageWindow.display("Other players will be joining the game now");
                 SimpleMessageWindow.display("Player " + givecolor + " get an item from player " + winnercolor);
             }
         }

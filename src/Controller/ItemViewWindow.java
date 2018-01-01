@@ -253,7 +253,7 @@ public class ItemViewWindow {
             layout.getChildren().addAll(ok);
             layout.setId("viewitembg");
             Scene scene = new Scene(layout,460,520);
-            File f = new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
+            File f = new File("..\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
             scene.getStylesheets().clear();
             scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));;
             window.setScene(scene);

@@ -105,9 +105,9 @@
 }
 
 #text{
--fx-background-color: #010101;
--fx-text-fill: #00FE00;
--fx-font-family: digital-7;
+    -fx-background-color: #010101;
+    -fx-text-fill: #00FE00;
+    -fx-font-family: digital-7;
 }
 
 
