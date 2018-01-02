@@ -24,6 +24,7 @@ import javafx.scene.layout.BackgroundImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.*;
 import java.util.List;
 
@@ -77,7 +78,6 @@ public class Main extends Application {
         startGame.setOnAction(event -> {
             gameBroad.setPlayersNumber(numberWindow.display(numberOfPlayersOptions, "please select how many players"));
             welcomeScene();
-            welcome.setText("Welcome  players " + gameBroad.getPlayersNumber());
             for (int i = 0; i < gameBroad.getPlayersNumber(); i++) {
                 actualPlayerScenes.add(allPlayerScenes.get(i));
                 actualOkButton.add(allOkButtons.get(i));
@@ -293,14 +293,15 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(starterItemLabel,100.0);
         AnchorPane.setLeftAnchor(starterItemLabel,70.0);
         AnchorPane.setRightAnchor(starterItemLabel,70.0);
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-            starterItemLabel.setFont(f); // use this font with our label
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+            InputStream is = numberWindow.class.getResourceAsStream("digital-7.ttf");
+            final Font f1 = Font.loadFont(is, 25);
+            starterItemLabel.setFont(f1); // use this font with our label
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
         Button ok2 = new Button();
         ok2.setText("");
         ok2.setId("msgokbttn");
@@ -335,14 +336,14 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(parkingSeachLabel,100.0);
         AnchorPane.setLeftAnchor(parkingSeachLabel,70.0);
         AnchorPane.setRightAnchor(parkingSeachLabel,70.0);
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-            parkingSeachLabel.setFont(f); // use this font with our label
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+//            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            parkingSeachLabel.setFont(f1); // use this font with our label
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
         Button viewRoomParking = new Button();
         viewRoomParking.setText("");
@@ -389,14 +390,14 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(chiefSelectLabel,100.0);
         AnchorPane.setLeftAnchor(chiefSelectLabel,70.0);
         AnchorPane.setRightAnchor(chiefSelectLabel,70.0);
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-            chiefSelectLabel.setFont(f); // use this font with our label
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+//            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            chiefSelectLabel.setFont(f1); // use this font with our label
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
         Button viewRoomButtonChief = new Button();
         viewRoomButtonChief.setText("");
         viewRoomButtonChief.setId("viewRoomCommon");
@@ -429,14 +430,14 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(movingLabel,100.0);
         AnchorPane.setLeftAnchor(movingLabel,70.0);
         AnchorPane.setRightAnchor(movingLabel,70.0);
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-            movingLabel.setFont(f); // use this font with our label
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+//            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            movingLabel.setFont(f1); // use this font with our label
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
         Button viewRoomMoving = new Button();
         viewRoomMoving.setText("");
         viewRoomMoving.setId("viewRoomCommon");
@@ -465,14 +466,14 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(zombieAttackLabel,100.0);
         AnchorPane.setLeftAnchor(zombieAttackLabel,70.0);
         AnchorPane.setRightAnchor(zombieAttackLabel,70.0);
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-            zombieAttackLabel.setFont(f); // use this font with our label
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+//            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            zombieAttackLabel.setFont(f1); // use this font with our label
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
         Button viewRoomAttack = new Button();
         viewRoomAttack.setText("");
         viewRoomAttack.setId("viewRoomCommon");
@@ -509,14 +510,14 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(fallenRoomLabel,100.0);
         AnchorPane.setLeftAnchor(fallenRoomLabel,70.0);
         AnchorPane.setRightAnchor(fallenRoomLabel,70.0);
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-            fallenRoomLabel.setFont(f); // use this font with our label
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+//            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            fallenRoomLabel.setFont(f1); // use this font with our label
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
         Button viewRoomFallen = new Button();
         viewRoomFallen.setText("");
         viewRoomFallen.setId("viewRoomCommon");
@@ -548,14 +549,14 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(winner,100.0);
         AnchorPane.setLeftAnchor(winner,70.0);
         AnchorPane.setRightAnchor(winner,70.0);
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-            winner.setFont(f); // use this font with our label
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+//            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+            winner.setFont(f1); // use this font with our label
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
         Button viewRoomWinner = new Button("");
         viewRoomWinner.setId("viewRoomCommon");
         AnchorPane.setLeftAnchor(viewRoomWinner,150.0);

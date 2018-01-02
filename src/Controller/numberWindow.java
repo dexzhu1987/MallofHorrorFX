@@ -25,14 +25,15 @@ public class numberWindow {
         label.setPadding(new Insets(30, 10, 30, 10));
 
 
-        try {
+//        try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-            label.setFont(f); // use this font with our label
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+            InputStream is = numberWindow.class.getResourceAsStream("digital-7.ttf");
+            final Font f1 = Font.loadFont(is, 25);
+            label.setFont(f1); // use this font with our label
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
 
 

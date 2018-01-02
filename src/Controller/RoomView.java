@@ -5,6 +5,7 @@ import Model.Room.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.*;
 import Model.Character.*;
 import javafx.geometry.HPos;
@@ -35,15 +36,16 @@ public class RoomView {
         AnchorPane.setLeftAnchor(currentZombieNum1,215.0);
         AnchorPane.setTopAnchor(currentZombieNum1,158.0);
 
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
-            currentZombieNum1.setFont(f); // use this font with our label
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+            InputStream is = numberWindow.class.getResourceAsStream("Exquisite Corpse.ttf");
+            final Font f1 = Font.loadFont(is, 43);
+            currentZombieNum1.setFont(f1); // use this font with our label
             currentZombieNum1.setStyle( "-fx-text-fill: red;");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
         GridPane roomHas2 = new GridPane();
         Label currentZombieNum2 = new Label(Integer.toString(rooms.get(1).getCurrentZombienumber()) );
@@ -52,15 +54,16 @@ public class RoomView {
         AnchorPane.setLeftAnchor(currentZombieNum2,470.0);
         AnchorPane.setTopAnchor(currentZombieNum2,158.0);
 
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
-            currentZombieNum2.setFont(f); // use this font with our label
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+
+//            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum2.setFont(f1); // use this font with our label
             currentZombieNum2.setStyle( "-fx-text-fill: red;");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
 
         GridPane roomHas3 = new GridPane();
@@ -70,15 +73,15 @@ public class RoomView {
         AnchorPane.setLeftAnchor(currentZombieNum3,706.0);
         AnchorPane.setTopAnchor(currentZombieNum3,158.0);
 
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
-            currentZombieNum3.setFont(f); // use this font with our label
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+//            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum3.setFont(f1); // use this font with our label
             currentZombieNum3.setStyle( "-fx-text-fill: red;");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
         GridPane roomHas4 = new GridPane();
         Label currentZombieNum4 = new Label(Integer.toString(rooms.get(3).getCurrentZombienumber()) );
@@ -87,15 +90,16 @@ public class RoomView {
         AnchorPane.setLeftAnchor(currentZombieNum4,215.0);
         AnchorPane.setTopAnchor(currentZombieNum4,330.0);
 
-        try {
+//        try {
             // load a custom font from a specific location (change path!)
             // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
-            currentZombieNum4.setFont(f); // use this font with our label
+//            InputStream is1 = numberWindow.class.getResourceAsStream("Exquisite Corpse.ttf");
+//            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum4.setFont(f1); // use this font with our label
             currentZombieNum4.setStyle( "-fx-text-fill: red;");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
 
         GridPane roomHas5 = new GridPane();
@@ -105,15 +109,15 @@ public class RoomView {
         AnchorPane.setLeftAnchor(currentZombieNum5,466.0);
         AnchorPane.setTopAnchor(currentZombieNum5,330.0);
 
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
-            currentZombieNum5.setFont(f); // use this font with our label
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+//            final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum5.setFont(f1); // use this font with our label
             currentZombieNum5.setStyle( "-fx-text-fill: red;");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
         GridPane roomHas6 = new GridPane();
         Label currentZombieNum6 = new Label(Integer.toString(rooms.get(5).getCurrentZombienumber()) );
@@ -122,15 +126,15 @@ public class RoomView {
         AnchorPane.setLeftAnchor(currentZombieNum6,710.0);
         AnchorPane.setTopAnchor(currentZombieNum6,330.0);
 
-        try {
-            // load a custom font from a specific location (change path!)
-            // 12 is the size to use
-            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
-            currentZombieNum6.setFont(f); // use this font with our label
+//        try {
+//            // load a custom font from a specific location (change path!)
+//            // 12 is the size to use
+//            final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\Exquisite Corpse.ttf")), 43);
+            currentZombieNum6.setFont(f1); // use this font with our label
             currentZombieNum6.setStyle( "-fx-text-fill: red;");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
         Button ok = new Button("");
         ok.setId("roomViewOk");

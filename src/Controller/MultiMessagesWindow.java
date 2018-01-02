@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,14 +39,15 @@ public class MultiMessagesWindow {
 //            AnchorPane.setRightAnchor(label,50.0);
 
 
-            try {
-                // load a custom font from a specific location (change path!)
-                // 12 is the size to use
-                final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Dexter\\IdeaProjects\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-                label.setFont(f); // use this font with our label
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                // load a custom font from a specific location (change path!)
+//                // 12 is the size to use
+                InputStream is = numberWindow.class.getResourceAsStream("digital-7.ttf");
+                final Font f1 = Font.loadFont(is,25);
+                label.setFont(f1); // use this font with our label
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            }
 
 
             Button ok = new Button("");
