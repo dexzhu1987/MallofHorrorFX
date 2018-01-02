@@ -632,7 +632,7 @@ public class Main extends Application {
                 boolean yes;
                 do {
                     yes = true;
-                    selectedRoom = numberWindow.display(dices, gameBroad.getPlayers().get(q) + " get " + pairofDice.getDieOneFace() + " and "
+                    selectedRoom = ChoosingRoomWindow.display(dices, gameBroad.getPlayers().get(q) + " get " + pairofDice.getDieOneFace() + " and "
                             + pairofDice.getDieTwoFace() + " please select your room");
                     if (gameBroad.matchRoom(selectedRoom).isFull()) {
                         yes = YesNoWindow.display(gameBroad.matchRoom(selectedRoom).getName() +
@@ -910,7 +910,7 @@ public class Main extends Application {
                 }
             }
             List <Integer> options = gameBroad.roomsOptions(startActPlayer);
-            startplayerroomnumber = numberWindow.display(options,startActPlayer + " please choose your room number");
+            startplayerroomnumber = ChoosingRoomWindow.display(options,startActPlayer + " please choose your room");
         } else {
             String winnercolor = gameBroad.matchRoom(currentVotingRoomNumber).winner();
             startplayer = gameBroad.getPlayers().indexOf(gameBroad.matchPlayer(winnercolor));
@@ -922,7 +922,7 @@ public class Main extends Application {
             MultiMessagesWindow.display(messages,"Each number means the correspoding room will have one zombie");
             mainWindow.setScene(actualPlayerScenes.get(startplayer));
             List <Integer> options = gameBroad.roomsOptions(gameBroad.matchPlayer(winnercolor));
-            startplayerroomnumber = numberWindow.display(options,"Please choose the room number that you will go to" );
+            startplayerroomnumber = ChoosingRoomWindow.display(options,"Please choose the room that you will go to" );
             SimpleMessageWindow.display("After reviewing the monitor, the chief will go to Room " + startplayerroomnumber);
         }
         if (teamHasSecurityCamera(gameBroad.getPlayers())) {
@@ -954,14 +954,14 @@ public class Main extends Application {
         for (int i = startplayer+1; i<gameBroad.getPlayers().size(); i++){
             mainWindow.setScene(actualPlayerScenes.get(i));
             List <Integer> options = gameBroad.roomsOptions(gameBroad.getPlayers().get(i));
-            int roompicked = numberWindow.display(options,gameBroad.getPlayers().get(i) + " please choose your room number");
+            int roompicked = ChoosingRoomWindow.display(options,gameBroad.getPlayers().get(i) + " please choose your room");
             roomspicked.add(roompicked);
         }
         //other half players
         for (int i = 0; i<startplayer; i++){
             mainWindow.setScene(actualPlayerScenes.get(i));
             List <Integer> options = gameBroad.roomsOptions(gameBroad.getPlayers().get(i));
-            int roompicked = numberWindow.display(options,gameBroad.getPlayers().get(i) + " please choose your room number");
+            int roompicked = ChoosingRoomWindow.display(options,gameBroad.getPlayers().get(i) + " please choose your room");
             roomspicked.add(roompicked);
         }
         SimpleMessageWindow.display("Moving Begins");

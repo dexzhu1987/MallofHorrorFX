@@ -874,3 +874,82 @@
      -fx-background-position: center center;
 }
 
+#restroomBttn {
+    -fx-background-image: url('restroomBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 200 150;
+    -fx-background-position: center center;
+    -fx-min-height: 150px;
+    -fx-min-width: 200px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#cachouBttn {
+    -fx-background-image: url('cachouBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 200 150;
+    -fx-background-position: center center;
+    -fx-min-height: 150px;
+    -fx-min-width: 200px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#megatoyBttn {
+    -fx-background-image: url('megatoyBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 200 150;
+    -fx-background-position: center center;
+    -fx-min-height: 150px;
+    -fx-min-width: 200px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#parkBttn {
+    -fx-background-image: url('parkBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 200 150;
+    -fx-background-position: center center;
+    -fx-min-height: 150px;
+    -fx-min-width: 200px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#securityHQBttn {
+    -fx-background-image: url('securityHQBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 200 150;
+    -fx-background-position: center center;
+    -fx-min-height: 150px;
+    -fx-min-width: 200px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#superstoreBttn {
+    -fx-background-image: url('superstoreBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 200 150;
+    -fx-background-position: center center;
+    -fx-min-height: 150px;
+    -fx-min-width: 200px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#choosingRoomBg{
+    -fx-background-image: url("choosingRoomBg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 700 525;
+    -fx-background-position: center center;
+}
+
