@@ -709,7 +709,8 @@ public class Main extends Application {
                     boolean moreThreatused ;
                     do {
                         moreThreatused =false;
-                        int numThreat = 0;
+//                        int numThreat = 0;
+                        boolean memberUsedThreat = false;
                         for (int i=0; i<searchTeam.size();i++) {
                             mainWindow.setScene(playersScenes.get(i));
                             Playable teammember = searchTeam.get(i);
@@ -717,19 +718,29 @@ public class Main extends Application {
                             for (int q=0; q<=teammember.threatNum(); q++){
                                 threadOptions.add(q);
                             }
-                            numThreat = numberWindow.display(threadOptions,teammember + " please select how many THREAT you want use?" );
-                            String effectedColor = "";
-                            for (int q = 0; q < votes.size(); q += 2) {
-                                if (teammember.getColor().equalsIgnoreCase(votes.get(q))) {
-                                    effectedColor = votes.get(q + 1);
+//                            numThreat = numberWindow.display(threadOptions,teammember + " please select how many THREAT you want use?" );
+                            memberUsedThreat = YesNoWindow.display(teammember + " please confirm you want to use THREAT");
+                            if (memberUsedThreat){
+                                if (teammember.hasThreat()){
+                                    String effectedColor = "";
+                                    for (int q = 0; q < votes.size(); q += 2) {
+                                        if (teammember.getColor().equalsIgnoreCase(votes.get(q))) {
+                                            effectedColor = votes.get(q + 1);
+                                        }
+                                    }
+                                    effectedColor = effectedColor.toUpperCase();
+                                    gameBroad.matchRoom(4).voteResultAfterItem(effectedColor, 1);
+//                                    for (int q = 0; q < numThreat; q++) {
+                                    Item threat = gameBroad.matchItem(teammember, "Threat");
+                                    teammember.usedItem(threat);
+                                    SimpleMessageWindow.display("You vote has increased by one");
+//                                    }
+                                } else {
+                                    SimpleMessageWindow.display("You do not have THREAT");
                                 }
+
                             }
-                            effectedColor = effectedColor.toUpperCase();
-                            gameBroad.matchRoom(4).voteResultAfterItem(effectedColor, numThreat);
-                            for (int q = 0; q < numThreat; q++) {
-                                Item threat = gameBroad.matchItem(teammember, "Threat");
-                                teammember.usedItem(threat);
-                            }
+
                         }
                         SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(4).getCurrentVoteResult());
                         moreThreatused = YesNoWindow.display("Please confirm no more THREAT will be used (y - there will be more THREAT/n - no more THREAT)");
@@ -840,27 +851,39 @@ public class Main extends Application {
                 if (voteYes) {
                     boolean moreThreatused = false;
                     do {
-                        int numThreat = 0;
+//                        int numThreat = 0;
+                        boolean memberUsedThreat2 = false;
                         for (int i=0; i<chiefTeam.size();i++) {
                             mainWindow.setScene(playersScenes.get(i));
                             Playable teammember = chiefTeam.get(i);
-                            List<Integer> threadOptions = new ArrayList<>();
-                            for (int q=0; q<=teammember.threatNum(); q++){
-                                threadOptions.add(q);
-                            }
-                            numThreat = numberWindow.display(threadOptions,teammember + " please select how many THREAT you want use?" );
-                            String effectedColor = "";
-                            for (int q = 0; q < votes.size(); q += 2) {
-                                if (teammember.getColor().equalsIgnoreCase(votes.get(q))) {
-                                    effectedColor = votes.get(q + 1);
+//                            List<Integer> threadOptions = new ArrayList<>();
+//                            for (int q=0; q<=teammember.threatNum(); q++){
+//                                threadOptions.add(q);
+//                            }
+//                            numThreat = numberWindow.display(threadOptions,teammember + " please select how many THREAT you want use?" );
+                            memberUsedThreat2 = YesNoWindow.display(teammember + " please confirm you want to use THREAT");
+                            if (memberUsedThreat2){
+                                if (teammember.hasThreat()){
+                                    String effectedColor = "";
+                                    for (int q = 0; q < votes.size(); q += 2) {
+                                        if (teammember.getColor().equalsIgnoreCase(votes.get(q))) {
+                                            effectedColor = votes.get(q + 1);
+                                        }
+                                    }
+                                    effectedColor = effectedColor.toUpperCase();
+                                    gameBroad.matchRoom(currentVotingRoomNumber).voteResultAfterItem(effectedColor, 1);
+//                            for (int q = 0; q < numThreat; q++) {
+                                    Item threat = gameBroad.matchItem(teammember, "Threat");
+                                    teammember.usedItem(threat);
+                                    SimpleMessageWindow.display("You vote has increased by one");
+ //                            }
+                                }else {
+                                    SimpleMessageWindow.display("You do not have THREAT");
                                 }
+
+
                             }
-                            effectedColor = effectedColor.toUpperCase();
-                            gameBroad.matchRoom(currentVotingRoomNumber).voteResultAfterItem(effectedColor, numThreat);
-                            for (int q = 0; q < numThreat; q++) {
-                                Item threat = gameBroad.matchItem(teammember, "Threat");
-                                teammember.usedItem(threat);
-                            }
+
                         }
                         SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult());
                         moreThreatused = YesNoWindow.display("Please confirm no more THREAT will be used (y - there will be more THREAT/n - no more THREAT)");
@@ -1145,27 +1168,37 @@ public class Main extends Application {
                             boolean moreThreatused;
                             do {
                                 moreThreatused = false;
-                                int numThreat = 0;
+//                                int numThreat = 0;
+                                boolean memberUsedThreat3 = false;
                                 for (int x = 0; x < newPlayersInTheRoomList.size(); x++) {
                                     Playable teammember = newPlayersInTheRoomList.get(x);
                                     mainWindow.setScene(newPlayerScenes.get(x));
-                                    List<Integer> threadOptions = new ArrayList<>();
-                                    for (int q = 0; q <= teammember.threatNum(); q++) {
-                                        threadOptions.add(q);
-                                    }
-                                    numThreat = numberWindow.display(threadOptions, teammember + " please select how many THREAT you want use?");
-                                    String effectedColor = "";
-                                    for (int q = 0; q < votes.size(); q += 2) {
-                                        if (teammember.getColor().equalsIgnoreCase(votes.get(q))) {
-                                            effectedColor = votes.get(q + 1);
+//                                    List<Integer> threadOptions = new ArrayList<>();
+//                                    for (int q = 0; q <= teammember.threatNum(); q++) {
+//                                        threadOptions.add(q);
+//                                    }
+//                                    numThreat = numberWindow.display(threadOptions, teammember + " please select how many THREAT you want use?");
+                                    memberUsedThreat3 = YesNoWindow.display(teammember  + " please confirm if you want to use THREAT");
+                                    if (memberUsedThreat3){
+                                        if (teammember.hasThreat()){
+                                            String effectedColor = "";
+                                            for (int q = 0; q < votes.size(); q += 2) {
+                                                if (teammember.getColor().equalsIgnoreCase(votes.get(q))) {
+                                                    effectedColor = votes.get(q + 1);
+                                                }
+                                            }
+                                            effectedColor = effectedColor.toUpperCase();
+                                            fallenRoom.voteResultAfterItem(effectedColor, 1);
+//                                    for (int q = 0; q < numThreat; q++) {
+                                            Item threat = gameBroad.matchItem(teammember, "Threat");
+                                            teammember.usedItem(threat);
+                                            SimpleMessageWindow.display("Your vote has increased by one");
+//                                          }
+                                        }else {
+                                            SimpleMessageWindow.display("You do not have THREAT");
                                         }
                                     }
-                                    effectedColor = effectedColor.toUpperCase();
-                                    gameBroad.matchRoom(4).voteResultAfterItem(effectedColor, numThreat);
-                                    for (int q = 0; q < numThreat; q++) {
-                                        Item threat = gameBroad.matchItem(teammember, "Threat");
-                                        teammember.usedItem(threat);
-                                    }
+
                                 }
                                 SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(4).getCurrentVoteResult());
                                 moreThreatused = YesNoWindow.display("Please confirm no more THREAT will be used (y - there will be more THREAT/n - no more THREAT)");
