@@ -100,7 +100,7 @@ public class Main extends Application {
         firstlayout.setId("firstLayout");
         howTOPlay.setText("");
         howTOPlay.setOnAction(event -> {
-            openRule();
+            tutorial();
         });
 
 //        VBox firstlayout = new VBox();
@@ -578,21 +578,143 @@ public class Main extends Application {
 
     }
 
-    public void openRule(){
+//    public void openRule(){
+//        Stage Window = new Stage();
+//        Image ruleImg = new Image("Images/Rule.jpg", 1200, 2300, false, false);
+//
+//        StackPane layout = new StackPane();
+//        ScrollPane scroll = new ScrollPane();
+//        layout.setAlignment(Pos.CENTER);
+//        scroll.setContent(new ImageView(ruleImg));
+//        scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+//        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+//
+//        Scene rule = new Scene(layout, 1200, 750);
+//        layout.getChildren().addAll(scroll);
+//        Window.setScene(rule);
+//        Window.show();
+//    }
+
+    public void tutorial(){
         Stage Window = new Stage();
-        Image ruleImg = new Image("Images/Rule.jpg", 1200, 2300, false, false);
 
-        StackPane layout = new StackPane();
-        ScrollPane scroll = new ScrollPane();
-        layout.setAlignment(Pos.CENTER);
-        scroll.setContent(new ImageView(ruleImg));
-        scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+        Button next1 = new Button("Next");
+        next1.setId("nextBtn");
+        AnchorPane t_layout1 = new AnchorPane();
+        t_layout1.setId("tutorial_1");
+        AnchorPane.setBottomAnchor(next1,100.0);
+        AnchorPane.setLeftAnchor(next1,350.0);
+        Scene tutorial_1 = new Scene(t_layout1, 800, 600);
+        tutorial_1.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
+        t_layout1.getChildren().addAll(next1);
 
-        Scene rule = new Scene(layout, 1200, 750);
-        layout.getChildren().addAll(scroll);
-        Window.setScene(rule);
+
+        Button next2 = new Button("Next");
+        Button previous2 = new Button("Previous");
+        next2.setId("nextBtn");
+        previous2.setId("previousBtn");
+        AnchorPane t_layout2 = new AnchorPane();
+        t_layout2.setId("tutorial_2");
+        AnchorPane.setBottomAnchor(next2,100.0);
+        AnchorPane.setLeftAnchor(next2,550.0);
+        AnchorPane.setBottomAnchor(previous2,100.0);
+        AnchorPane.setLeftAnchor(previous2,150.0);
+        Scene tutorial_2 = new Scene(t_layout2, 800, 600);
+        tutorial_2.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
+        t_layout2.getChildren().addAll(next2,previous2);
+
+
+
+        Button next3 = new Button("Next");
+        Button previous3 = new Button("Previous");
+        next3.setId("nextBtn");
+        previous3.setId("previousBtn");
+        AnchorPane t_layout3 = new AnchorPane();
+        t_layout3.setId("tutorial_3");
+        AnchorPane.setBottomAnchor(next3,100.0);
+        AnchorPane.setLeftAnchor(next3,550.0);
+        AnchorPane.setBottomAnchor(previous3,100.0);
+        AnchorPane.setLeftAnchor(previous3,150.0);
+        Scene tutorial_3 = new Scene(t_layout3, 800, 600);
+        tutorial_3.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
+        t_layout3.getChildren().addAll(next3,previous3);
+
+        Button next4 = new Button("Next");
+        Button previous4 = new Button("Previous");
+        next4.setId("nextBtn");
+        previous4.setId("previousBtn");
+        AnchorPane t_layout4 = new AnchorPane();
+        t_layout4.setId("tutorial_4");
+        AnchorPane.setBottomAnchor(next4,100.0);
+        AnchorPane.setLeftAnchor(next4,550.0);
+        AnchorPane.setBottomAnchor(previous4,100.0);
+        AnchorPane.setLeftAnchor(previous4,150.0);
+        Scene tutorial_4 = new Scene(t_layout4, 800, 600);
+        tutorial_4.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
+        t_layout4.getChildren().addAll(next4,previous4);
+
+        Button next5 = new Button("Next");
+        Button previous5 = new Button("Previous");
+        next5.setId("nextBtn");
+        previous5.setId("previousBtn");
+        AnchorPane t_layout5 = new AnchorPane();
+        t_layout5.setId("tutorial_5");
+        AnchorPane.setBottomAnchor(next5,100.0);
+        AnchorPane.setLeftAnchor(next5,550.0);
+        AnchorPane.setBottomAnchor(previous5,100.0);
+        AnchorPane.setLeftAnchor(previous5,150.0);
+        Scene tutorial_5 = new Scene(t_layout5, 800, 600);
+        tutorial_5.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
+        t_layout5.getChildren().addAll(next5,previous5);
+
+        Button next6 = new Button("Next");
+        Button previous6 = new Button("Previous");
+        next6.setId("nextBtn");
+        previous6.setId("previousBtn");
+        AnchorPane t_layout6 = new AnchorPane();
+        t_layout6.setId("tutorial_6");
+        AnchorPane.setBottomAnchor(next6,100.0);
+        AnchorPane.setLeftAnchor(next6,550.0);
+        AnchorPane.setBottomAnchor(previous6,100.0);
+        AnchorPane.setLeftAnchor(previous6,150.0);
+        Scene tutorial_6 = new Scene(t_layout6, 800, 600);
+        tutorial_6.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
+        t_layout6.getChildren().addAll(next6,previous6);
+
+        Window.setScene(tutorial_1);
         Window.show();
+
+        next1.setOnAction(e ->{
+            Window.setScene(tutorial_2);
+        });
+        previous2.setOnAction(e ->{
+            Window.setScene(tutorial_1);
+        });
+        next2.setOnAction(e ->{
+            Window.setScene(tutorial_3);
+        });
+        previous3.setOnAction(e ->{
+            Window.setScene(tutorial_2);
+        });
+        next3.setOnAction(e ->{
+            Window.setScene(tutorial_4);
+        });
+        previous4.setOnAction(e ->{
+            Window.setScene(tutorial_3);
+        });
+        next4.setOnAction(e ->{
+            Window.setScene(tutorial_5);
+        });
+        previous5.setOnAction(e ->{
+            Window.setScene(tutorial_4);
+        });
+        next5.setOnAction(e ->{
+            Window.setScene(tutorial_6);
+        });
+        previous6.setOnAction(e ->{
+            Window.setScene(tutorial_5);
+        });
+
     }
 
     public void welcomeScene() {
