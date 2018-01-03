@@ -1,0 +1,57 @@
+#nextBtn{
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 50;
+    -fx-background-position: center center;
+    -fx-min-height: 50px;
+    -fx-min-width: 100px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+
+#previousBtn{
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 50;
+    -fx-background-position: center center;
+    -fx-min-height: 50px;
+    -fx-min-width: 100px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}
+#tutorial_1{
+    -fx-background-image: url("zomibieapproachedbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_2{
+    -fx-background-image: url("movingbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_3{
+    -fx-background-image: url("zomibieapproachedbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_4{
+    -fx-background-image: url("movingbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_5{
+    -fx-background-image: url("zomibieapproachedbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_6{
+    -fx-background-image: url("movingbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
