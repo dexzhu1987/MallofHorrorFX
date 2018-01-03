@@ -1265,7 +1265,7 @@ public class Main extends Application {
             }
         }
                 if (count == 0) {
-                    SimpleMessageWindow.display("No room has fallen this turn, but more zombies are still approaching.");
+                    SimpleMessageWindow.display("No room has fallen this turn, but more zombies are approaching.");
                         }
                 HashSet<Playable> removedPlayers = new HashSet<>();
                 HashSet<Integer> removedScenes = new HashSet<>();
@@ -1288,7 +1288,7 @@ public class Main extends Application {
                     actualcolors.remove(index);
                 }
                 SimpleMessageWindow.display("One round has been finished, game will move back to parking search, " +
-                        "\nOnce there are less than four character in the game, the one with most victory points won.");
+                        "\nOnce there are four character in the game, the one with most victory points won.");
                 if (gameBroad.totalCharatersRemain()>4){
                 mainWindow.setScene(parkingSearchScene);
                 }else {

@@ -21,7 +21,7 @@ public class ViewMoreZombiesWindow {
         window.setTitle("Zombies are approaching..");
         window.setMinWidth(250);
         Label label = new Label();
-        label.setText("One to two more zombies have approached below rooms...because " +
+        label.setText("Zero to two more zombies have approached below rooms...because " +
                 "\nOne room has most people, (zombie can smell fresh)"+
                 "\nOne room has most models, (they smell better)");
         label.setId("text");
