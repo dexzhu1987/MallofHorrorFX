@@ -16,11 +16,10 @@ public class Axe extends Item {
     @Override
     public void effect(Playable player, Room room) {
         List<String> messages = new ArrayList<>();
-        messages.add("You have choosed Axe");
         messages.add("Axe can kill one zomebie in the room");
         int orignalZombieNumber =room.getCurrentZombienumber();
         room.zombieKilled();
         messages.add("Zombies number has dropped from " + orignalZombieNumber + " to "  + room.getCurrentZombienumber());
-        MultiMessagesWindow.display(messages,  "----------------------Axe----------------------");
+        MultiMessagesWindow.display(messages,  "-------------Axe-----------");
     }
 }

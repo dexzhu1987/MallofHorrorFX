@@ -953,3 +953,21 @@
     -fx-background-position: center center;
 }
 
+#ViewZombiesWindow{
+    -fx-background-image: url("messagebg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 600 450;
+    -fx-background-position: center center;
+}
+
+#wonderlandBttn {
+    -fx-background-image: url('wonderlandBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 200 150;
+    -fx-background-position: center center;
+    -fx-min-height: 150px;
+    -fx-min-width: 200px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
+    -fx-cursor: hand;
+}

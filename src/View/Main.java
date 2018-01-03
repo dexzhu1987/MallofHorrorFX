@@ -497,6 +497,7 @@ public class Main extends Application {
         AnchorPane fallenRoomLayout = new AnchorPane();
         Label fallenRoomLabel =  new Label();
         fallenRoomLabel.setText("--------------------Zombies attacked ----------------------"+
+                "\n"+
                 "\nFor each room, when characters' strength is less than zombies number, zombies attacked successfully." +
                 "\nIf zombies attacked successfully, one character will be eaten by the zombies"+
                 "\n"+
@@ -1049,10 +1050,13 @@ public class Main extends Application {
             if (startActPlayer.hasSecurityCamera()) {
                 boolean usedCamera = YesNoWindow.display("The results can be viewed by using item SecurityCamera, you want to use Security Camera?(y/n)");
                 if (usedCamera) {
-                    List<String> messages = new ArrayList<>();
-                    messages.add(dices.toString());
-                    messages.add("Each number means the correspoding room will have one zombie");
-                    MultiMessagesWindow.display(messages, "Zombies will be approaching:");
+//                    List<String> messages = new ArrayList<>();
+//                    messages.add(dices.toString());
+//                    messages.add("Each number means the correspoding room will have one zombie");
+//                    MultiMessagesWindow.display(messages, "Zombies will be approaching:");
+                    ViewZombiesWindow.display(dices);
+                    Item securityCamera = gameBroad.matchItem(startActPlayer, "SecurityCamera");
+                    startActPlayer.usedItem(securityCamera);
                 }
             }
             List <Integer> options = gameBroad.roomsOptions(startActPlayer);
@@ -1063,9 +1067,10 @@ public class Main extends Application {
             SimpleMessageWindow.display(gameBroad.matchPlayer(winnercolor) + " looked at the screens " +
                         "found zombies are approaching to rooms (only winning player can see the result)");
             List<String> messages = new ArrayList<>();
-            messages.add(dices.toString());
-            messages.add("If you have remember the results, please click CONTINUE");
-            MultiMessagesWindow.display(messages,"Each number means the correspoding room will have one zombie");
+//            messages.add(dices.toString());
+//            messages.add("If you have remember the results, please click CONTINUE");
+//            MultiMessagesWindow.display(messages,"Each number means the correspoding room will have one zombie");
+            ViewZombiesWindow.display(dices);
             mainWindow.setScene(actualPlayerScenes.get(startplayer));
             List <Integer> options = gameBroad.roomsOptions(gameBroad.matchPlayer(winnercolor));
             startplayerroomnumber = ChoosingRoomWindow.display(options,"Please choose the room that you will go to" );
@@ -1080,10 +1085,11 @@ public class Main extends Application {
                     boolean usedCamera = YesNoWindow.display(player + " please confirm you want to use your SecurityCamera Item to view the result(y/n)");
                     if (usedCamera) {
                         if (player.hasSecurityCamera()) {
-                            List<String> messages = new ArrayList<>();
-                            messages.add(dices.toString());
-                            messages.add("Each number means the correspoding room will have one zombie");
-                            MultiMessagesWindow.display(messages, "Zombies will be approaching:");
+//                            List<String> messages = new ArrayList<>();
+//                            messages.add(dices.toString());
+//                            messages.add("Each number means the correspoding room will have one zombie");
+//                            MultiMessagesWindow.display(messages, "Zombies will be approaching:");
+                            ViewZombiesWindow.display(dices);
                             Item securityCamera = gameBroad.matchItem(player, "SecurityCamera");
                             player.usedItem(securityCamera);
                         } else {
@@ -1175,35 +1181,43 @@ public class Main extends Application {
             }
         }
        mainWindow.setScene(zombieAttackScene);
-       List<String> messages = new ArrayList<>();
-       messages.add("Zombies will be approaching rooms number: ");
-       messages.add(" " + dices);
-       messages.add("As a result");
-        for (int dice: dices){
-            gameBroad.matchRoom(dice).zombieApproached();
-            messages.add("A zombie has approached " + gameBroad.matchRoom(dice).getName() );
-        }
-        MultiMessagesWindow.display(messages,"Now we will reveal where the zomies will go to");
+//       List<String> messages = new ArrayList<>();
+//       messages.add("Zombies will be approaching rooms number: ");
+//       messages.add(" " + dices);
+//       messages.add("As a result");
+//        for (int dice: dices){
+//            gameBroad.matchRoom(dice).zombieApproached();
+//            messages.add("A zombie has approached " + gameBroad.matchRoom(dice).getName() );
+//        }
+//        MultiMessagesWindow.display(messages,"Now we will reveal where the zomies will go to");
+        SimpleMessageWindow.display("Now we will reveal where the zombies will go to");
+        ViewZombiesWindow.display(dices);
 
-        List<String> messages2 = new ArrayList<>();
-        messages2.add("For the room with most people, one more zombie will attracted to there (they can smell the flesh)");
+//        List<String> messages2 = new ArrayList<>();
+//        messages2.add("For the room with most people, one more zombie will attracted to there (they can smell the flesh)");
+        List<Integer> more = new ArrayList<>();
         if (gameBroad.mostPeople().getRoomNum()==7){
-            messages2.add("Result is TIE, no zombie will be attacted");
+//            messages2.add("Result is TIE, no zombie will be attacted");
+            more.add(0);
         }
         else {
             gameBroad.mostPeople().zombieApproached();
-            messages2.add("As a result, one zombie has approached " + gameBroad.mostPeople().getName());
+//            messages2.add("As a result, one zombie has approached " + gameBroad.mostPeople().getName());
+            more.add(gameBroad.mostPeople().getRoomNum());
         }
-        messages2.add("----------------------------------------");
-        messages2.add("For the room with most models (they are more likely to scream), one more zombie will attracted to there");
+//        messages2.add("----------------------------------------");
+//        messages2.add("For the room with most models (they are more likely to scream), one more zombie will attracted to there");
         if (gameBroad.mostModel().getRoomNum()==7){
-            messages2.add("Result is TIE, no zombie will be attacted");
+//            messages2.add("Result is TIE, no zombie will be attacted");
+            more.add(0);
         }
         else {
             gameBroad.mostModel().zombieApproached();
-            messages2.add("As a result, one zombie has approached " + gameBroad.mostModel().getName());
+//            messages2.add("As a result, one zombie has approached " + gameBroad.mostModel().getName());
+            more.add(gameBroad.mostModel().getRoomNum());
         }
-        MultiMessagesWindow.display(messages2, "We may have more zombies approached due to below reasons");
+//        MultiMessagesWindow.display(messages2, "We may have more zombies approached due to below reasons");
+        ViewMoreZombiesWindow.display(more);
         mainWindow.setScene(fallenRoomScene);
     }
 
@@ -1249,11 +1263,11 @@ public class Main extends Application {
                                     }
                                 }
                                 else {
-                                    break;
+                                    noMore=true;
                                 }
                             }
                             mainWindow.setScene(zombieAttackScene);
-                            noMore = YesNoWindow.display("Please confirmed no more items will be used (y - no more item will be used/n - more item will be used)");
+                            noMore = YesNoWindow.display("Please confirm no more items will be used (y - no more item will be used/n - more item will be used)");
                         }
                         while (!noMore);
                     }

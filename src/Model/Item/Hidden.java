@@ -22,10 +22,8 @@ public class Hidden extends Item {
         for (GameCharacter character: existedCharacters){
             existedCharactersList.add(character);
         }
-        charselect = GameCharacterWindow.display(player, existedCharactersList, "---------------------------Hidden------------------------------"+
-                "\nYou have choosed Hidden"+
+        charselect = GameCharacterWindow.display(player, existedCharactersList, "-------------------Hidden-------------------"+
                 "\nYou will be hiding during the whole process, (you will not be eaten nor can join the voting)"+
-                "\nCosider your character temporaly leaving the room"+
                 "\n" + player + "pleaese choose the character you want to hide. " );
         GameCharacter selectedCharacter = new ToughGuy();
         for (GameCharacter character: existedCharacters){
@@ -44,7 +42,7 @@ public class Hidden extends Item {
         messages.add("Due to Hidden has been used, aftereffect(entering back to the room is triggerd)");
         gameBroad.matchRoom(affectedRoomNumber).enter(affectedGameCharacter);
         messages.add(affectedGameCharacter + " has entered back to " + gameBroad.matchRoom(affectedRoomNumber).getName());;
-        MultiMessagesWindow.display(messages,"--------------------------Hidden---------------------------------" );
+        MultiMessagesWindow.display(messages,"---------------Hidden---------------------" );
     }
 
     public static void main(String[] args) {
