@@ -14,12 +14,11 @@ public class ShotGun extends Item {
 
     public void effect(Playable player, Room room) {
         List<String> messeges = new ArrayList<>();
-        messeges.add("You have choosed ShortGun");
         messeges.add("ShortGun can kill two zomebie in the room");
         int orignalZombieNumber =room.getCurrentZombienumber();
         room.zombieKilled();
         room.zombieKilled();
         messeges.add("Zombies number has dropped from " + orignalZombieNumber + " to "  + room.getCurrentZombienumber());
-        MultiMessagesWindow.display(messeges,"-------------------------ShortGun-----------------------------");
+        MultiMessagesWindow.display(messeges,"---------------ShortGun------------------");
     }
 }

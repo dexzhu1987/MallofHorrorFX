@@ -25,10 +25,8 @@ public class Sprint extends Item {
             opitons.add(4);
             opitons.add(5);
             opitons.add(6);
-            roompicked = numberWindow.display(opitons, "-------------------Sprint----------------------"+
-                    "\nYou have choosed Sprint"+
-                    "\nYou can eacaped from this room to other any room"+
-                    "\nPlease choose your room number that you want to go to");
+            roompicked = ChoosingRoomWindow.display(opitons, "-------------Sprint----------------"+
+                    "\nPlease choose your room that you want to eacape to");
             if (roompicked == room.getRoomNum()){
                    SimpleMessageWindow.display("You are already in the room, please select other number");
                     loop=true;
@@ -66,7 +64,7 @@ public class Sprint extends Item {
             gameBroad.matchRoom(affectedRoomNumber).enter(affectedGameCharacter);
             messages.add(affectedGameCharacter + " has entered " + gameBroad.matchRoom(affectedRoomNumber).getName());
         }
-        MultiMessagesWindow.display(messages, "-------------------------Sprint--------------------------");
+        MultiMessagesWindow.display(messages, "------------------Sprint-------------------");
     }
 
     public static void main(String[] args) {

@@ -24,7 +24,7 @@ public class ChoosingItemWindow {
         Stage window = new Stage();
 
         window.setTitle("Items");
-
+        window.initModality(Modality.APPLICATION_MODAL);
         AnchorPane layout = new AnchorPane();
 
         Label label = new Label();

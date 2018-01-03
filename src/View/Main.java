@@ -497,6 +497,7 @@ public class Main extends Application {
         AnchorPane fallenRoomLayout = new AnchorPane();
         Label fallenRoomLabel =  new Label();
         fallenRoomLabel.setText("--------------------Zombies attacked ----------------------"+
+                "\n"+
                 "\nFor each room, when characters' strength is less than zombies number, zombies attacked successfully." +
                 "\nIf zombies attacked successfully, one character will be eaten by the zombies"+
                 "\n"+
@@ -1127,11 +1128,11 @@ public class Main extends Application {
                                     }
                                 }
                                 else {
-                                    break;
+                                    noMore=true;
                                 }
                             }
                             mainWindow.setScene(zombieAttackScene);
-                            noMore = YesNoWindow.display("Please confirmed no more items will be used (y - no more item will be used/n - more item will be used)");
+                            noMore = YesNoWindow.display("Please confirm no more items will be used (y - no more item will be used/n - more item will be used)");
                         }
                         while (!noMore);
                     }
