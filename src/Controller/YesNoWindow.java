@@ -23,7 +23,7 @@ public class YesNoWindow {
     static boolean answer;
 
 
-    public static boolean display( String message){
+    public static boolean display(String message){
         Stage window = new Stage();
         window.setTitle("Please select your answer");
 

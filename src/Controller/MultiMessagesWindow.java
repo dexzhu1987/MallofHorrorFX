@@ -91,14 +91,14 @@ public class MultiMessagesWindow {
                 currentLabel.setId("text");
                 currentLabel.setWrapText(true);
                 currentLabel.setPadding(new Insets(0, 10, 0, 10));
-                try {
-                    // load a custom font from a specific location (change path!)
-                    // 12 is the size to use
-                    final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
-                    currentLabel.setFont(f); // use this font with our label
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    // load a custom font from a specific location (change path!)
+//                    // 12 is the size to use
+//                    final Font f = Font.loadFont(new FileInputStream(new File("..\\MallofHorrorFX\\src\\Controller\\digital-7.ttf")), 25);
+                    currentLabel.setFont(f1); // use this font with our label
+//                } catch (FileNotFoundException e) {
+//                    e.printStackTrace();
+//                }
                 labels.add(currentLabel);
             }
 
