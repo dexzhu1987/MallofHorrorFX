@@ -423,7 +423,7 @@ public class Main extends Application {
         //ChracterMovingScene
         AnchorPane movingLayout = new AnchorPane();
         Label movingLabel = new Label();
-        movingLabel.setText("The chief will at the result now. If no chief is eleced, a ramdom player will start the turn first");
+        movingLabel.setText("The chief is looking at the result now. If no chief is eleced, a ramdom player will start the turn first");
         movingLabel.setId("text");
         movingLabel.setWrapText(true);
         movingLabel.setPadding(new Insets(30, 10, 30, 10));
@@ -1035,6 +1035,7 @@ public class Main extends Application {
         int DiceThree = fourdices.rollDieThree();
         int DiceFour = fourdices.rollDieFour();
         List<Integer> dices = new ArrayList<>();
+        dices.clear();
         dices.add(DiceOne);
         dices.add(DiceTwo);
         dices.add(DiceThree);
@@ -1082,7 +1083,7 @@ public class Main extends Application {
                 for (int i=0; i<gameBroad.getPlayers().size(); i++) {
                     Playable player = gameBroad.getPlayers().get(i);
                     mainWindow.setScene(actualPlayerScenes.get(i));
-                    boolean usedCamera = YesNoWindow.display(player + " please confirm you want to use your SecurityCamera Item to view the result(y/n)");
+                    boolean usedCamera = YesNoWindow.display(player + " please confirm you want to use your SecurityCamera(y/n)");
                     if (usedCamera) {
                         if (player.hasSecurityCamera()) {
 //                            List<String> messages = new ArrayList<>();
@@ -1185,10 +1186,10 @@ public class Main extends Application {
 //       messages.add("Zombies will be approaching rooms number: ");
 //       messages.add(" " + dices);
 //       messages.add("As a result");
-//        for (int dice: dices){
-//            gameBroad.matchRoom(dice).zombieApproached();
+        for (int dice: dices){
+            gameBroad.matchRoom(dice).zombieApproached();
 //            messages.add("A zombie has approached " + gameBroad.matchRoom(dice).getName() );
-//        }
+        }
 //        MultiMessagesWindow.display(messages,"Now we will reveal where the zomies will go to");
         SimpleMessageWindow.display("Now we will reveal where the zombies will go to");
         ViewZombiesWindow.display(dices);
@@ -1239,7 +1240,7 @@ public class Main extends Application {
                 //using items to save the room
                 if (teamHasOtherItems(playersInTheRoom) && fallenRoom.getRoomNum() != 4) {
                     SimpleMessageWindow.display(playersInTheRoom + " is/are in the fallen room");
-                    boolean usedItemTeam = YesNoWindow.display("This result can change by using items, anyone in the room want to use Items?(y/n)");
+                    boolean usedItemTeam = YesNoWindow.display("This can be changed by using items, anyone in the room want to use Items?(y/n)");
                     if (usedItemTeam) {
                         boolean noMore;
                         do {
@@ -1409,8 +1410,8 @@ public class Main extends Application {
                     actualPlayerScenes.remove(index);
                     actualcolors.remove(index);
                 }
-                SimpleMessageWindow.display("One round has been finished, game will move back to parking search, " +
-                        "\nOnce there are four character in the game, the one with most victory points won.");
+                SimpleMessageWindow.display("A round is finished, game will move back to parking search, " +
+                        "\nOnce there are four character in game, the player with most victory points won.");
                 if (gameBroad.totalCharatersRemain()>4){
                 mainWindow.setScene(parkingSearchScene);
                 }else {
