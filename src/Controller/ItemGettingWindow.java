@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemGettingWindow {
-    public static void display(Item item){
+    public static void display(Item item, String message){
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Item");
@@ -27,7 +27,7 @@ public class ItemGettingWindow {
         AnchorPane layout = new AnchorPane();
 
         Label label = new Label();
-        label.setText("You get");
+        label.setText(message);
         label.setId("text");
         label.setWrapText(true);
         label.setPadding(new Insets(10, 10, 10, 10));
