@@ -20,37 +20,79 @@
     -fx-cursor: hand;
 }
 #tutorial_1{
-    -fx-background-image: url("DT1.png");
+    -fx-background-image: url("TR2.png");
     -fx-background-repeat: stretch;
     -fx-background-size: 800 600;
     -fx-background-position: center center;
 }
 #tutorial_2{
-    -fx-background-image: url("DT2.png");
+    -fx-background-image: url("TR3.png");
     -fx-background-repeat: stretch;
     -fx-background-size: 800 600;
     -fx-background-position: center center;
 }
 #tutorial_3{
-    -fx-background-image: url("DT6.png");
+    -fx-background-image: url("TR6.png");
     -fx-background-repeat: stretch;
     -fx-background-size: 800 600;
     -fx-background-position: center center;
 }
 #tutorial_4{
-    -fx-background-image: url("DT4.png");
+    -fx-background-image: url("TR11.png");
     -fx-background-repeat: stretch;
     -fx-background-size: 800 600;
     -fx-background-position: center center;
 }
 #tutorial_5{
-    -fx-background-image: url("DT5.png");
+    -fx-background-image: url("TR12.png");
     -fx-background-repeat: stretch;
     -fx-background-size: 800 600;
     -fx-background-position: center center;
 }
 #tutorial_6{
-    -fx-background-image: url("DT3.png");
+    -fx-background-image: url("TR1.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_7{
+    -fx-background-image: url("TR4.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_8{
+    -fx-background-image: url("TR5.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_9{
+    -fx-background-image: url("TR7.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_10{
+    -fx-background-image: url("TR8.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_11{
+    -fx-background-image: url("TR9.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_12{
+    -fx-background-image: url("TR10.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+}
+#tutorial_13{
+    -fx-background-image: url("TR13.png");
     -fx-background-repeat: stretch;
     -fx-background-size: 800 600;
     -fx-background-position: center center;
