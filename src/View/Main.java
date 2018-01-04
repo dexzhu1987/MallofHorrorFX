@@ -805,7 +805,7 @@ public class Main extends Application {
             SimpleMessageWindow.display(gameBroad.getPlayers().get(i) + " have received an starter item (Keep it to yourself)");
             Item starterItem = gameBroad.getItemDeck().deal();
             gameBroad.getPlayers().get(i).getItem(starterItem);
-            ItemGettingWindow.display(starterItem);
+            ItemGettingWindow.display(starterItem, "You get");
         }
         mainWindow.setScene(parkingSearchScene);
     }
@@ -911,7 +911,7 @@ public class Main extends Application {
 //                        itemtemplist.get(2) + ". Please select the item you want to keep (1,2,or 3)");
                 Item itemselect = ChoosingItemWindow.display(itemtemplist,"Please choose the item you want to keep");
                 if (gameBroad.matchPlayer(winnercolor).getCurrentItem().size()<6){
-                    ItemGettingWindow.display(itemselect);
+                    ItemGettingWindow.display(itemselect, "You get");
                     gameBroad.matchPlayer(winnercolor).getItem(itemselect);
                 }
                 else {
@@ -939,7 +939,7 @@ public class Main extends Application {
                 SimpleMessageWindow.display(gameBroad.matchPlayer(givecolor) + " you have received an item from " + gameBroad.matchPlayer(winnercolor)
                     + " (keep it to yourself)");
                 if (gameBroad.matchPlayer(givecolor).getCurrentItem().size()<6){
-                    ItemGettingWindow.display(itemgiveselect);
+                    ItemGettingWindow.display(itemgiveselect, gameBroad.matchPlayer(givecolor) + ": You get");
                 } else {
                     SimpleMessageWindow.display("You should have received " + itemgiveselect + ". Howver, due to your bag is full. You cannot carry more items.");
                 }
