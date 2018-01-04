@@ -68,6 +68,11 @@ public class Main extends Application {
         mainWindow = primaryStage;
         mainWindow.setTitle("Mall of Horror");
 
+        mainWindow.setOnCloseRequest(event -> {
+            event.consume();
+            closePrograme();
+        });
+
         //startgameScene
         List<Integer> numberOfPlayersOptions = new ArrayList<>();
         numberOfPlayersOptions.add(4);
@@ -595,6 +600,14 @@ public class Main extends Application {
 //        Window.setScene(rule);
 //        Window.show();
 //    }
+
+    private void closePrograme(){
+        Boolean answer= YesNoWindow.display("Sure you want to exit");
+        if (answer){
+            mainWindow.close();
+        }
+
+    }
 
     public void tutorial(){
         Stage Window = new Stage();

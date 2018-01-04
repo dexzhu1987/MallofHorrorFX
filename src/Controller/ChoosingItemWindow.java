@@ -19,13 +19,19 @@ import java.util.List;
 
 public class ChoosingItemWindow {
     static Item item;
+    static Stage window;
 
     public static Item display(List<Item> items, String message ){
-        Stage window = new Stage();
+        window = new Stage();
 
         window.setTitle("Items");
         window.initModality(Modality.APPLICATION_MODAL);
         AnchorPane layout = new AnchorPane();
+
+        window.setOnCloseRequest(event -> {
+            event.consume();
+            closePrograme();
+        });
 
         Label label = new Label();
         label.setText(message);
@@ -433,5 +439,14 @@ public class ChoosingItemWindow {
 
         return item;
     }
+
+    private static void closePrograme(){
+        Boolean answer= YesNoWindow.display("Closing will cause the programe run incorrectly, are you sure");
+        if (answer){
+            window.close();
+        }
+
+    }
+
 
 }

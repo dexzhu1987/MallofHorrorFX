@@ -22,9 +22,10 @@ import java.util.List;
 
 public class GameCharacterWindow {
     static String theCharacter;
+    static Stage window;
 
     public static String display(Playable player, List<GameCharacter> opitons, String message){
-        Stage window = new Stage();
+        window = new Stage();
         window.setTitle("Please select your character");
         window.setMinWidth(250);
         Label label = new Label();
@@ -33,6 +34,10 @@ public class GameCharacterWindow {
         label.setWrapText(true);
         label.setPadding(new Insets(20, 10, 20, 10));
 
+        window.setOnCloseRequest(event -> {
+            event.consume();
+            closePrograme();
+        });
 
 
 //        try {
@@ -148,7 +153,13 @@ public class GameCharacterWindow {
     }
 
 
+    private static void closePrograme(){
+        Boolean answer= YesNoWindow.display("Closing will cause the programe run incorrectly, are you sure");
+        if (answer){
+            window.close();
+        }
 
+    }
 
 }
 

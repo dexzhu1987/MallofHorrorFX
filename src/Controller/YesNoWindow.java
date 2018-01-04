@@ -23,9 +23,12 @@ public class YesNoWindow {
     static boolean answer;
 
 
+
     public static boolean display(String message){
         Stage window = new Stage();
         window.setTitle("Please select your answer");
+
+;
 
         Label label = new Label();
         label.setText(message);
@@ -102,5 +105,7 @@ public class YesNoWindow {
 
         return answer;
     }
+
+
 
 }

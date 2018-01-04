@@ -22,9 +22,10 @@ import java.util.List;
 
 public class ChoosingColorWindow {
     static String theColor;
+    static Stage window;
 
     public static String display(List<Playable> opitons, String message){
-        Stage window = new Stage();
+        window = new Stage();
         window.setTitle("Please select the color");
         window.setMinWidth(250);
         Label label = new Label();
@@ -32,6 +33,11 @@ public class ChoosingColorWindow {
         label.setId("text");
         label.setWrapText(true);
         label.setPadding(new Insets(30, 10, 30, 10));
+
+        window.setOnCloseRequest(event -> {
+            event.consume();
+            closePrograme();
+        });
 
 
 //        try {
@@ -147,6 +153,14 @@ public class ChoosingColorWindow {
 
 
         return theColor;
+    }
+
+    private static void closePrograme(){
+        Boolean answer= YesNoWindow.display("Closing will cause the programe run incorrectly, are you sure");
+        if (answer){
+            window.close();
+        }
+
     }
 
 }

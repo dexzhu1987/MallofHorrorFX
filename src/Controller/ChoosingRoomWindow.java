@@ -19,9 +19,10 @@ import java.util.List;
 
 public class ChoosingRoomWindow {
     static int theNumber;
+    static Stage window;
 
     public static int display(List<Integer> opitons, String message) {
-        Stage window = new Stage();
+        window = new Stage();
         window.setTitle("Please select your number");
         window.setMinWidth(250);
         Label label = new Label();
@@ -30,6 +31,10 @@ public class ChoosingRoomWindow {
         label.setWrapText(true);
         label.setPadding(new Insets(30, 10, 30, 10));
 
+        window.setOnCloseRequest(event -> {
+            event.consume();
+            closePrograme();
+        });
 
 //        try {
 //            // load a custom font from a specific location (change path!)
@@ -212,6 +217,13 @@ public class ChoosingRoomWindow {
         return theNumber;
     }
 
+    private static void closePrograme(){
+        Boolean answer= YesNoWindow.display("Closing will cause the programe run incorrectly, are you sure");
+        if (answer){
+            window.close();
+        }
+
+    }
 
 
 }

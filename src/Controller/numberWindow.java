@@ -13,9 +13,10 @@ import javafx.application.Application;
 
 public class numberWindow {
     static int theNumber;
+    static Stage window;
 
     public static int display(List<Integer> opitons, String message) {
-        Stage window = new Stage();
+        window = new Stage();
         window.setTitle("Please select your number");
         window.setMinWidth(250);
         Label label = new Label();
@@ -35,7 +36,10 @@ public class numberWindow {
 //            e.printStackTrace();
 //        }
 
-
+        window.setOnCloseRequest(event -> {
+            event.consume();
+            closePrograme();
+        });
 
 
         Button numberZeroButton = new Button("0");
@@ -374,6 +378,12 @@ public class numberWindow {
     }
 
 
+    private static void closePrograme(){
+        Boolean answer= YesNoWindow.display("Closing will cause the programe run incorrectly, are you sure");
+        if (answer){
+            window.close();
+        }
 
+    }
 
 }
