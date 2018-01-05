@@ -31,35 +31,35 @@ public class ViewVotingResultsWindow {
 //            // load a custom font from a specific location (change path!)
 //            // 12 is the size to use
         InputStream is = numberWindow.class.getResourceAsStream("digital-7.ttf");
-        final Font f1 = Font.loadFont(is, 23);
+        final Font f1 = Font.loadFont(is, 28);
 //        } catch (FileNotFoundException e) {
 //            e.printStackTrace();
 //        }
 
         Button numberZeroButton = new Button("");
-        numberZeroButton.setId("red");
-        AnchorPane.setTopAnchor(numberZeroButton, );
-        AnchorPane.setLeftAnchor(numberZeroButton,);
+        numberZeroButton.setId("RED");
+        AnchorPane.setTopAnchor(numberZeroButton,73.0);
+        AnchorPane.setLeftAnchor(numberZeroButton,423.0 );
         Button numberOneButton = new Button("");
-        AnchorPane.setTopAnchor(numberOneButton,);
-        AnchorPane.setLeftAnchor(numberOneButton,);
-        numberOneButton.setId("yellow");
+        AnchorPane.setTopAnchor(numberOneButton,106.0);
+        AnchorPane.setLeftAnchor(numberOneButton,423.0 );
+        numberOneButton.setId("YELLOW");
         Button numberTwoButton = new Button("");
-        numberTwoButton.setId("blue");
-        AnchorPane.setTopAnchor(numberTwoButton,);
-        AnchorPane.setLeftAnchor(numberTwoButton,);
+        numberTwoButton.setId("BLUE");
+        AnchorPane.setTopAnchor(numberTwoButton,142.0);
+        AnchorPane.setLeftAnchor(numberTwoButton,423.0 );
         Button numberThreeButton = new Button("");
-        numberThreeButton.setId("green");
-        AnchorPane.setTopAnchor(numberThreeButton,);
-        AnchorPane.setLeftAnchor(numberThreeButton,);
+        numberThreeButton.setId("GREEN");
+        AnchorPane.setTopAnchor(numberThreeButton,177.0);
+        AnchorPane.setLeftAnchor(numberThreeButton,423.0 );
         Button numberFourButton = new Button("");
-        numberFourButton.setId("brown");
-        AnchorPane.setTopAnchor(numberFourButton,);
-        AnchorPane.setLeftAnchor(numberFourButton,);
+        numberFourButton.setId("BROWN");
+        AnchorPane.setTopAnchor(numberFourButton,210.0);
+        AnchorPane.setLeftAnchor(numberFourButton,423.0 );
         Button numberFiveButton = new Button("");
-        numberFiveButton.setId("black");
-        AnchorPane.setTopAnchor(numberFiveButton,);
-        AnchorPane.setLeftAnchor(numberFiveButton,);
+        numberFiveButton.setId("BLACK");
+        AnchorPane.setTopAnchor(numberFiveButton,243.0);
+        AnchorPane.setLeftAnchor(numberFiveButton,423.0 );
 
 
         List<Button> oneToSix = new ArrayList<>();
@@ -71,8 +71,6 @@ public class ViewVotingResultsWindow {
         oneToSix.add(numberFiveButton);
 
 
-        List<Button> optionsButton = new ArrayList<>();
-        optionsButton.clear();
         for (int i = 0; i < colors.size(); i+=2) {
             for (int q=0; q<oneToSix.size(); q++){
                 if (colors.get(i).equalsIgnoreCase(oneToSix.get(q).getId())) {
@@ -81,6 +79,65 @@ public class ViewVotingResultsWindow {
             }
         }
 
+        Label red = new Label("0");
+        red.setId("REd");
+        red.setFont(f1); // use this font with our label
+        red.setStyle( "-fx-text-fill: red;");
+        AnchorPane.setTopAnchor(red,320.0);
+        AnchorPane.setLeftAnchor(red,142.0 );
+
+        Label yellow = new Label("0");
+        yellow.setId("YELLow");
+        yellow.setFont(f1); // use this font with our label
+        yellow.setStyle( "-fx-text-fill: yellow;");
+        AnchorPane.setTopAnchor(yellow,354.0);
+        AnchorPane.setLeftAnchor(yellow,142.0 );
+
+        Label blue = new Label("0");
+        blue.setId("BLue");
+        blue.setFont(f1); // use this font with our label
+        blue.setStyle( "-fx-text-fill: blue;");
+        AnchorPane.setTopAnchor(blue,320.0);
+        AnchorPane.setLeftAnchor(blue,331.0 );
+
+        Label green = new Label("0");
+        green.setId("GREen");
+        green.setFont(f1); // use this font with our label
+        green.setStyle( "-fx-text-fill: green;");
+        AnchorPane.setTopAnchor(green,354.0);
+        AnchorPane.setLeftAnchor(green,331.0 );
+
+        Label brown = new Label("0");
+        brown.setId("BROwn");
+        brown.setFont(f1); // use this font with our label
+        brown.setStyle( "-fx-text-fill: brown;");
+        AnchorPane.setTopAnchor(brown,320.0);
+        AnchorPane.setLeftAnchor(brown,525.0 );
+
+        Label black = new Label("0");
+        black.setId("BLAck");
+        black.setFont(f1); // use this font with our label
+        black.setStyle( "-fx-text-fill: white;");
+        AnchorPane.setTopAnchor(black,354.0);
+        AnchorPane.setLeftAnchor(black,525.0 );
+
+        List<Label> labels = new ArrayList<>();
+        labels.add(red);
+        labels.add(yellow);
+        labels.add(blue);
+        labels.add(green);
+        labels.add(brown);
+        labels.add(black);
+
+        List<String> keys = new ArrayList<>(results.keySet());
+        List<Integer> values= new ArrayList<>(results.values());
+
+        for (int i=0; i<keys.size(); i++){
+            for (int q=0; q<labels.size(); q++)
+            if (keys.get(i).equalsIgnoreCase(labels.get(q).getId())){
+                labels.get(q).setText(Integer.toString(values.get(i)) );
+            }
+        }
 
 
 
@@ -96,9 +153,16 @@ public class ViewVotingResultsWindow {
 
 
         layout.getChildren().addAll(ok);
+        for (Button button: oneToSix){
+            layout.getChildren().add(button);
+        }
+
+        for (Label label: labels){
+            layout.getChildren().add(label);
+        }
 
 
-        layout.setId("ViewZombiesWindow");
+        layout.setId("votingWindowBg");
         Scene scene = new Scene(layout, 600, 450);
         File f = new File("..\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
         scene.getStylesheets().clear();

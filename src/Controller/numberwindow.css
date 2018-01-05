@@ -971,3 +971,144 @@
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
+
+
+
+#RED {
+    -fx-background-image: url('votingNormalBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#YELLOW {
+    -fx-background-image: url('votingNormalBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#BLUE {
+    -fx-background-image: url('votingNormalBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#GREEN {
+    -fx-background-image: url('votingNormalBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#BROWN {
+    -fx-background-image: url('votingNormalBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#BLACK {
+    -fx-background-image: url('votingNormalBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#Redact {
+    -fx-background-image: url('votingRedBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#Yellowact {
+    -fx-background-image: url('votingYellowBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#Blueact {
+    -fx-background-image: url('votingBlueBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#Greenact {
+    -fx-background-image: url('votingGreenBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#Brownact {
+    -fx-background-image: url('votingBrownBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#Blackact {
+    -fx-background-image: url('votingBlackBttn.png');
+    -fx-background-repeat: stretch;
+    -fx-background-radius: 6, 5;
+    -fx-background-size: 100 30;
+    -fx-background-position: center center;
+    -fx-min-height: 30px;
+    -fx-min-width: 100px;
+    -fx-cursor: hand;
+}
+
+#votingWindowBg{
+    -fx-background-image: url("votingWindowBg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 600 450;
+    -fx-background-position: center center;
+}

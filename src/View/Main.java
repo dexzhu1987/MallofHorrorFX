@@ -973,12 +973,13 @@ public class Main extends Application {
             }
             gameBroad.matchRoom(4).resetVoteResult();
             gameBroad.matchRoom(4).voteResultAfterVote(votes);
-            List<String> results = new ArrayList<>();
-            for (int l = 0; l < votes.size(); l += 2) {
-                results.add(gameBroad.matchPlayer(votes.get(l)) + " has voted " + votes.get(l + 1));
-            }
-            results.add("Summary: " + gameBroad.matchRoom(4).getCurrentVoteResult());
-            MultiMessagesWindow.display(results, "Voting Result");
+//            List<String> results = new ArrayList<>();
+//            for (int l = 0; l < votes.size(); l += 2) {
+//                results.add(gameBroad.matchPlayer(votes.get(l)) + " has voted " + votes.get(l + 1));
+//            }
+//            results.add("Summary: " + gameBroad.matchRoom(4).getCurrentVoteResult());
+//            MultiMessagesWindow.display(results, "Voting Result");
+            ViewVotingResultsWindow.display(votes,gameBroad.matchRoom(4).getCurrentVoteResult());
             //using Threat to change result;
             if (teamHasThreat(searchteam)) {
                 boolean voteYes = YesNoWindow.display("Voting result can be changed by item THREAT, anyone want to change the result?");
@@ -1116,12 +1117,13 @@ public class Main extends Application {
             }
             gameBroad.matchRoom(currentVotingRoomNumber).resetVoteResult();
             gameBroad.matchRoom(currentVotingRoomNumber).voteResultAfterVote(votes);
-            List<String> results = new ArrayList<>();
-            for (int l = 0; l < votes.size(); l += 2) {
-                results.add(gameBroad.matchPlayer(votes.get(l)) + " has voted " + votes.get(l + 1));
-            }
-            results.add("Summary: " + gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult());
-            MultiMessagesWindow.display(results, "Voting Result");
+//            List<String> results = new ArrayList<>();
+//            for (int l = 0; l < votes.size(); l += 2) {
+//                results.add(gameBroad.matchPlayer(votes.get(l)) + " has voted " + votes.get(l + 1));
+//            }
+//            results.add("Summary: " + gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult());
+//            MultiMessagesWindow.display(results, "Voting Result");
+            ViewVotingResultsWindow.display(votes,gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult());
             //using Threat to change result;
             if (teamHasThreat(team)) {
                 boolean voteYes = YesNoWindow.display("Voting result can be changed by item THREAT, anyone want to change the result?");
@@ -1446,12 +1448,13 @@ public class Main extends Application {
                     }
                     fallenRoom.resetVoteResult();
                     fallenRoom.voteResultAfterVote(votes);
-                    List<String> results = new ArrayList<>();
-                    for (int l = 0; l < votes.size(); l += 2) {
-                        results.add(gameBroad.matchPlayer(votes.get(l)) + " has voted " + votes.get(l + 1));
-                    }
-                    results.add("Summary: " + fallenRoom.getCurrentVoteResult());
-                    MultiMessagesWindow.display(results, "Voting Result");
+//                    List<String> results = new ArrayList<>();
+//                    for (int l = 0; l < votes.size(); l += 2) {
+//                        results.add(gameBroad.matchPlayer(votes.get(l)) + " has voted " + votes.get(l + 1));
+//                    }
+//                    results.add("Summary: " + fallenRoom.getCurrentVoteResult());
+//                    MultiMessagesWindow.display(results, "Voting Result");
+                    ViewVotingResultsWindow.display(votes,fallenRoom.getCurrentVoteResult());
                     //using Threat to change result;
                     if (teamHasThreat(newPlayersInTheRoom)) {
                         boolean teamUsedThreat = YesNoWindow.display("Voting result can be changed by item THREAT, anyone want to change the result?(y/n)");
