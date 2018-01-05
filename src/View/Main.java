@@ -793,6 +793,20 @@ public class Main extends Application {
         tutorial_13.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout13.getChildren().addAll(next13,previous13);
 
+        Button next14 = new Button("Next");
+        Button previous14 = new Button("Previous");
+        next14.setId("nextBtn");
+        previous14.setId("previousBtn");
+        AnchorPane t_layout14 = new AnchorPane();
+        t_layout14.setId("tutorial_14");
+        AnchorPane.setBottomAnchor(next14,30.0);
+        AnchorPane.setLeftAnchor(next14,600.0);
+        AnchorPane.setBottomAnchor(previous14,30.0);
+        AnchorPane.setLeftAnchor(previous14,100.0);
+        Scene tutorial_14 = new Scene(t_layout14, 800, 600);
+        tutorial_14.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
+        t_layout14.getChildren().addAll(next14,previous14);
+
         Window.setScene(tutorial_1);
         Window.show();
 
@@ -867,6 +881,12 @@ public class Main extends Application {
         });
         previous13.setOnAction(e ->{
             Window.setScene(tutorial_12);
+        });
+        next13.setOnAction(e ->{
+            Window.setScene(tutorial_14);
+        });
+        previous14.setOnAction(e ->{
+            Window.setScene(tutorial_13);
         });
 
     }

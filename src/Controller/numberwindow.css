@@ -14,7 +14,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-     -fx-max-height: 55px
+     -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -28,7 +28,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -42,7 +42,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -56,7 +56,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -70,7 +70,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -85,7 +85,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -99,7 +99,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -128,7 +128,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -141,7 +141,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -154,7 +154,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -167,7 +167,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -180,7 +180,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -193,7 +193,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -206,7 +206,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -219,7 +219,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -232,7 +232,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -245,7 +245,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -258,7 +258,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -271,7 +271,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -284,7 +284,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -297,7 +297,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -310,7 +310,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -323,7 +323,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -336,7 +336,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -349,7 +349,7 @@
     -fx-min-height: 170px;
     -fx-min-width: 170px;
     -fx-max-width: 170px;
-    -fx-max-height: 170px
+    -fx-max-height: 170px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -372,7 +372,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -386,7 +386,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -400,7 +400,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -414,7 +414,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -428,7 +428,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -442,7 +442,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -456,21 +456,21 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
 
 #blueToughGuybttn{
     -fx-background-image: url('blueToughGuybttn.png');
-    -fx-background-repeat: stretch
+    -fx-background-repeat: stretch;
     -fx-background-radius: 100;
     -fx-background-size: 45;
     -fx-background-position: center center;
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -484,7 +484,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -498,7 +498,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -512,7 +512,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -526,7 +526,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -540,7 +540,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -554,7 +554,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -568,7 +568,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -582,7 +582,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -596,7 +596,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -610,7 +610,7 @@
     -fx-min-height: 45px;
     -fx-min-width: 45px;
     -fx-max-width: 45px;
-     -fx-max-height: 45px
+     -fx-max-height: 45px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -734,7 +734,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -748,7 +748,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -762,7 +762,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -776,7 +776,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -791,7 +791,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
@@ -805,7 +805,7 @@
     -fx-min-height: 55px;
     -fx-min-width: 55px;
     -fx-max-width: 55px;
-    -fx-max-height: 55px
+    -fx-max-height: 55px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
