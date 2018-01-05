@@ -1020,7 +1020,9 @@ public class Main extends Application {
                             }
 
                         }
-                        SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(4).getCurrentVoteResult());
+//                        SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(4).getCurrentVoteResult());
+                        ViewVotingSummaryWindow.display(gameBroad.matchRoom(4).getCurrentVoteResult(), "Voting " +
+                                "Result after Threat");
                         moreThreatused = YesNoWindow.display("Please confirm no more THREAT will be used (y - there will be more THREAT/n - no more THREAT)");
                     }
                     while (moreThreatused);
@@ -1164,7 +1166,8 @@ public class Main extends Application {
                             }
 
                         }
-                        SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult());
+//                        SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult());
+                        ViewVotingSummaryWindow.display(gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult(), "Vote Result after THREAT");
                         moreThreatused = YesNoWindow.display("Please confirm no more THREAT will be used (y - there will be more THREAT/n - no more THREAT)");
                     }
                     while (moreThreatused);
@@ -1177,7 +1180,8 @@ public class Main extends Application {
                 SimpleMessageWindow.display("Result is TIE." + " No chief is elected");
             } else {
                 String winnercolor = gameBroad.matchRoom(currentVotingRoomNumber).winner();
-                SimpleMessageWindow.display("Voting Result: " + gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult());
+                ViewVotingSummaryWindow.display(gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult(), "Vote Result");
+//                SimpleMessageWindow.display("Voting Result: " + gameBroad.matchRoom(currentVotingRoomNumber).getCurrentVoteResult());
                 SimpleMessageWindow.display("Winner is " + gameBroad.matchPlayer(winnercolor));
             }
         }
@@ -1494,7 +1498,8 @@ public class Main extends Application {
                                     }
 
                                 }
-                                SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(4).getCurrentVoteResult());
+//                                SimpleMessageWindow.display("Result after the THREAT used: " + gameBroad.matchRoom(4).getCurrentVoteResult());
+                                ViewVotingSummaryWindow.display(gameBroad.matchRoom(4).getCurrentVoteResult(),"Vote Result after THREAT");
                                 moreThreatused = YesNoWindow.display("Please confirm no more THREAT will be used (y - there will be more THREAT/n - no more THREAT)");
                             }
                             while (moreThreatused);
@@ -1515,8 +1520,10 @@ public class Main extends Application {
                         SimpleMessageWindow.display(loser + " has been chosed, one of character his/her character in the room will be eaten. ");
                     } else {
                         String winnercolor = fallenRoom.winner();
-                        SimpleMessageWindow.display("Voting Result: " + fallenRoom.getCurrentVoteResult() +
-                                "\n" + gameBroad.matchPlayer(winnercolor) + " get most vote and one of his/her character in the room will be eaten.");
+//                        SimpleMessageWindow.display("Voting Result: " + fallenRoom.getCurrentVoteResult() +
+//                                "\n" + gameBroad.matchPlayer(winnercolor) + " get most vote and one of his/her character in the room will be eaten.");
+                        ViewVotingSummaryWindow.display(fallenRoom.getCurrentVoteResult(),"Voting Result");
+                        SimpleMessageWindow.display("As a result: "+  gameBroad.matchPlayer(winnercolor) + " has to select one of his/her characters to be killed");
                         ;
                         loser = gameBroad.matchPlayer(winnercolor);
                     }

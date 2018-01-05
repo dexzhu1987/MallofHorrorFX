@@ -1112,3 +1112,10 @@
     -fx-background-size: 600 450;
     -fx-background-position: center center;
 }
+
+#ViewVotingSummaryWindow{
+    -fx-background-image: url("VotingSummaryWindowBg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 400 300;
+    -fx-background-position: center center;
+}
