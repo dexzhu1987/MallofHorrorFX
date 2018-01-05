@@ -1,21 +1,27 @@
 #nextBtn{
-    -fx-background-repeat: stretch;
-    -fx-background-radius: 6, 5;
-    -fx-background-size: 100 50;
+    -fx-background-image: url('nextBttn.png');
+   -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 60;
     -fx-background-position: center center;
-    -fx-min-height: 50px;
-    -fx-min-width: 100px;
+    -fx-min-height: 60px;
+    -fx-min-width: 60px;
+    -fx-max-width: 60px;
+     -fx-max-height: 60px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }
 
 #previousBtn{
-    -fx-background-repeat: stretch;
-    -fx-background-radius: 6, 5;
-    -fx-background-size: 100 50;
+    -fx-background-image: url('prevBttn.png');
+   -fx-background-repeat: stretch;
+    -fx-background-radius: 100;
+    -fx-background-size: 60;
     -fx-background-position: center center;
-    -fx-min-height: 50px;
-    -fx-min-width: 100px;
+    -fx-min-height: 60px;
+    -fx-min-width: 60px;
+    -fx-max-width: 60px;
+     -fx-max-height: 60px;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.3 , 0 , 1 );
     -fx-cursor: hand;
 }

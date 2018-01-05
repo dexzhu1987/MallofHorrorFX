@@ -612,7 +612,7 @@ public class Main extends Application {
     public void tutorial(){
         Stage Window = new Stage();
 
-        Button next1 = new Button("Next");
+        Button next1 = new Button("");
         next1.setId("nextBtn");
         AnchorPane t_layout1 = new AnchorPane();
         t_layout1.setId("tutorial_1");
@@ -623,8 +623,8 @@ public class Main extends Application {
         t_layout1.getChildren().addAll(next1);
 
 
-        Button next2 = new Button("Next");
-        Button previous2 = new Button("Previous");
+        Button next2 = new Button("");
+        Button previous2 = new Button("");
         next2.setId("nextBtn");
         previous2.setId("previousBtn");
         AnchorPane t_layout2 = new AnchorPane();
@@ -639,8 +639,8 @@ public class Main extends Application {
 
 
 
-        Button next3 = new Button("Next");
-        Button previous3 = new Button("Previous");
+        Button next3 = new Button("");
+        Button previous3 = new Button("");
         next3.setId("nextBtn");
         previous3.setId("previousBtn");
         AnchorPane t_layout3 = new AnchorPane();
@@ -653,8 +653,8 @@ public class Main extends Application {
         tutorial_3.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout3.getChildren().addAll(next3,previous3);
 
-        Button next4 = new Button("Next");
-        Button previous4 = new Button("Previous");
+        Button next4 = new Button("");
+        Button previous4 = new Button("");
         next4.setId("nextBtn");
         previous4.setId("previousBtn");
         AnchorPane t_layout4 = new AnchorPane();
@@ -667,8 +667,8 @@ public class Main extends Application {
         tutorial_4.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout4.getChildren().addAll(next4,previous4);
 
-        Button next5 = new Button("Next");
-        Button previous5 = new Button("Previous");
+        Button next5 = new Button("");
+        Button previous5 = new Button("");
         next5.setId("nextBtn");
         previous5.setId("previousBtn");
         AnchorPane t_layout5 = new AnchorPane();
@@ -681,8 +681,8 @@ public class Main extends Application {
         tutorial_5.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout5.getChildren().addAll(next5,previous5);
 
-        Button next6 = new Button("Next");
-        Button previous6 = new Button("Previous");
+        Button next6 = new Button("");
+        Button previous6 = new Button("");
         next6.setId("nextBtn");
         previous6.setId("previousBtn");
         AnchorPane t_layout6 = new AnchorPane();
@@ -695,8 +695,8 @@ public class Main extends Application {
         tutorial_6.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout6.getChildren().addAll(next6,previous6);
 
-        Button next7 = new Button("Next");
-        Button previous7 = new Button("Previous");
+        Button next7 = new Button("");
+        Button previous7 = new Button("");
         next7.setId("nextBtn");
         previous7.setId("previousBtn");
         AnchorPane t_layout7 = new AnchorPane();
@@ -709,8 +709,8 @@ public class Main extends Application {
         tutorial_7.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout7.getChildren().addAll(next7,previous7);
 
-        Button next8 = new Button("Next");
-        Button previous8 = new Button("Previous");
+        Button next8 = new Button("");
+        Button previous8 = new Button("");
         next8.setId("nextBtn");
         previous8.setId("previousBtn");
         AnchorPane t_layout8 = new AnchorPane();
@@ -723,8 +723,8 @@ public class Main extends Application {
         tutorial_8.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout8.getChildren().addAll(next8,previous8);
 
-        Button next9 = new Button("Next");
-        Button previous9 = new Button("Previous");
+        Button next9 = new Button("");
+        Button previous9 = new Button("");
         next9.setId("nextBtn");
         previous9.setId("previousBtn");
         AnchorPane t_layout9 = new AnchorPane();
@@ -737,8 +737,8 @@ public class Main extends Application {
         tutorial_9.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout9.getChildren().addAll(next9,previous9);
 
-        Button next10 = new Button("Next");
-        Button previous10 = new Button("Previous");
+        Button next10 = new Button("");
+        Button previous10 = new Button("");
         next10.setId("nextBtn");
         previous10.setId("previousBtn");
         AnchorPane t_layout10 = new AnchorPane();
@@ -751,8 +751,8 @@ public class Main extends Application {
         tutorial_10.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout10.getChildren().addAll(next10,previous10);
 
-        Button next11 = new Button("Next");
-        Button previous11 = new Button("Previous");
+        Button next11 = new Button("");
+        Button previous11 = new Button("");
         next11.setId("nextBtn");
         previous11.setId("previousBtn");
         AnchorPane t_layout11 = new AnchorPane();
@@ -765,8 +765,8 @@ public class Main extends Application {
         tutorial_11.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout11.getChildren().addAll(next11,previous11);
 
-        Button next12 = new Button("Next");
-        Button previous12 = new Button("Previous");
+        Button next12 = new Button("");
+        Button previous12 = new Button("");
         next12.setId("nextBtn");
         previous12.setId("previousBtn");
         AnchorPane t_layout12 = new AnchorPane();
@@ -779,8 +779,8 @@ public class Main extends Application {
         tutorial_12.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout12.getChildren().addAll(next12,previous12);
 
-        Button next13 = new Button("Next");
-        Button previous13 = new Button("Previous");
+        Button next13 = new Button("");
+        Button previous13 = new Button("");
         next13.setId("nextBtn");
         previous13.setId("previousBtn");
         AnchorPane t_layout13 = new AnchorPane();
@@ -793,8 +793,8 @@ public class Main extends Application {
         tutorial_13.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
         t_layout13.getChildren().addAll(next13,previous13);
 
-        Button next14 = new Button("Next");
-        Button previous14 = new Button("Previous");
+        Button next14 = new Button("");
+        Button previous14 = new Button("");
         next14.setId("nextBtn");
         previous14.setId("previousBtn");
         AnchorPane t_layout14 = new AnchorPane();
@@ -805,7 +805,7 @@ public class Main extends Application {
         AnchorPane.setLeftAnchor(previous14,100.0);
         Scene tutorial_14 = new Scene(t_layout14, 800, 600);
         tutorial_14.getStylesheets().add(this.getClass().getResource("tutorial.css").toExternalForm());
-        t_layout14.getChildren().addAll(next14,previous14);
+        t_layout14.getChildren().addAll(previous14);
 
         Window.setScene(tutorial_1);
         Window.show();
