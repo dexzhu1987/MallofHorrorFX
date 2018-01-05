@@ -363,7 +363,7 @@
     -fx-background-position: center center;
 }
 
-#redgunmanbttn {
+#redGunManbttn {
     -fx-background-image: url('redgunmanbttn.png');
     -fx-background-repeat: stretch;
     -fx-background-radius: 100;
@@ -377,7 +377,7 @@
     -fx-cursor: hand;
 }
 
-#redtoughguybttn{
+#redToughGuybttn{
     -fx-background-image: url('redtoughguybttn.png');
     -fx-background-repeat: stretch;
     -fx-background-radius: 100;
@@ -391,7 +391,7 @@
     -fx-cursor: hand;
 }
 
-#redmodelbttn{
+#redModelbttn{
     -fx-background-image: url('redmodelbttn.png');
     -fx-background-repeat: stretch;
     -fx-background-radius: 100;
@@ -898,7 +898,7 @@
     -fx-cursor: hand;
 }
 
-#megatoyBttn {
+#megatoysBttn {
     -fx-background-image: url('megatoyBttn.png');
     -fx-background-repeat: stretch;
     -fx-background-radius: 6, 5;
@@ -910,7 +910,7 @@
     -fx-cursor: hand;
 }
 
-#parkBttn {
+#parkingBttn {
     -fx-background-image: url('parkBttn.png');
     -fx-background-repeat: stretch;
     -fx-background-radius: 6, 5;
@@ -922,7 +922,7 @@
     -fx-cursor: hand;
 }
 
-#securityHQBttn {
+#securityhqBttn {
     -fx-background-image: url('securityHQBttn.png');
     -fx-background-repeat: stretch;
     -fx-background-radius: 6, 5;
@@ -934,7 +934,7 @@
     -fx-cursor: hand;
 }
 
-#superstoreBttn {
+#supermarketBttn {
     -fx-background-image: url('superstoreBttn.png');
     -fx-background-repeat: stretch;
     -fx-background-radius: 6, 5;
@@ -1117,5 +1117,19 @@
     -fx-background-image: url("VotingSummaryWindowBg.png");
     -fx-background-repeat: stretch;
     -fx-background-size: 400 300;
+    -fx-background-position: center center;
+}
+
+#ViewCharacterMovingWindow{
+    -fx-background-image: url("charactermovingbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 700 525;
+    -fx-background-position: center center;
+}
+
+#ViewCharacterMovingFullWindow{
+    -fx-background-image: url("charactermovingfullbg.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 700 525;
     -fx-background-position: center center;
 }

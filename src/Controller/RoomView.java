@@ -147,11 +147,11 @@ public class RoomView {
 
 
         Button redGunMan = new Button("");
-        redGunMan.setId("redgunmanbttn");
+        redGunMan.setId("redGunManbttn");
         Button redToughGuy = new Button("");
-        redToughGuy.setId("redtoughguybttn");
+        redToughGuy.setId("redToughGuybttn");
         Button redModel = new Button("");
-        redModel.setId("redmodelbttn");
+        redModel.setId("redModelbttn");
 
         Button yellowGunMan = new Button("");
         yellowGunMan.setId("yellowGunManbttn");

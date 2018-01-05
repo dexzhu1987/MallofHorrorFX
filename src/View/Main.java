@@ -1309,13 +1309,15 @@ public class Main extends Application {
         gameBroad.inWhichRoom(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect)).leave(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect));
         if (gameBroad.matchRoom(startplayerroomnumber).isFull()){
             gameBroad.matchRoom(4).enter(selectedCharacter);
-            SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect) + " left " +
-                    leavingroom.getName() + " and wanted to enter " + gameBroad.matchRoom(startplayerroomnumber).getName()
-            +"\nBut due to room is full, character is moved to Parking instead");
+            ViewCharacterMovingFullWindow.display(leavingroom,gameBroad.matchRoom(startplayerroomnumber),gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect));
+//            SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect) + " left " +
+//                    leavingroom.getName() + " and wanted to enter " + gameBroad.matchRoom(startplayerroomnumber).getName()
+//            +"\nBut due to room is full, character is moved to Parking instead");
         }else {
             gameBroad.matchRoom(startplayerroomnumber).enter(selectedCharacter);
-            SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect) + " left " +
-                    leavingroom.getName() + " enter " + gameBroad.matchRoom(startplayerroomnumber).getName());
+            ViewCharacterMovingWindow.display(leavingroom,gameBroad.matchRoom(startplayerroomnumber),gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect));
+//            SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(startplayer),charselect) + " left " +
+//                    leavingroom.getName() + " enter " + gameBroad.matchRoom(startplayerroomnumber).getName());
         }
         //other players, first half
         int k = 0;
@@ -1330,13 +1332,15 @@ public class Main extends Application {
             gameBroad.inWhichRoom(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect)).leave(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect));
             if (gameBroad.matchRoom(roomspicked.get(q)).isFull()){
                 gameBroad.matchRoom(4).enter(selectedCharacter2);
-                SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
-                        leavingroom2.getName() + " and wanted enter " + gameBroad.matchRoom(roomspicked.get(q)).getName()+
-                        "\nBut due to room is full, character is moved to Parking instead");
+                ViewCharacterMovingFullWindow.display(leavingroom2,gameBroad.matchRoom(roomspicked.get(q)),selectedCharacter2);
+//                SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
+//                        leavingroom2.getName() + " and wanted enter " + gameBroad.matchRoom(roomspicked.get(q)).getName()+
+//                        "\nBut due to room is full, character is moved to Parking instead");
             }else {
                 gameBroad.matchRoom(roomspicked.get(q)).enter(selectedCharacter2);
-                SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
-                        leavingroom2.getName() + " enter " + gameBroad.matchRoom(roomspicked.get(q)).getName());
+                ViewCharacterMovingWindow.display(leavingroom2,gameBroad.matchRoom(roomspicked.get(q)),selectedCharacter2);
+//                SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
+//                        leavingroom2.getName() + " enter " + gameBroad.matchRoom(roomspicked.get(q)).getName());
             }
             k++;
         }
@@ -1351,13 +1355,15 @@ public class Main extends Application {
             gameBroad.inWhichRoom(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect)).leave(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect));
             if (gameBroad.matchRoom(roomspicked.get(q)).isFull()){
                 gameBroad.matchRoom(4).enter(selectedCharacter2);
-                SimpleMessageWindow.display( gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
-                        leavingRoom2.getName() + " and wanted to enter " + gameBroad.matchRoom(roomspicked.get(q)).getName()
-                        +"\nDue to room is full, character is moved to Parking instead");
+                ViewCharacterMovingFullWindow.display(leavingRoom2, gameBroad.matchRoom(roomspicked.get(q)),selectedCharacter2);
+//                SimpleMessageWindow.display( gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " left " +
+//                        leavingRoom2.getName() + " and wanted to enter " + gameBroad.matchRoom(roomspicked.get(q)).getName()
+//                        +"\nDue to room is full, character is moved to Parking instead");
             }else {
                 gameBroad.matchRoom(roomspicked.get(q)).enter(selectedCharacter2);
-                SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " leave " +
-                        leavingRoom2.getName() + " enter " + gameBroad.matchRoom(roomspicked.get(q)).getName());
+                ViewCharacterMovingWindow.display(leavingRoom2, gameBroad.matchRoom(roomspicked.get(q)),selectedCharacter2);
+//                SimpleMessageWindow.display(gameBroad.matchGameCharacter(gameBroad.getPlayers().get(i),charselect) + " leave " +
+//                        leavingRoom2.getName() + " enter " + .getName());
             }
         }
        mainWindow.setScene(zombieAttackScene);

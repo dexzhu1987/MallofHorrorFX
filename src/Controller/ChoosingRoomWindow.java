@@ -53,13 +53,13 @@ public class ChoosingRoomWindow {
         Button numberTwoButton = new Button("2");
         numberTwoButton.setId("cachouBttn");
         Button numberThreeButton = new Button("3");
-        numberThreeButton.setId("megatoyBttn");
+        numberThreeButton.setId("megatoysBttn");
         Button numberFourButton = new Button("4");
-        numberFourButton.setId("parkBttn");
+        numberFourButton.setId("parkingBttn");
         Button numberFiveButton = new Button("5");
-        numberFiveButton.setId("securityHQBttn");
+        numberFiveButton.setId("securityhqBttn");
         Button numberSixButton = new Button("6");
-        numberSixButton.setId("superstoreBttn");
+        numberSixButton.setId("supermarketBttn");
 
         Button numberZeroButton2 = new Button("0");
         numberZeroButton2.setId("0");
@@ -68,13 +68,13 @@ public class ChoosingRoomWindow {
         Button numberTwoButton2 = new Button("2");
         numberTwoButton2.setId("cachouBttn");
         Button numberThreeButton2 = new Button("3");
-        numberThreeButton2.setId("megatoyBttn");
+        numberThreeButton2.setId("megatoysBttn");
         Button numberFourButton2 = new Button("4");
-        numberFourButton2.setId("parkBttn");
+        numberFourButton2.setId("parkingBttn");
         Button numberFiveButton2 = new Button("5");
-        numberFiveButton2.setId("securityHQBttn");
+        numberFiveButton2.setId("securityhqBttn");
         Button numberSixButton2 = new Button("6");
-        numberSixButton2.setId("superstoreBttn");
+        numberSixButton2.setId("supermarketBttn");
 
         //Clicking will set answer and close window
         numberZeroButton.setOnAction(e -> {

@@ -42,52 +42,52 @@ public class ViewZombiesWindow {
         Button numberTwoButton = new Button("2");
         numberTwoButton.setId("cachouBttn");
         Button numberThreeButton = new Button("3");
-        numberThreeButton.setId("megatoyBttn");
+        numberThreeButton.setId("megatoysBttn");
         Button numberFourButton = new Button("4");
-        numberFourButton.setId("parkBttn");
+        numberFourButton.setId("parkingBttn");
         Button numberFiveButton = new Button("5");
-        numberFiveButton.setId("securityHQBttn");
+        numberFiveButton.setId("securityhqBttn");
         Button numberSixButton = new Button("6");
-        numberSixButton.setId("superstoreBttn");
+        numberSixButton.setId("supermarketBttn");
 
         Button numberOneButton2 = new Button("1");
         numberOneButton2.setId("restroomBttn");
         Button numberTwoButton2 = new Button("2");
         numberTwoButton2.setId("cachouBttn");
         Button numberThreeButton2 = new Button("3");
-        numberThreeButton2.setId("megatoyBttn");
+        numberThreeButton2.setId("megatoysBttn");
         Button numberFourButton2 = new Button("4");
-        numberFourButton2.setId("parkBttn");
+        numberFourButton2.setId("parkingBttn");
         Button numberFiveButton2 = new Button("5");
-        numberFiveButton2.setId("securityHQBttn");
+        numberFiveButton2.setId("securityhqBttn");
         Button numberSixButton2 = new Button("6");
-        numberSixButton2.setId("superstoreBttn");
+        numberSixButton2.setId("supermarketBttn");
 
         Button numberOneButton3 = new Button("1");
         numberOneButton3.setId("restroomBttn");
         Button numberTwoButton3 = new Button("2");
         numberTwoButton3.setId("cachouBttn");
         Button numberThreeButton3 = new Button("3");
-        numberThreeButton3.setId("megatoyBttn");
+        numberThreeButton3.setId("megatoysBttn");
         Button numberFourButton3 = new Button("4");
-        numberFourButton3.setId("parkBttn");
+        numberFourButton3.setId("parkingBttn");
         Button numberFiveButton3 = new Button("5");
-        numberFiveButton3.setId("securityHQBttn");
+        numberFiveButton3.setId("securityhqBttn");
         Button numberSixButton3 = new Button("6");
-        numberSixButton3.setId("superstoreBttn");
+        numberSixButton3.setId("supermarketBttn");
 
         Button numberOneButton4 = new Button("1");
         numberOneButton4.setId("restroomBttn");
         Button numberTwoButton4 = new Button("2");
         numberTwoButton4.setId("cachouBttn");
         Button numberThreeButton4 = new Button("3");
-        numberThreeButton4.setId("megatoyBttn");
+        numberThreeButton4.setId("megatoysBttn");
         Button numberFourButton4 = new Button("4");
-        numberFourButton4.setId("parkBttn");
+        numberFourButton4.setId("parkingBttn");
         Button numberFiveButton4 = new Button("5");
-        numberFiveButton4.setId("securityHQBttn");
+        numberFiveButton4.setId("securityhqBttn");
         Button numberSixButton4 = new Button("6");
-        numberSixButton4.setId("superstoreBttn");
+        numberSixButton4.setId("supermarketBttn");
 
 
         List<Button> oneToSix = new ArrayList<>();

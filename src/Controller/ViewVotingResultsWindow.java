@@ -166,7 +166,7 @@ public class ViewVotingResultsWindow {
         Scene scene = new Scene(layout, 600, 450);
         File f = new File("..\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
         scene.getStylesheets().clear();
-        scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
+        scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));;
         ;
         window.setScene(scene);
         window.showAndWait();
