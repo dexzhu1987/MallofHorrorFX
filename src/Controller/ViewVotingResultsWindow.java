@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -13,14 +14,18 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class ViewVotingResultsWindow {
-    public static void display(List<Integer> opitons) {
+    public static void display(List<String> colors, HashMap<String, Integer> results) {
         Stage window = new Stage();
         window.setTitle("Voting Results are..");
         window.setMinWidth(250);
 
+
+        AnchorPane layout = new AnchorPane();
 
 //        try {
 //            // load a custom font from a specific location (change path!)
@@ -33,16 +38,28 @@ public class ViewVotingResultsWindow {
 
         Button numberZeroButton = new Button("");
         numberZeroButton.setId("red");
+        AnchorPane.setTopAnchor(numberZeroButton, );
+        AnchorPane.setLeftAnchor(numberZeroButton,);
         Button numberOneButton = new Button("");
+        AnchorPane.setTopAnchor(numberOneButton,);
+        AnchorPane.setLeftAnchor(numberOneButton,);
         numberOneButton.setId("yellow");
         Button numberTwoButton = new Button("");
         numberTwoButton.setId("blue");
+        AnchorPane.setTopAnchor(numberTwoButton,);
+        AnchorPane.setLeftAnchor(numberTwoButton,);
         Button numberThreeButton = new Button("");
         numberThreeButton.setId("green");
+        AnchorPane.setTopAnchor(numberThreeButton,);
+        AnchorPane.setLeftAnchor(numberThreeButton,);
         Button numberFourButton = new Button("");
         numberFourButton.setId("brown");
+        AnchorPane.setTopAnchor(numberFourButton,);
+        AnchorPane.setLeftAnchor(numberFourButton,);
         Button numberFiveButton = new Button("");
         numberFiveButton.setId("black");
+        AnchorPane.setTopAnchor(numberFiveButton,);
+        AnchorPane.setLeftAnchor(numberFiveButton,);
 
 
         List<Button> oneToSix = new ArrayList<>();
@@ -56,44 +73,39 @@ public class ViewVotingResultsWindow {
 
         List<Button> optionsButton = new ArrayList<>();
         optionsButton.clear();
-        for (int i=0; i<oneToSix.size(); i++){
-            if (opitons.get(0)==Integer.parseInt(oneToSix.get(i).getText()) ){
-                optionsButton.add(oneToSix.get(i));
+        for (int i = 0; i < colors.size(); i+=2) {
+            for (int q=0; q<oneToSix.size(); q++){
+                if (colors.get(i).equalsIgnoreCase(oneToSix.get(q).getId())) {
+                    oneToSix.get(q).setId(colors.get(i+1)+"act");
+                }
             }
         }
 
-        VBox layout = new VBox(10);
-        layout.setPadding(new Insets(10, 20, 10, 20));
 
-        FlowPane numbers = new FlowPane();
-        numbers.setPadding(new Insets(10, 5, 10, 5));
-        numbers.setHgap(15);
-        numbers.setVgap(15);
-        numbers.setAlignment(Pos.CENTER);
 
-        for (int i=0; i<optionsButton.size(); i++){
-            numbers.getChildren().add(optionsButton.get(i));
-        }
 
         Button ok = new Button("");
         ok.setId("msgokbttn");
+        AnchorPane.setLeftAnchor(ok,262.5);
+        AnchorPane.setBottomAnchor(ok,20.0);
 
         //Clicking will set answer and close window
         ok.setOnAction(e -> {
             window.close();
         });
 
-        layout.getChildren().clear();
-        layout.getChildren().addAll(numbers, ok);
+
+        layout.getChildren().addAll(ok);
 
 
-        layout.setAlignment(Pos.CENTER);
         layout.setId("ViewZombiesWindow");
-        Scene scene = new Scene(layout,600,450);
+        Scene scene = new Scene(layout, 600, 450);
         File f = new File("..\\MallofHorrorFX\\src\\Controller\\numberwindow.css");
         scene.getStylesheets().clear();
-        scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));;
+        scene.getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
+        ;
         window.setScene(scene);
         window.showAndWait();
 
+    }
 }
